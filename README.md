@@ -12,6 +12,6 @@ Types and Constants for Estfor
 ## Usage
 
   yarn add @estfor/definitions
-  import { BRONZE_HELMET } from '@paintswap/estfor-definitions/dist/estforConstants'
-  import { Skill } from '@paintswap/estfor-definitions/dist/estforTypes'
+
+  import { EstforConstants, EstforTypes } from '@paintswap/estfor-definitions'
 
