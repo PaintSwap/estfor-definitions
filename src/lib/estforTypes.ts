@@ -138,3 +138,15 @@ export const defaultInputItem = {
   boostValue: 0,
   boostDuration: 0,
 }
+
+export const noAttire = {
+  helmet: 0,
+  amulet: 0,
+  armor: 0,
+  gauntlets: 0,
+  tassets: 0,
+  boots: 0,
+  ring: 0, // Always NONE for now
+  reserved1: 0, // Always NONE for now
+  queueId: 0, // Doesn't matter
+}
