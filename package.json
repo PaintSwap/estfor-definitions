@@ -1,13 +1,13 @@
 {
   "name": "@paintswap/estfor-definitions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Types and constants for Estfor",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
   },
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "estfor",
     "paintswap",
@@ -18,14 +18,14 @@
     "library"
   ],
   "files": [
-    "dist/**/*"
+    "dist/*"
   ],
   "scripts": {
     "build": "run-script-os",
     "build:windows": "rd /s/q dist && tsc",
     "build:default": "rm -rf ./dist/* && tsc",
     "prepare": "yarn build",
-    "version": "yarn format:write && git add -A src",
+    "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
   "author": "Paintswap Team",
