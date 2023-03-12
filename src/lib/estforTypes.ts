@@ -43,6 +43,7 @@ export enum EquipPosition {
   FOOD,
   AUX, // wood, seeds etc..
   BOOST_VIAL,
+  NO_POSITION,
 }
 
 export type Attire = {
