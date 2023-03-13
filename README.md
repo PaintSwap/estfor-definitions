@@ -5,9 +5,9 @@ Types and Constants for Estfor
 
   yarn build
 
-## Publish to NPM
+## Publish to NPM (--access=public needed the first time)
 
-  yarn publish --access=public
+  yarn publish
 
 ## Usage
 
