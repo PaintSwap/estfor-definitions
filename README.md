@@ -11,7 +11,7 @@ Types and Constants for Estfor
 
 ## Usage
 
-  yarn add @estfor/definitions
+  yarn add @paintswap/estfor-definitions
 
   import { EstforConstants, EstforTypes } from '@paintswap/estfor-definitions'
 
