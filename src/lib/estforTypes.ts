@@ -46,16 +46,16 @@ export enum EquipPosition {
   NO_POSITION,
 }
 
-export type Attire = {
-  helmet: number
-  amulet: number
-  armor: number
-  gauntlets: number
-  tassets: number
-  boots: number
-  ring: number
-  reserved1: number
-  queueId: number
+export class Attire {
+  helmet: i32 = 0
+  amulet: i32 = 0
+  armor: i32 = 0
+  gauntlets: i32 = 0
+  tassets: i32 = 0
+  boots: i32 = 0
+  ring: i32 = 0
+  reserved1: i32 = 0
+  queueId: i64 = 0
 }
 
 export enum ActionQueueStatus {
@@ -74,157 +74,107 @@ export enum CombatStyle {
   MAGIC_DEFENCE,
 }
 
-export type Equipment = {
-  itemTokenId: number
-  amount: number
+export class Equipment {
+  itemTokenId: i32 = 0
+  amount: i32 = 0
 }
 
-export type QueuedAction = {
-  attire: Attire
-  actionId: number
-  regenerateId: number // Food (combat), maybe something for non-combat later
-  choiceId: number // Melee/Arrow/Magic (combat), logs, ore (non-combat)
-  choiceId1: number // Reserved (TBD)
-  choiceId2: number // Reserved (TBD)
-  combatStyle: CombatStyle
-  timespan: number // How long to queue the action for
-  rightHandEquipmentTokenId: number
-  leftHandEquipmentTokenId: number
-  startTime: string // Filled in by the smart contract, can be "0"
-  isValid: boolean // If we still have the item, TODO: Not used yet
+export class QueuedAction {
+  attire: Attire = new Attire()
+  actionId: i32 = 0
+  regenerateId: i32 = 0 // Food (combat), maybe something for non-combat later
+  choiceId: i32 = 0 // Melee/Arrow/Magic (combat), logs, ore (non-combat)
+  choiceId1: i32 = 0 // Reserved (TBD)
+  choiceId2: i32 = 0 // Reserved (TBD)
+  combatStyle: CombatStyle = CombatStyle.NONE
+  timespan: i32 = 0 // How long to queue the action for
+  rightHandEquipmentTokenId: i32 = 0
+  leftHandEquipmentTokenId: i32 = 0
+  startTime: string = '0' // Filled in by the smart contract, can be "0"
+  isValid: boolean = true // If we still have the item, TODO: Not used yet
 }
 
-export type ActionInfo = {
-  skill: Skill
-  isAvailable: boolean
-  isDynamic: boolean
-  actionChoiceRequired: boolean
-  xpPerHour: number
-  numSpawn: number
-  minSkillPoints: number
-  handItemTokenIdRangeMin: number
-  handItemTokenIdRangeMax: number
+export class ActionInfo {
+  skill: Skill = Skill.NONE
+  isAvailable: boolean = true
+  isDynamic: boolean = false
+  actionChoiceRequired: boolean = false
+  xpPerHour: i32 = 0
+  numSpawn: i32 = 0
+  minSkillPoints: i32 = 0
+  handItemTokenIdRangeMin: i32 = 0
+  handItemTokenIdRangeMax: i32 = 0
 }
 
-export type ActionReward = {
-  itemTokenId: number
-  rate: number // base 100, 2 decimal places
+export class ActionReward {
+  itemTokenId: i32 = 0
+  rate: i32 = 0 // base 100, 2 decimal places
 }
 
-export type Action = {
-  actionId: number
-  info: ActionInfo
-  guaranteedRewards: ActionReward[]
-  randomRewards: ActionReward[]
-  combatStats: CombatStats
-}
-
-export type ActionChoice = {
-  skill: Skill
-  diff: number
-  rate: number
-  xpPerHour: number
-  minSkillPoints: number
-  inputTokenId1: number
-  num1: number
-  inputTokenId2: number
-  num2: number
-  inputTokenId3: number
-  num3: number
-  outputTokenId: number
-  outputNum: number // Not used yet, always 1
+export class Action {
+  actionId: i32 = 0
+  info: ActionInfo = new ActionInfo()
+  guaranteedRewards: ActionReward[] = []
+  randomRewards: ActionReward[] = []
+  combatStats: CombatStats = new CombatStats()
 }
 
 // Contains everything you need to create an item
-export type InputItem = {
-  combatStats: CombatStats
-  nonCombatStats: NonCombatStats
-  tokenId: number
-  equipPosition: EquipPosition
+export class InputItem {
+  combatStats: CombatStats = new CombatStats()
+  nonCombatStats: NonCombatStats = new NonCombatStats()
+  tokenId: i32 = 0
+  equipPosition: EquipPosition = EquipPosition.NONE
   // Can this be transferred to another player?
-  isTransferable: boolean
+  isTransferable: boolean = true
   // Minimum requirements in this skill
-  skill: Skill
-  minSkillPoints: number
+  skill: Skill = Skill.NONE
+  minSkillPoints: i32 = 0
   // Food
-  healthRestored: number
+  healthRestored: i32 = 0
   // Boost
-  boostType: BoostType
-  boostValue: number // Varies, could be the % increase
-  boostDuration: number // How long the effect of the boost last
+  boostType: BoostType = BoostType.NONE
+  boostValue: i32 = 0 // Varies, could be the % increase
+  boostDuration: i32 = 0 // How long the effect of the boost last
   // uri
-  metadataURI: string
+  metadataURI: string = ''
 }
 
-export type CombatStats = {
-  melee: number
-  magic: number
-  range: number
-  meleeDefence: number
-  magicDefence: number
-  rangeDefence: number
-  health: number
+export class CombatStats {
+  melee: i32 = 0
+  magic: i32 = 0
+  range: i32 = 0
+  meleeDefence: i32 = 0
+  magicDefence: i32 = 0
+  rangeDefence: i32 = 0
+  health: i32 = 0
 }
 
-export type NonCombatStats = {
-  skill: Skill
-  diff: number
+export class NonCombatStats {
+  skill: Skill = Skill.NONE
+  diff: i32 = 0
 }
 
-export const emptyCombatStats: CombatStats = {
-  melee: 0,
-  magic: 0,
-  range: 0,
-  meleeDefence: 0,
-  magicDefence: 0,
-  rangeDefence: 0,
-  health: 0,
+export const emptyCombatStats = new CombatStats()
+export const emptyNonCombatStats = new NonCombatStats()
+export const defaultInputItem = new InputItem()
+export const noAttire = new Attire()
+
+export class PendingOutput {
+  consumed: Equipment[] = []
+  produced: Equipment[] = []
+  producedPastRandomRewards: Equipment[] = []
+  producedXPRewards: Equipment[] = []
+  died: boolean = false
 }
 
-export const emptyNonCombatStats: NonCombatStats = {
-  skill: Skill.NONE,
-  diff: 0,
+export class PendingFlags {
+  includeLoot: boolean = true // Guaranteed loot from actions, and random loot if claiming quite late
+  includePastRandomRewards: boolean = true // This is random loot from previous actions
+  includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
 }
 
-export const defaultInputItem = {
-  combatStats: emptyCombatStats,
-  nonCombatStats: emptyNonCombatStats,
-  isTransferable: true,
-  skill: Skill.NONE,
-  minSkillPoints: 0,
-  healthRestored: 0,
-  boostType: BoostType.NONE,
-  boostValue: 0,
-  boostDuration: 0,
-}
-
-export const noAttire = {
-  helmet: 0,
-  amulet: 0,
-  armor: 0,
-  gauntlets: 0,
-  tassets: 0,
-  boots: 0,
-  ring: 0, // Always NONE for now
-  reserved1: 0, // Always NONE for now
-  queueId: 0, // Doesn't matter
-}
-
-export type PendingOutput = {
-  consumed: Equipment[]
-  produced: Equipment[]
-  producedPastRandomRewards: Equipment[]
-  producedXPRewards: Equipment[]
-  died: boolean
-}
-
-export type PendingFlags = {
-  includeLoot: boolean // Guaranteed loot from actions, and random loot if claiming quite late
-  includePastRandomRewards: boolean // This is random loot from previous actions
-  includeXPRewards: boolean // Passing any xp thresholds gives you extra rewards
-}
-
-export type XPThresholdReward = {
-  xpThreshold: number
-  equipments: Equipment[]
+export class XPThresholdReward {
+  xpThreshold: i32 = 0
+  equipments: Equipment[] = []
 }
