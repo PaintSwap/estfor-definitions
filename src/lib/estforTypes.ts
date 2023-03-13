@@ -171,7 +171,7 @@ export type NonCombatStats = {
   diff: number
 }
 
-export const emptyStats: CombatStats = {
+export const emptyCombatStats: CombatStats = {
   melee: 0,
   magic: 0,
   range: 0,
@@ -187,7 +187,7 @@ export const emptyNonCombatStats: NonCombatStats = {
 }
 
 export const defaultInputItem = {
-  combatStats: emptyStats,
+  combatStats: emptyCombatStats,
   nonCombatStats: emptyNonCombatStats,
   isTransferable: true,
   skill: Skill.NONE,
