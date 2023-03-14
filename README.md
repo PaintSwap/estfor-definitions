@@ -1,7 +1,9 @@
 # estfor-definitions
 
-[Estfor Kingdom](https://estfor.com/) `types` and `constants` available for [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
-[TypeScript](https://www.npmjs.com/package/typescript), and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
+[<img src="https://www.iconarchive.com/download/i107938/google/noto-emoji-objects/62963-crossed-swords.svg" height="20"/> Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="20"/> Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="20"/> TypeScript](https://www.npmjs.com/package/typescript), and 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="20"/> AssemblyScript / WebAssembly](https://www.npmjs.com/package/assemblyscript).
 
 The items in this library will allow you to interact with Estfor Kingdom via:
 
