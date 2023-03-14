@@ -1,8 +1,9 @@
 # estfor-definitions
 
-[Estfor Kingdom](https://estfor.com/) `types` and `constants` available for Javascript, [TypeScript](https://www.npmjs.com/package/typescript), and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
+[Estfor Kingdom](https://estfor.com/) `types` and `constants` available for [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
+[TypeScript](https://www.npmjs.com/package/typescript), and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
 
-The items in this library will allow you to interact with Estfor from:
+The items in this library will allow you to interact with Estfor Kingdom via:
 
 - Vanilla JS applications
 - React, Angular, and other front end frameworks
@@ -26,14 +27,14 @@ Once installed, the `EstforConstants`, `EstforTypes`, and `NONE` type will be ex
 ```ts
 import { EstforConstants, EstforTypes, NONE } from '@paintswap/estfor-definitions'
 const { LOG } = EstforConstants
-const LOG = EstforConstants.LOG
+const MAPLE_LOG = EstforConstants.MAPLE_LOG
 ```
 
 It is also possible to import specific items directly.
 
 ```ts
-import { LOG } from '@paintswap/estfor-definitions/dist/constants'
-import { Skill } from '@paintswap/estfor-definitions/dist/types'
+import { LOG } from '@paintswap/estfor-definitions/constants'
+import { Skill } from '@paintswap/estfor-definitions/types'
 ```
 
 ## Development
@@ -50,7 +51,7 @@ yarn build
 
 ### Use Locally
 
-###
+#### NPM
 
 From library root:
 
@@ -64,7 +65,7 @@ From project root:
 npm link @paintswap/estfor-definitions
 ```
 
-###
+#### Yarn
 
 From library root:
 
