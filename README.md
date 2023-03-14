@@ -1,16 +1,16 @@
 # estfor-definitions
 
 [Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="1em"/>Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="1em"/>TypeScript](https://www.npmjs.com/package/typescript), and 
-[AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="1em"/>WebAssembly](https://www.npmjs.com/package/assemblyscript).
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="15"/>Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="15"/>TypeScript](https://www.npmjs.com/package/typescript), and 
+[AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="15"/>WebAssembly](https://www.npmjs.com/package/assemblyscript).
 
 The items in this library will allow you to interact with Estfor Kingdom via:
 
 - Vanilla JS applications
-- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/React-Light.svg" height="1em"/>React, <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/Angular-Light.svg" height="1em"/>Angular, and other front end frameworks
-- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/NodeJS-Light.svg" height="1em"/>NodeJS / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="1em"/>Typescript back end services
-- AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="1em"/>WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
+- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/React-Light.svg" height="15"/>React, <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/Angular-Light.svg" height="15"/>Angular, and other front end frameworks
+- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/NodeJS-Light.svg" height="15"/>NodeJS / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="15"/>Typescript back end services
+- AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="15"/>WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
 ## Usage
 
