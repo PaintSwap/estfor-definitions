@@ -2,7 +2,7 @@
 
 [Estfor Kingdom](https://estfor.com/) `types` and `constants` available for Javascript, [TypeScript](https://www.npmjs.com/package/typescript), and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
 
-The itms in this library will allow you to interact with Estfor from:
+The items in this library will allow you to interact with Estfor from:
 
 - Vanilla JS applications
 - React, Angular, and other front end frameworks
