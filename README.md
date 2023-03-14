@@ -1,16 +1,16 @@
 # estfor-definitions
 
-[<img src="https://www.iconarchive.com/download/i107938/google/noto-emoji-objects/62963-crossed-swords.svg" height="20"/> Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="20"/> Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="20"/> TypeScript](https://www.npmjs.com/package/typescript), and 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="20"/> AssemblyScript / WebAssembly](https://www.npmjs.com/package/assemblyscript).
+[Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="20"/>Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
+[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="20"/>TypeScript](https://www.npmjs.com/package/typescript), and 
+[AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="20"/>WebAssembly](https://www.npmjs.com/package/assemblyscript).
 
 The items in this library will allow you to interact with Estfor Kingdom via:
 
 - Vanilla JS applications
-- React, Angular, and other front end frameworks
-- Node / Typescript back end services
-- AssemblyScript / WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
+- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/React-Light.svg" height="20"/>React, <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/Angular-Light.svg" height="20"/>Angular, and other front end frameworks
+- <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/NodeJS-Light.svg" height="20"/>NodeJS / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="20"/>Typescript back end services
+- AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="20"/>WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
 ## Usage
 
