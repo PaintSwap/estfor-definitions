@@ -20,8 +20,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "prepare": "yarn build",
+    "build:tsc": "tsc",
+    "build:asc": "asc --target release",
+    "build:asc:debug": "asc --target debug",
+    "prepare": "yarn build:tsc && yarn build:asc",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
