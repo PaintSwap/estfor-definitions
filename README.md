@@ -1,4 +1,4 @@
-# Estfor Kingdom Types and Constants (estfor-definitions)
+# Estfor Kingdom Types & Constants (estfor-definitions)
 
 [Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
 [<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="15"/> Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
