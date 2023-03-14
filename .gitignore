@@ -106,6 +106,6 @@ dist
 build
 index.wasm
 
-constants.*
-types.*
-index.*
+/index.*
+/constants.*
+/types.*
