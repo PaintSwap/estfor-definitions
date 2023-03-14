@@ -1,53 +1,116 @@
 # estfor-definitions
-Types and Constants for Estfor
 
-## Build
+Types and Constants for [Estfor Kingdom](https://www.estfor.com/).
 
-    yarn build
+## Usage
 
-## Publish to NPM (--access=public needed the first time)
+To use Estfor Kingdom types and constants in your project, first import the dev dependency:
 
-    yarn publish
+```shell
+npm install -D @paintswap/estfor-definitions  # NPM
+```
 
-## Dev use locally using yarn
+```shell
+yarn add -D @paintswap/estfor-definitions     # Yarn
+```
+
+Once installed, the `EstforConstants`, `EstforTypes`, and `NONE` type will be exposed. You can then access the individual types from their parent.
+
+```ts
+import { EstforConstants, EstforTypes, NONE } from '@paintswap/estfor-definitions'
+const { LOG } = EstforConstants
+const LOG = EstforConstants.LOG
+```
+
+It is also possible to import specific items directly.
+
+```ts
+import { LOG } from '@paintswap/estfor-definitions/dist/constants'
+import { Skill } from '@paintswap/estfor-definitions/dist/types'
+```
+
+## Development
+
+### Build
+
+```shell
+npm run build   # NPM
+```
+
+```shell
+yarn build      # Yarn
+```
+
+### Use Locally
+
+#### NPM
 
 From library root:
 
-    yarn link
+```shell
+npm link        # NPM
+```
 
 From project root:
 
-    yarn link @paintswap/estfor-definitions
+```shell
+npm link @paintswap/estfor-definitions  # NPM
+```
 
-## Dev use locally using yalc
+#### Yarn
 
 From library root:
 
-    yalc publish
+```shell
+yarn link       # Yarn
+```
 
 From project root:
-  
-    yalc link @paintswap/estfor-definitions
 
-Push live updates to projects (library root)
+```shell
+yarn link @paintswap/estfor-definitions # Yarn
+```
 
-    yarn build
-    yalc push
+#### Yalc
 
-## Restore NPM version
+Install `yalc`
 
-    yarn add @paintswap/estfor-definitions
+```shell
+npm install -g yalc@latest  # NPM
+yarn add -g yalc@latest     # Yarn
+```
 
-## Normal Usage
+From library root:
 
-    yarn add @paintswap/estfor-definitions
+```shell
+yalc publish
+```
 
-    import { EstforConstants, EstforTypes } from '@paintswap/estfor-definitions'
-    const { LOG } = EstforConstants
-    const LOG = EstforConstants.LOG
+From project root:
 
-Can also do single imports:
+```shell
+yalc add @paintswap/estfor-definitions
+```
 
-    import { LOG } from '@paintswap/estfor-definitions/dist/constants'
-    import { Skill } from '@paintswap/estfor-definitions/dist/types'
+Use newly published updates to local yalc repository.
 
+```shell
+yalc update
+```
+
+Revert to NPM Repository
+
+```shell
+yalc remove @paintswap/estfor-definitions
+yarn add @paintswap/estfor-definitions
+```
+
+### Publish to NPM (--access=public needed the first time)
+
+```shell
+npm publish     # NPM
+```
+
+```shell
+yarn publish    # Yarn
+```
