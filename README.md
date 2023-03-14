@@ -3,7 +3,7 @@
 [Estfor Kingdom](https://estfor.com/) `types` and `constants` available for 
 [<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/JavaScript.svg" height="15"/> Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript), 
 [<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg" height="15"/> TypeScript](https://www.npmjs.com/package/typescript), and 
-[<img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="15"/> AssemblyScript / WebAssembly](https://www.npmjs.com/package/assemblyscript).
+[ <img src="https://avatars1.githubusercontent.com/u/28916798?s=15" height="15"/> AssemblyScript / <img src="https://raw.githubusercontent.com/jpb06/jpb06/master/icons/WebAssembly.svg" height="15"/> WebAssembly](https://www.npmjs.com/package/assemblyscript).
 
 The items in this library will allow you to interact with Estfor Kingdom via:
 
