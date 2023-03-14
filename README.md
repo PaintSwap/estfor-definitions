@@ -1,6 +1,6 @@
 # estfor-definitions
 
-Types and Constants for [Estfor Kingdom](https://www.estfor.com/).
+Types and Constants for [Estfor Kingdom](https://www.estfor.com/) available for [TypeScript](https://www.npmjs.com/package/typescript) and [AssemblyScript](https://www.npmjs.com/package/assemblyscript). 
 
 ## Usage
 
