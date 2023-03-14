@@ -1,0 +1,18 @@
+{
+  "entries": [
+    "./src/index.ts"
+  ],
+  "options": {
+    "importTable": true
+  },
+  "targets": {
+    "release": {
+      "optimize": true,
+      "outFile": "build/index.wasm"
+    },
+    "debug": {
+      "debug": true,
+      "outFile": "build/debug.wasm"
+    }
+  }
+}

@@ -1,8 +1,10 @@
 {
+  "extends": "assemblyscript/std/assembly",
   "include": ["./src/index.ts"],
   "exclude": [],
   "compilerOptions": {
     "declaration": true,
-    "outDir": "dist"
+    "declarationMap": true,
+    "outDir": "./"
   }
 }
