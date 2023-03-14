@@ -1,6 +1,13 @@
 # estfor-definitions
 
-Types and Constants for [Estfor Kingdom](https://estfor.com/) available for [TypeScript](https://www.npmjs.com/package/typescript) and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
+[Estfor Kingdom](https://estfor.com/) `types` and `constants` available for Javascript, [TypeScript](https://www.npmjs.com/package/typescript), and [AssemblyScript](https://www.npmjs.com/package/assemblyscript).
+
+The itms in this library will allow you to interact with Estfor from:
+
+- Vanilla JS applications
+- React, Angular, and other front end frameworks
+- Node / Typescript back end services
+- AssemblyScript / WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
 ## Usage
 
