@@ -7,11 +7,11 @@ Types and Constants for [Estfor Kingdom](https://www.estfor.com/).
 To use Estfor Kingdom types and constants in your project, first import the dev dependency:
 
 ```shell
-npm install -D @paintswap/estfor-definitions  # NPM
+npm install -D @paintswap/estfor-definitions                         # NPM
 ```
 
 ```shell
-yarn add -D @paintswap/estfor-definitions     # Yarn
+yarn add -D @paintswap/estfor-definitions                            # Yarn
 ```
 
 Once installed, the `EstforConstants`, `EstforTypes`, and `NONE` type will be exposed. You can then access the individual types from their parent.
@@ -34,11 +34,11 @@ import { Skill } from '@paintswap/estfor-definitions/dist/types'
 ### Build
 
 ```shell
-npm run build   # NPM
+npm run build                                       # NPM
 ```
 
 ```shell
-yarn build      # Yarn
+yarn build                                          # Yarn
 ```
 
 ### Use Locally
@@ -48,13 +48,13 @@ yarn build      # Yarn
 From library root:
 
 ```shell
-npm link        # NPM
+npm link                                            # NPM
 ```
 
 From project root:
 
 ```shell
-npm link @paintswap/estfor-definitions  # NPM
+npm link @paintswap/estfor-definitions              # NPM
 ```
 
 #### Yarn
@@ -62,13 +62,13 @@ npm link @paintswap/estfor-definitions  # NPM
 From library root:
 
 ```shell
-yarn link       # Yarn
+yarn link                                           # Yarn
 ```
 
 From project root:
 
 ```shell
-yarn link @paintswap/estfor-definitions # Yarn
+yarn link @paintswap/estfor-definitions             # Yarn
 ```
 
 #### Yalc
@@ -76,8 +76,10 @@ yarn link @paintswap/estfor-definitions # Yarn
 Install `yalc`
 
 ```shell
-npm install -g yalc@latest  # NPM
-yarn add -g yalc@latest     # Yarn
+npm install -g yalc@latest                          # NPM
+```
+```shell
+yarn add -g yalc@latest                             # Yarn
 ```
 
 From library root:
@@ -108,9 +110,9 @@ yarn add @paintswap/estfor-definitions
 ### Publish to NPM (--access=public needed the first time)
 
 ```shell
-npm publish     # NPM
+npm publish                                         # NPM
 ```
 
 ```shell
-yarn publish    # Yarn
+yarn publish                                        # Yarn
 ```
