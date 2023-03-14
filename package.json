@@ -23,6 +23,8 @@
   "scripts": {
     "build": "yarn build:tsc",
     "build:tsc": "tsc",
+    "build:asc": "asc --target release",
+    "build:asc:debug": "asc --target debug",
     "prepare": "yarn build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
