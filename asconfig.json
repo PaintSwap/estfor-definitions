@@ -8,11 +8,11 @@
   "targets": {
     "release": {
       "optimize": true,
-      "outFile": "dist/index.wasm"
+      "outFile": "build/index.wasm"
     },
     "debug": {
       "debug": true,
-      "outFile": "dist/debug.wasm"
+      "outFile": "build/debug.wasm"
     }
   }
 }
