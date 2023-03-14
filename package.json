@@ -16,11 +16,11 @@
     "as",
     "library"
   ],
-  "main": "index.ts",
-  "module": "index.ts",
-  "types": "index.ts",
+  "asmain": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "asc --explicitStart --exportRuntime --runtime stub index.ts --lib estfor-definitions -b index.wasm",
+    "build": "tsc",
     "prepare": "yarn build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
