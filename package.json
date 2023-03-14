@@ -25,7 +25,7 @@
     "build:tsc": "tsc",
     "build:asc": "asc --target release",
     "build:asc:debug": "asc --target debug",
-    "prepare": "yarn build",
+    "prepare": "yarn build:tsc",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
