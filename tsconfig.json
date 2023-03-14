@@ -4,6 +4,7 @@
   "exclude": [],
   "compilerOptions": {
     "declaration": true,
+    "declarationMap": true,
     "outDir": "./"
   }
 }
