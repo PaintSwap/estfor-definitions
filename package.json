@@ -16,7 +16,7 @@
     "as",
     "library"
   ],
-  "asmain": "src/index.ts",
+  "ascMain": "src/index.ts",
   "module": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -41,6 +41,5 @@
   },
   "dependencies": {
     "assemblyscript": "0.19.10"
-  },
-  "ascMain": "index.ts"
+  }
 }
