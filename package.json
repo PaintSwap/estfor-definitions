@@ -8,15 +8,15 @@
   },
   "keywords": [
     "estfor",
+    "estfor kingdom",
+    "javascript",
+    "typescript",
+    "assemblyscript",
+    "webassembly",
     "paintswap",
     "game",
     "web3",
-    "typescript",
-    "assemblyscript",
-    "ts",
-    "js",
-    "as",
-    "library"
+    "thegraph"
   ],
   "module": "CommonJS",
   "ascMain": "src/index.ts",
