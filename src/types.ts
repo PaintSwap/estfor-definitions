@@ -10,7 +10,7 @@ export enum BoostType {
 export enum Skill {
   NONE,
   COMBAT,
-  ATTACK,
+  MELEE,
   RANGE,
   MAGIC,
   DEFENCE,
