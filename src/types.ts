@@ -178,3 +178,52 @@ export class XPThresholdReward {
   xpThreshold: i32 = 0
   equipments: Equipment[] = []
 }
+
+export class Player {
+  id: string = '0'
+  tokenId: string = '0'
+  avatarId: string = '1'
+  owner: string = ''
+  name: string = ''
+  lastTimestamp: string = '0'
+  isActive: boolean = false // Is this player the active one for the owner
+  /* Action Skill Points */
+  woodcuttingXP: i32 = 0
+  firemakingXP: i32 = 0
+  fishingXP: i32 = 0
+  cookingXP: i32 = 0
+  miningXP: i32 = 0
+  smithingXP: i32 = 0
+  craftingXP: i32 = 0
+  thievingXP: i32 = 0
+
+  /* Combat Skill Points */
+  healthXP: i32 = 0
+  attackXP: i32 = 0
+  defenceXP: i32 = 0
+  magicXP: i32 = 0
+  rangeXP: i32 = 0
+
+  /** Ranks */
+  woodcuttingRank: i32 = 0
+  firemakingRank: i32 = 0
+  fishingRank: i32 = 0
+  cookingRank: i32 = 0
+  miningRank: i32 = 0
+  smithingRank: i32 = 0
+  craftingRank: i32 = 0
+  thievingRank: i32 = 0
+  attackRank: i32 = 0
+  magicRank: i32 = 0
+  rangeRank: i32 = 0
+  defenceRank: i32 = 0
+  healthRank: i32 = 0
+  combinedRank: i32 = 0
+
+  /* Boost */
+  boostStartTime: i32 = 0
+  boostDuration: i32 = 0
+  boostVal: i32 = 0
+  boostType: BoostType
+  boostItemTokenId: i32 = 0
+}
