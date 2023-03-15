@@ -187,7 +187,7 @@ export class Player {
   name: string = ''
   lastTimestamp: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
-  /* Action Skill Points */
+  /* Action XP */
   woodcuttingXP: i32 = 0
   firemakingXP: i32 = 0
   fishingXP: i32 = 0
@@ -197,7 +197,7 @@ export class Player {
   craftingXP: i32 = 0
   thievingXP: i32 = 0
 
-  /* Combat Skill Points */
+  /* Combat XP */
   healthXP: i32 = 0
   attackXP: i32 = 0
   defenceXP: i32 = 0
