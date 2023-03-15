@@ -16,6 +16,8 @@ The items in this library will allow you to interact with Estfor Kingdom via:
 - NodeJS / Typescript back end services
 - AssemblyScript / WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
+[NPMJS Package](https://www.npmjs.com/package/@paintswap/estfor-definitions)
+
 ## Usage
 
 To use Estfor Kingdom types and constants in your project, first import the dev dependency:
