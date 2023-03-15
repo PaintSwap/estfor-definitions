@@ -199,7 +199,7 @@ export class Player {
 
   /* Combat XP */
   healthXP: i32 = 0
-  attackXP: i32 = 0
+  meleeXP: i32 = 0
   defenceXP: i32 = 0
   magicXP: i32 = 0
   rangeXP: i32 = 0
@@ -213,7 +213,7 @@ export class Player {
   smithingRank: i32 = 0
   craftingRank: i32 = 0
   thievingRank: i32 = 0
-  attackRank: i32 = 0
+  meleeRank: i32 = 0
   magicRank: i32 = 0
   rangeRank: i32 = 0
   defenceRank: i32 = 0
