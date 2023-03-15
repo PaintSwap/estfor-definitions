@@ -1,7 +1,7 @@
 {
   "name": "@paintswap/estfor-definitions",
   "version": "0.1.10",
-  "description": "Types and constants for Estfor",
+  "description": "Types and constants for Estfor Kingdom",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
