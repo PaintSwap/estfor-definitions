@@ -101,7 +101,7 @@ export class ActionInfo {
   actionChoiceRequired: boolean = false
   xpPerHour: i32 = 0
   numSpawn: i32 = 0
-  minSkillPoints: i32 = 0
+  minXP: i32 = 0
   handItemTokenIdRangeMin: i32 = 0
   handItemTokenIdRangeMax: i32 = 0
 }
@@ -129,7 +129,7 @@ export class InputItem {
   isTransferable: boolean = true
   // Minimum requirements in this skill
   skill: Skill = Skill.NONE
-  minSkillPoints: i32 = 0
+  minXP: i32 = 0
   // Food
   healthRestored: i32 = 0
   // Boost
