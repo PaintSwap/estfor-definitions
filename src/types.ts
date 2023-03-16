@@ -227,3 +227,10 @@ export class Player {
   boostType: BoostType
   boostItemTokenId: i32 = 0
 }
+
+export class User {
+  id: string = '0'
+  totalSold: string = '0'
+  totalBought: string = '0'
+  numPlayers: i32 = 0
+}
