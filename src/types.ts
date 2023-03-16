@@ -47,11 +47,11 @@ export enum EquipPosition {
 }
 
 export class Attire {
-  helmet: i32 = 0
-  amulet: i32 = 0
-  armor: i32 = 0
-  gauntlets: i32 = 0
-  tassets: i32 = 0
+  head: i32 = 0
+  neck: i32 = 0
+  body: i32 = 0
+  arms: i32 = 0
+  legs: i32 = 0
   boots: i32 = 0
   ring: i32 = 0
   reserved1: i32 = 0
