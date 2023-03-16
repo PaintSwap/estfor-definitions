@@ -186,6 +186,7 @@ export class Player {
   owner: string = ''
   name: string = ''
   lastTimestamp: string = '0'
+  mintedNumber: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
   /* Action XP */
   woodcuttingXP: i32 = 0
@@ -237,4 +238,43 @@ export class User {
 
 export class GlobalPlayerStats {
   totalPlayers: string = '0'
+}
+
+export enum ActivityType {
+  LevelUp,
+  Buy,
+  Sell,
+  Died,
+  Consumed,
+  Rewards,
+  ClaimedXPThresholdRewards,
+  ActionPartiallyFinished,
+  ActionsQueued,
+  ActionFinished,
+}
+
+export class Activity {
+  id: string = ''
+  type: string = '' // ActivityType
+  itemTokenIds: i32[] = []
+  amounts: string[] = []
+  prices: string[] = []
+  queueId: string = ''
+  timestamp: string = ''
+  hash: string = ''
+  playerId: string = '0'
+  user: string = ''
+}
+
+export class LastAttire {
+  id: string = '' // playerId
+  playerId: string = ''
+  user: string = ''
+  headEquipped: i32 = 0
+  neckEquipped: i32 = 0
+  bodyEquipped: i32 = 0
+  armsEquipped: i32 = 0
+  legsEquipped: i32 = 0
+  bootsEquipped: i32 = 0
+  ringEquipped: i32 = 0
 }
