@@ -234,3 +234,7 @@ export class User {
   totalBought: string = '0'
   numPlayers: i32 = 0
 }
+
+export class GlobalPlayerStats {
+  totalPlayers: string = '0'
+}
