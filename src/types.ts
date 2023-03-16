@@ -79,7 +79,7 @@ export class Equipment {
   amount: i32 = 0
 }
 
-export class QueuedAction {
+export class QueuedActionInput {
   attire: Attire = new Attire()
   actionId: i32 = 0
   regenerateId: i32 = 0 // Food (combat), maybe something for non-combat later
@@ -111,7 +111,7 @@ export class ActionReward {
   rate: i32 = 0 // base 100, 2 decimal places
 }
 
-export class Action {
+export class ActionInput {
   actionId: i32 = 0
   info: ActionInfo = new ActionInfo()
   guaranteedRewards: ActionReward[] = []
@@ -266,6 +266,11 @@ export class Activity {
   user: string = ''
 }
 
+export class ActivityInfo {
+  id: string = ''
+  numActivities: string = ''
+}
+
 export class LastAttire {
   id: string = '' // playerId
   playerId: string = ''
@@ -277,4 +282,97 @@ export class LastAttire {
   legsEquipped: i32 = 0
   bootsEquipped: i32 = 0
   ringEquipped: i32 = 0
+}
+
+export class QueuedAction {
+  id: string = '' // queueId
+  actionId: i32 = 0
+  playerId: string = ''
+  regenerateId: i32 = 0
+  choiceId: i32 = 0
+  choiceId1: i32 = 0
+  choiceId2: i32 = 0
+  rightHandEquipmentTokenId: i32 = 0
+  leftHandEquipmentTokenId: i32 = 0
+  startTime: string = ''
+  timespan: i32 = 0
+  isValid: boolean = true
+
+  headEquipped: i32 = 0
+  neckEquipped: i32 = 0
+  bodyEquipped: i32 = 0
+  armsEquipped: i32 = 0
+  legsEquipped: i32 = 0
+  bootsEquipped: i32 = 0
+  ringEquipped: i32 = 0
+}
+
+export class Item {
+  id: string = '0'
+  tokenId: i32 = 0
+  melee: i32 = 0
+  magic: i32 = 0
+  range: i32 = 0
+  meleeDefence: i32 = 0
+  magicDefence: i32 = 0
+  rangeDefence: i32 = 0
+  health: i32 = 0
+  totalQuantity: string = '0'
+  equipPosition: i32 = 0
+  healthRestored: i32 = 0
+  skill1: Skill = Skill.NONE
+  skillDiff1: i32 = 0
+  boostType: BoostType = BoostType.NONE
+  boostValue: i32 = 0
+  boostDuration: i32 = 0
+}
+
+export class UserItemNFT {
+  id: string = ''
+  user: string = ''
+  tokenId: i32 = 0
+  amount: string = ''
+  item: Item = new Item()
+}
+
+export class ShopItem {
+  id: string = ''
+  tokenId: i32 = 0
+  price: string = '0'
+}
+
+export class ActionChoice {
+  id: string = ''
+  actionId: i32 = 0
+  skill: Skill = Skill.NONE
+  diff: i32 = 0
+  rate: i32 = 0
+  xpPerHour: i32 = 0
+  minXPs: i32 = 0
+  inputTokenId1: i32 = 0
+  num1: i32 = 0
+  inputTokenId2: i32 = 0
+  num2: i32 = 0
+  inputTokenId3: i32 = 0
+  num3: i32 = 0
+  outputTokenId: i32 = 0
+}
+
+export class Action {
+  id: string = ''
+  actionId: i32 = 0
+  skill: Skill = Skill.NONE
+  xpPerHour: i32 = 0
+  numSpawn: i32 = 0
+  minXP: string = '0'
+
+  guaranteedRewardItemTokenIds: i32[] = []
+  guaranteedRewardRates: i32[] = []
+  randomChanceItemTokenIds: i32[] = []
+  randomChanceRates: i32[] = []
+
+  handItemTokenIdRangeMin: i32 = 0
+  handItemTokenIdRangeMax: i32 = 0
+  isAvailable: boolean = false
+  isDynamic: boolean = false
 }
