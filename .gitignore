@@ -107,3 +107,6 @@ dist
 /index.*
 /constants.*
 /types.*
+
+# vim
+*.swp

@@ -349,7 +349,7 @@ export class ActionChoice {
   diff: i32 = 0
   rate: i32 = 0
   xpPerHour: i32 = 0
-  minXPs: i32 = 0
+  minXP: i32 = 0
   inputTokenId1: i32 = 0
   num1: i32 = 0
   inputTokenId2: i32 = 0
