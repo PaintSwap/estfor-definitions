@@ -32,7 +32,7 @@ export enum EquipPosition {
   BODY,
   ARMS,
   LEGS,
-  BOOTS,
+  FEET,
   SPARE1,
   SPARE2,
   LEFT_HAND,
@@ -52,7 +52,7 @@ export class Attire {
   body: i32 = 0
   arms: i32 = 0
   legs: i32 = 0
-  boots: i32 = 0
+  feet: i32 = 0
   ring: i32 = 0
   reserved1: i32 = 0
   queueId: i64 = 0
@@ -306,7 +306,7 @@ export class LastFullEquipment {
   bodyEquipped: i32 = 0
   armsEquipped: i32 = 0
   legsEquipped: i32 = 0
-  bootsEquipped: i32 = 0
+  feetEquipped: i32 = 0
   ringEquipped: i32 = 0
   timestamp: string = '0'
 }
@@ -331,7 +331,7 @@ export class QueuedAction {
   bodyEquipped: i32 = 0
   armsEquipped: i32 = 0
   legsEquipped: i32 = 0
-  bootsEquipped: i32 = 0
+  feetEquipped: i32 = 0
   ringEquipped: i32 = 0
 }
 

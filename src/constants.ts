@@ -86,25 +86,25 @@ export const SHAMAN_TROUSERS = LEGS_BASE + 14
 export const MASTER_TROUSERS = LEGS_BASE + 15
 export const LEGS_MAX = LEGS_BASE + 254
 
-// 1281 - 1535 (boots)
-export const BOOTS_BASE = 1281
-export const BRONZE_BOOTS = BOOTS_BASE
-export const IRON_BOOTS = BOOTS_BASE + 1
-export const MITHRIL_BOOTS = BOOTS_BASE + 2
-export const ADAMANTINE_BOOTS = BOOTS_BASE + 3
-export const RUNITE_BOOTS = BOOTS_BASE + 4
-export const TITANIUM_BOOTS = BOOTS_BASE + 5
-export const ORICHALCUM_BOOTS = BOOTS_BASE + 6
-export const NATUOW_BOOTS = BOOTS_BASE + 7
-export const BAT_WING_BOOTS = BOOTS_BASE + 8
-export const NATURE_BOOTS = BOOTS_BASE + 9
-export const APPRENTICE_BOOTS = BOOTS_BASE + 10
-export const MAGE_BOOTS = BOOTS_BASE + 11
-export const SORCERER_BOOTS = BOOTS_BASE + 12
-export const SEERS_BOOTS = BOOTS_BASE + 13
-export const SHAMAN_BOOTS = BOOTS_BASE + 14
-export const MASTER_BOOTS = BOOTS_BASE + 15
-export const BOOTS_MAX = BOOTS_BASE + 254
+// 1281 - 1535 (feet)
+export const FEET_BASE = 1281
+export const BRONZE_BOOTS = FEET_BASE
+export const IRON_BOOTS = FEET_BASE + 1
+export const MITHRIL_BOOTS = FEET_BASE + 2
+export const ADAMANTINE_BOOTS = FEET_BASE + 3
+export const RUNITE_BOOTS = FEET_BASE + 4
+export const TITANIUM_BOOTS = FEET_BASE + 5
+export const ORICHALCUM_BOOTS = FEET_BASE + 6
+export const NATUOW_BOOTS = FEET_BASE + 7
+export const BAT_WING_BOOTS = FEET_BASE + 8
+export const NATURE_BOOTS = FEET_BASE + 9
+export const APPRENTICE_BOOTS = FEET_BASE + 10
+export const MAGE_BOOTS = FEET_BASE + 11
+export const SORCERER_BOOTS = FEET_BASE + 12
+export const SEERS_BOOTS = FEET_BASE + 13
+export const SHAMAN_BOOTS = FEET_BASE + 14
+export const MASTER_BOOTS = FEET_BASE + 15
+export const FEET_MAX = FEET_BASE + 254
 
 // 1536 - 1791 spare(1)
 // 1792 - 2047 spare(2)
