@@ -188,6 +188,8 @@ export class Player {
   lastTimestamp: string = '0'
   mintedNumber: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
+  numActivities: i32 = 0 // Not used yet
+  pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   /* Action XP */
   woodcuttingXP: i32 = 0
   firemakingXP: i32 = 0
