@@ -105,6 +105,7 @@ export class ActionInfo {
   minXP: i32 = 0
   handItemTokenIdRangeMin: i32 = 0
   handItemTokenIdRangeMax: i32 = 0
+  successPercent: i32 = 0
 }
 
 export class ActionReward {
@@ -386,6 +387,8 @@ export class ActionChoice {
   inputTokenId3: i32 = 0
   num3: i32 = 0
   outputTokenId: i32 = 0
+  outputNum: i32 = 1
+  successPercent: i32 = 100
 }
 
 export class Action {
@@ -406,6 +409,7 @@ export class Action {
   isAvailable: boolean = false
   isDynamic: boolean = false
   actionChoiceRequired: boolean = false
+  successPercent: i32 = 100
 
   /* Combat Stats */
   melee: i32 = 0
