@@ -92,6 +92,7 @@ export class QueuedActionInput {
   leftHandEquipmentTokenId: i32 = 0
   startTime: string = '0' // Filled in by the smart contract, can be "0"
   isValid: boolean = true // If we still have the item, TODO: Not used yet
+  skill: Skill = Skill.NONE
 }
 
 export class ActionInfo {
@@ -283,10 +284,22 @@ export class ActivityInfo {
   numActivities: string = ''
 }
 
-export class LastAttire {
-  id: string = '' // playerId
-  playerId: string = ''
+export class LastFullEquipment {
+  id: string = '0' // playerId
+  playerId: string = '0'
   user: string = ''
+  actionId: i32 = 0
+  regenerateId: i32 = 0
+  choiceId: i32 = 0
+  choiceId1: i32 = 0
+  choiceId2: i32 = 0
+  rightHandEquipmentTokenId: i32 = 0
+  leftHandEquipmentTokenId: i32 = 0
+  startTime: string = ''
+  timespan: i32 = 0
+  isValid: boolean = true
+  skill: Skill = Skill.NONE
+
   headEquipped: i32 = 0
   neckEquipped: i32 = 0
   bodyEquipped: i32 = 0
@@ -294,6 +307,7 @@ export class LastAttire {
   legsEquipped: i32 = 0
   bootsEquipped: i32 = 0
   ringEquipped: i32 = 0
+  timestamp: string = '0'
 }
 
 export class QueuedAction {
@@ -309,6 +323,7 @@ export class QueuedAction {
   startTime: string = ''
   timespan: i32 = 0
   isValid: boolean = true
+  skill: Skill = Skill.NONE
 
   headEquipped: i32 = 0
   neckEquipped: i32 = 0
