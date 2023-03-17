@@ -197,6 +197,7 @@ export class Player {
   smithingXP: i32 = 0
   craftingXP: i32 = 0
   thievingXP: i32 = 0
+  totalXP: string = '0'
 
   /* Combat XP */
   healthXP: i32 = 0
