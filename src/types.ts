@@ -86,8 +86,6 @@ export class QueuedActionInput {
   timespan: i32 = 0 // How long to queue the action for
   rightHandEquipmentTokenId: i32 = 0
   leftHandEquipmentTokenId: i32 = 0
-  startTime: string = '0' // Filled in by the smart contract, can be "0"
-  isValid: boolean = true // If we still have the item, TODO: Not used yet
   skill: Skill = Skill.NONE
 }
 
