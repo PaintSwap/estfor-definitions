@@ -66,12 +66,8 @@ export enum ActionQueueStatus {
 
 export enum CombatStyle {
   NONE,
-  MELEE,
-  RANGE,
-  MAGIC,
-  MELEE_DEFENCE,
-  RANGE_DEFENCE,
-  MAGIC_DEFENCE,
+  ATTACK,
+  DEFENCE,
 }
 
 export class Equipment {
@@ -201,6 +197,8 @@ export class Player {
   isActive: boolean = false // Is this player the active one for the owner
   numActivities: i32 = 0 // Not used yet
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
+  speedMultiplier: i32 = 1
+
   /* Action XP */
   woodcuttingXP: i32 = 0
   firemakingXP: i32 = 0
