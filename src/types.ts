@@ -165,6 +165,7 @@ export class PendingOutput {
   produced: Equipment[] = []
   producedPastRandomRewards: Equipment[] = []
   producedXPRewards: Equipment[] = []
+  xpGained: u32 = 0
   died: boolean = false
 }
 
