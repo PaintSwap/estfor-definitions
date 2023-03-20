@@ -330,6 +330,9 @@ export class Item {
   boostType: BoostType = BoostType.NONE
   boostValue: i32 = 0
   boostDuration: i32 = 0
+  // Minimum requirements for equipping
+  skill: Skill = Skill.NONE
+  minXP: string = '0'
 }
 
 export class UserItemNFT {
