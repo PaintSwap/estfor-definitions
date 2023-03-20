@@ -187,7 +187,8 @@ export class Player {
   owner: string = ''
   name: string = ''
   lastTimestamp: string = '0'
-  mintedNumber: string = '0'
+  mintedNumber: string = '0' // Will be unique, use for sorting
+  mintedTimestamp: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
   numActivities: i32 = 0 // Not used yet
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
@@ -379,4 +380,13 @@ export class Action {
   handItemTokenIdRangeMax: i32 = 0
   isAvailable: boolean = false
   isDynamic: boolean = false
+
+  /* Combat Stats */
+  melee: i32 = 0
+  magic: i32 = 0
+  range: i32 = 0
+  rangeDefence: i32 = 0
+  meleeDefence: i32 = 0
+  magicDefence: i32 = 0
+  health: i32 = 0
 }
