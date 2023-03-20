@@ -383,6 +383,7 @@ export class Action {
   handItemTokenIdRangeMax: i32 = 0
   isAvailable: boolean = false
   isDynamic: boolean = false
+  actionChoiceRequired: boolean = false
 
   /* Combat Stats */
   melee: i32 = 0
