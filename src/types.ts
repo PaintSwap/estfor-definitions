@@ -175,9 +175,16 @@ export class PendingFlags {
   includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
 }
 
-export class XPThresholdReward {
+export class XPThresholdRewardInput {
   xpThreshold: i32 = 0
   equipments: Equipment[] = []
+}
+
+export class XPThresholdReward {
+  id: string = '' // XP for the reward
+  xp: string = '' // same as id
+  rewardItemAmounts: string[] = []
+  rewardItemTokenIds: string[] = []
 }
 
 export class Player {
