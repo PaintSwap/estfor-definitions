@@ -102,16 +102,22 @@ export class ActionInfo {
   successPercent: i32 = 0
 }
 
-export class ActionReward {
+export class GuaranteedReward {
   itemTokenId: i32 = 0
   rate: i32 = 0 // base 100, 2 decimal places
+}
+
+export class RandomReward {
+  itemTokenId: i32 = 0
+  chance: i32 = 0 // out of 65335
+  amount: i32 = 0
 }
 
 export class ActionInput {
   actionId: i32 = 0
   info: ActionInfo = new ActionInfo()
-  guaranteedRewards: ActionReward[] = []
-  randomRewards: ActionReward[] = []
+  guaranteedRewards: GuaranteedReward[] = []
+  randomRewards: RandomReward[] = []
   combatStats: CombatStats = new CombatStats()
 }
 
