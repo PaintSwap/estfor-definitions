@@ -43,7 +43,6 @@ export enum EquipPosition {
   FOOD,
   AUX, // wood, seeds etc..
   BOOST_VIAL,
-  NO_POSITION,
 }
 
 export class Attire {
@@ -133,10 +132,10 @@ export class InputItem {
   skill: Skill = Skill.NONE
   minXP: u32 = 0
   // Food
-  healthRestored: i32 = 0
+  healthRestored: u32 = 0
   // Boost
   boostType: BoostType = BoostType.NONE
-  boostValue: u8 = 0 // Varies, could be the % increase
+  boostValue: u16 = 0 // Varies, could be the % increase
   boostDuration: u32 = 0 // How long the effect of the boost last
   // uri
   metadataURI: string = ''
@@ -353,7 +352,7 @@ export class Item {
   skill1: Skill = Skill.NONE
   skillDiff1: u8 = 0
   boostType: BoostType = BoostType.NONE
-  boostValue: u32 = 0
+  boostValue: u16 = 0
   boostDuration: u32 = 0
   // Minimum requirements for equipping
   skill: Skill = Skill.NONE
@@ -372,6 +371,23 @@ export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
   price: string = '0'
+}
+
+export class ActionChoiceInput {
+  skill: Skill = Skill.NONE
+  diff: u32 = 0
+  rate: u16 = 0
+  xpPerHour: u32 = 0
+  minXP: u32 = 0
+  inputTokenId1: u16 = 0
+  num1: u16 = 0
+  inputTokenId2: u16 = 0
+  num2: u16 = 0
+  inputTokenId3: u16 = 0
+  num3: u16 = 0
+  outputTokenId: u16 = 0
+  outputNum: u8 = 1
+  successPercent: u8 = 100
 }
 
 export class ActionChoice {
