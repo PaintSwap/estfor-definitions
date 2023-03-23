@@ -95,7 +95,7 @@ export class ActionInfo {
   isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
-  numSpawn: u32 = 0
+  numSpawned: u32 = 0
   minXP: u32 = 0
   handItemTokenIdRangeMin: u16 = 0
   handItemTokenIdRangeMax: u16 = 0
@@ -398,7 +398,7 @@ export class Action {
   actionId: u32 = 0
   skill: Skill = Skill.NONE
   xpPerHour: u32 = 0
-  numSpawn: u32 = 0
+  numSpawned: u32 = 0
   minXP: string = '0'
 
   guaranteedRewardItemTokenIds: u32[] = []
