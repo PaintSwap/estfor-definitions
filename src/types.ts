@@ -265,7 +265,7 @@ export enum ActivityType {
 
 export enum Direction {
   Consumed,
-  Produced
+  Produced,
 }
 
 export class Activity {
@@ -439,4 +439,9 @@ export class Action {
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
   health: i16 = 0
+}
+
+export class RandomWords {
+  lastRandomWordRequestedTimestamp: string
+  lastRandomWordsReceived: string = '' // Bytes
 }
