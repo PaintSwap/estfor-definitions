@@ -203,22 +203,22 @@ export class Player {
   speedMultiplier: u32 = 1
 
   /* Action XP */
-  woodcuttingXP: u32 = 0
-  firemakingXP: u32 = 0
-  fishingXP: u32 = 0
-  cookingXP: u32 = 0
-  miningXP: u32 = 0
-  smithingXP: u32 = 0
-  craftingXP: u32 = 0
-  thievingXP: u32 = 0
+  woodcuttingXP: string = '0'
+  firemakingXP: string = '0'
+  fishingXP: string = '0'
+  cookingXP: string = '0'
+  miningXP: string = '0'
+  smithingXP: string = '0'
+  craftingXP: string = '0'
+  thievingXP: string = '0'
   totalXP: string = '0'
 
   /* Combat XP */
-  healthXP: u32 = 0
-  meleeXP: u32 = 0
-  defenceXP: u32 = 0
-  magicXP: u32 = 0
-  rangeXP: u32 = 0
+  healthXP: string = '0'
+  meleeXP: string = '0'
+  defenceXP: string = '0'
+  magicXP: string = '0'
+  rangeXP: string = '0'
 
   /** Ranks */
   woodcuttingRank: u32 = 0
@@ -256,16 +256,16 @@ export class GlobalPlayerStats {
 }
 
 export enum ActivityType {
-  LevelUp,
   Buy,
   Sell,
-  Died,
-  Consumed,
-  Rewards,
-  ClaimedXPThresholdRewards,
   ActionPartiallyFinished,
-  ActionsQueued,
   ActionFinished,
+  PendingRandomRewardsClaimed, // This is only if claimed separately
+}
+
+export enum Direction {
+  Consumed,
+  Produced
 }
 
 export class Activity {
@@ -273,7 +273,9 @@ export class Activity {
   type: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
+  directions: string[] = [] // Direction
   prices: string[] = []
+  actionId: string = ''
   queueId: string = ''
   timestamp: string = ''
   hash: string = ''
