@@ -442,6 +442,7 @@ export class Action {
 }
 
 export class RandomWords {
-  lastRandomWordRequestedTimestamp: string
+  lastRequestedTimestamp: string
   lastRandomWordsReceived: string = '' // Bytes
+  hasLastRequestedRandomWordsBeenReceived: boolean = false
 }
