@@ -328,6 +328,7 @@ export class QueuedAction {
   timespan: u32 = 0
   isValid: boolean = true
   skill: Skill = Skill.NONE
+  combatStyle: CombatStyle = CombatStyle.NONE
 
   headEquipped: u16 = 0
   neckEquipped: u16 = 0
