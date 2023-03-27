@@ -360,6 +360,7 @@ export class Item {
   // Minimum requirements for equipping
   skill: Skill = Skill.NONE
   minXP: string = '0'
+  name: string = ''
 }
 
 export class UserItemNFT {
