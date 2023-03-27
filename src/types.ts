@@ -139,6 +139,8 @@ export class InputItem {
   boostDuration: u32 = 0 // How long the effect of the boost last
   // uri
   metadataURI: string = ''
+  // name of the item
+  name: string = ''
 }
 
 export class CombatStats {
