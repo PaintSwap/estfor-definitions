@@ -1,3 +1,9 @@
+import adminSnapshotAddresses from './whitelisted_admins.json'
+import alphaSnapshotAddresses from './whitelisted_alpha_snapshot.json'
+
+export const whitelistedAdmins = adminSnapshotAddresses.map((el: any) => el.address.toLocaleLowerCase())
+export const whitelistedSnapshot = alphaSnapshotAddresses.map((el: any) => el.address.toLocaleLowerCase())
+
 export const NONE = 0
 // 1 - 255 (head)
 export const HEAD_BASE = 1
