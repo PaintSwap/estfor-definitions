@@ -1,0 +1,13 @@
+export const whitelistedAdmins = [
+  '0x316342122a9ae36de41b231260579b92f4c8be7f',
+  '0xa801864d0d24686b15682261aa05d4e1e6e5bd94',
+  '0x946d17072eac624c3e3fb06108959b7fefbcb8ad',
+  '0xd50edd169341a4b518cf8700d8d1bb8a1c2c8970',
+  '0x43d5e0dc6fe97fc150c8eb651edd529cab3225dc',
+  '0x8ca12fb5438252ab8efa25d3fb34166eda1c17ed',
+  '0xec08fa2f34dd9ab9a53b956dddaa17e9972ee006',
+  '0x0b7653272db6468dbdebd99671c8d1e510c9a8a4',
+  '0x55ae8f2fe2c52ff5563bcb56e26015ee3ff1f427',
+  '0xa69950c58fd6f885088f492c80162eba237931c2',
+]
+export default whitelistedAdmins

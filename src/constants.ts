@@ -1,8 +1,8 @@
-import adminSnapshotAddresses from './whitelisted_admins.json'
-import alphaSnapshotAddresses from './whitelisted_alpha_snapshot.json'
+import adminSnapshotAddresses from './whitelisted_admins'
+import alphaSnapshotAddresses from './whitelisted_alpha_snapshot'
 
-export const whitelistedAdmins = adminSnapshotAddresses.map((el: any) => el.address.toLocaleLowerCase())
-export const whitelistedSnapshot = alphaSnapshotAddresses.map((el: any) => el.address.toLocaleLowerCase())
+export const whitelistedAdmins = adminSnapshotAddresses
+export const whitelistedSnapshot = alphaSnapshotAddresses
 
 export const NONE = 0
 // 1 - 255 (head)
@@ -739,7 +739,7 @@ export const levelXp: Array<i32> = [
   16432, 17689, 19036, 20479, 22025, 23681, 25456, 27357, 29393, 31575, 33913, 36418, 39102, 41977, 45058, 48359, 51896,
   55686, 59747, 64098, 68761, 73757, 79110, 84847, 90995, 97582, 104641, 112206, 120312, 128998, 138307, 148283, 158973,
   170430, 182707, 195864, 209963, 225074, 241267, 258621, 277219, 297150, 318511, 341403, 365936, 392228, 420406,
-  450605, 482969, 517654, 554828, 594667, 637364, 683124, 732166, 784726, 841057, 901428, 966131, 1035476, 1109796
+  450605, 482969, 517654, 554828, 594667, 637364, 683124, 732166, 784726, 841057, 901428, 966131, 1035476, 1109796,
 ]
 
 export default NONE

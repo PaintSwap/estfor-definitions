@@ -107,6 +107,7 @@ dist
 /index.*
 /constants.*
 /types.*
+/whitelisted_*
 
 # vim
 *.swp
