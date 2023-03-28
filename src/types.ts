@@ -255,6 +255,7 @@ export class User {
 
 export class GlobalPlayerStats {
   totalPlayers: string = '0'
+  totalAvatars: string[] = []
 }
 
 export enum ActivityType {
