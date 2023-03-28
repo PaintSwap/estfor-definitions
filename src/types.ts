@@ -262,12 +262,20 @@ export enum ActivityType {
   Sell,
   ActionPartiallyFinished,
   ActionFinished,
-  PendingRandomRewardsClaimed, // This is only if claimed separately
+  XPThresholdReward,
+  DailyReward,
+  WeeklyReward,
+  PendingRandomRewardsClaimed,
 }
 
 export enum Direction {
   Consumed,
   Produced,
+}
+
+export enum ActivityUndertaker {
+  Player,
+  User,
 }
 
 export class Activity {
@@ -283,6 +291,7 @@ export class Activity {
   hash: string = ''
   playerId: string = '0'
   user: string = ''
+  undertaker: string = '' // ActivityUndertaker
 }
 
 export class ActivityInfo {
@@ -328,6 +337,8 @@ export class QueuedAction {
   leftHandEquipmentTokenId: u16 = 0
   startTime: string = ''
   timespan: u32 = 0
+  originalStartTime: string = ''
+  originalTimespan: u32 = 0
   isValid: boolean = true
   skill: Skill = Skill.NONE
   combatStyle: CombatStyle = CombatStyle.NONE

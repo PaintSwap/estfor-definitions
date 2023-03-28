@@ -1,4 +1,4 @@
-﻿export const whitelistedAdmins = [
+﻿export const whitelistedAlphaSnapshot = [
   '0x00042c520a179ebf382669771be7f60baa9a7c00',
   '0x00326e37cef76788f6b0cf643c94481d60bd3d58',
   '0x003c06a6168e9d2474e2c7f588d819b75f8025e5',
@@ -5481,4 +5481,4 @@
   '0xffedb92f8b8c7b620ea6b722ef146f28c1b6e665',
   '0xfff776e4041dd892dfa4f08fe6fde3d9c6a6caa4',
 ]
-export default whitelistedAdmins
+export default whitelistedAlphaSnapshot
