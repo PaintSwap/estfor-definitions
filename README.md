@@ -124,7 +124,7 @@ yalc remove @paintswap/estfor-definitions
 yarn add @paintswap/estfor-definitions
 ```
 
-### Publish to NPM (--access=public needed the first time)
+### Manual Publish to NPM (--access=public needed the first time)
 
 ```shell
 npm publish
@@ -133,3 +133,9 @@ npm publish
 ```shell
 yarn publish
 ```
+
+### Via github CI
+
+1. Push any changes to github
+2. Create a new release version with `yarn version`
+3. It will tag and push to Github which will trigger the CI to publish to NPM
