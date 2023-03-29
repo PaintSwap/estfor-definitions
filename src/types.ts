@@ -286,14 +286,12 @@ export class Activity {
   amounts: string[] = []
   directions: string[] = [] // Direction
   prices: string[] = []
-  actionId: string = ''
-  queueId: string = ''
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
-  actionChoice: ActionChoice = new ActionChoice()
+  queuedAction: QueuedAction = new QueuedAction()
 }
 
 export class ActivityInfo {
@@ -305,25 +303,8 @@ export class LastFullEquipment {
   id: string = '0' // playerId
   playerId: string = '0'
   user: string = ''
-  actionId: u32 = 0
-  regenerateId: u16 = 0
-  choiceId: u32 = 0
-  choiceId1: u32 = 0
-  choiceId2: u32 = 0
-  rightHandEquipmentTokenId: u16 = 0
-  leftHandEquipmentTokenId: u16 = 0
-  startTime: string = ''
-  timespan: u32 = 0
-  isValid: boolean = true
+  queuedAction: QueuedAction = new QueuedAction()
   skill: Skill = Skill.NONE
-
-  headEquipped: u16 = 0
-  neckEquipped: u16 = 0
-  bodyEquipped: u16 = 0
-  armsEquipped: u16 = 0
-  legsEquipped: u16 = 0
-  feetEquipped: u16 = 0
-  ringEquipped: u16 = 0
   timestamp: string = '0'
 }
 
@@ -332,9 +313,9 @@ export class QueuedAction {
   actionId: u32 = 0
   playerId: string = ''
   regenerateId: u16 = 0
-  choiceId: u32 = 0
-  choiceId1: u32 = 0
-  choiceId2: u32 = 0
+  choice: ActionChoice = new ActionChoice()
+  choice1: ActionChoice = new ActionChoice()
+  choice2: ActionChoice = new ActionChoice()
   rightHandEquipmentTokenId: u16 = 0
   leftHandEquipmentTokenId: u16 = 0
   startTime: string = ''
