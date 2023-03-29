@@ -323,6 +323,7 @@ export class QueuedAction {
   originalStartTime: string = ''
   originalTimespan: u32 = 0
   isValid: boolean = true
+  isActive: boolean = true
   skill: Skill = Skill.NONE
   combatStyle: CombatStyle = CombatStyle.NONE
 
