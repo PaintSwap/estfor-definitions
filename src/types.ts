@@ -293,6 +293,7 @@ export class Activity {
   playerId: string = '0'
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
+  actionChoice: ActionChoice = new ActionChoice()
 }
 
 export class ActivityInfo {
