@@ -251,6 +251,7 @@ export class User {
   totalSold: string = '0'
   totalBought: string = '0'
   numPlayers: u32 = 0
+  activePlayerId: string = '0'
 }
 
 export class GlobalPlayerStats {
@@ -449,6 +450,7 @@ export class Action {
 export class RandomWords {
   lastRequestId: string = ''
   lastRequestedBy: string = ''
+  lastRequestedPlayer: Player = new Player()
   lastRequestedTimestamp: string = ''
   lastRandomWordsReceived: string = '' // Bytes
   hasLastRequestedRandomWordsBeenReceived: boolean = false
