@@ -257,6 +257,7 @@ export class GlobalPlayerStats {
   totalPlayers: string = '0'
   totalAvatars: string[] = []
   lastMintedPlayerId: string = '0'
+  lastMintedAvatarId: i32 = 0
   lastMintedTimestamp: string = '0'
   lastQueuedActionPlayerId: string = '0'
   lastQueuedActions: i32[] = []
