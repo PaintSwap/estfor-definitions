@@ -54,7 +54,6 @@ export class Attire {
   feet: u16 = 0
   ring: u16 = 0
   reserved1: u16 = 0
-  queueId: u64 = 0
 }
 
 export enum ActionQueueStatus {
@@ -85,7 +84,6 @@ export class QueuedActionInput {
   timespan: u32 = 0 // How long to queue the action for
   rightHandEquipmentTokenId: u16 = 0
   leftHandEquipmentTokenId: u16 = 0
-  skill: Skill = Skill.NONE
 }
 
 export class ActionInfo {
