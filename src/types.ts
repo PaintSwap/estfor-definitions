@@ -310,6 +310,7 @@ export class LastFullEquipment {
   user: string = ''
   queuedAction: QueuedAction = new QueuedAction()
   skill: Skill = Skill.NONE
+  combatStyle: CombatStyle = CombatStyle.NONE
   timestamp: string = '0'
 }
 
