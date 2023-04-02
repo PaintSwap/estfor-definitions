@@ -246,9 +246,11 @@ export class Player {
 
 export class User {
   id: string = '0'
+  numPlayers: u32 = 0
+  numUniqueItems: u32 = 0
+  numActivities: u32 = 0
   totalSold: string = '0'
   totalBought: string = '0'
-  numPlayers: u32 = 0
   activePlayerId: string = '0'
 }
 
@@ -302,11 +304,6 @@ export class Activity {
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
-}
-
-export class ActivityInfo {
-  id: string = ''
-  numActivities: string = ''
 }
 
 export class LastFullEquipment {
