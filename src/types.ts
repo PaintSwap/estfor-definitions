@@ -261,6 +261,13 @@ export class GlobalPlayerStats {
   lastQueuedActionTimestamp: string = '0'
 }
 
+export class GlobalUserStats {
+  totalUsers: string = '0'
+  totalSold: string = '0'
+  totalBought: string = '0'
+  totalBrushBurned: string = '0'
+}
+
 export enum ActivityType {
   Buy,
   Sell,
