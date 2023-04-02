@@ -9,5 +9,7 @@ export const whitelistedAdmins = [
   '0x0b7653272db6468dbdebd99671c8d1e510c9a8a4',
   '0x55ae8f2fe2c52ff5563bcb56e26015ee3ff1f427',
   '0xa69950c58fd6f885088f492c80162eba237931c2',
+  '0x1d877c5e1452a635b3feaa47994b03c7c0976ad3',
+  '0xb4dda75e5dee0a9e999152c3b72816fc1004d1dd',
 ]
 export default whitelistedAdmins
