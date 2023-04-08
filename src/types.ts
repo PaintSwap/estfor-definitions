@@ -366,6 +366,7 @@ export class Item {
   skill: Skill = Skill.NONE
   minXP: string = '0'
   name: string = ''
+  isTransferable: boolean = true
 }
 
 export class UserItemNFT {
