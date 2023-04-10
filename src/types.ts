@@ -415,6 +415,7 @@ export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
   price: string = '0'
+  allocationRemaining: string = '0'
 }
 
 export class ActionChoiceInput {
@@ -522,7 +523,7 @@ export class ClanMember {
   id: string = '' // playerId
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
-  status: i32 = 0 // 0 is not a member of a clan, 1 member, 2 is admin, 3 is owner
+  status: ClanStatus = ClanStatus.NOT_MEMBER
 }
 
 export class ClanInvite {
@@ -531,4 +532,11 @@ export class ClanInvite {
   clan: Clan = new Clan()
   invitedBy: string = ''
   invitedTimestamp: string = ''
+}
+
+export enum ClanStatus {
+  NOT_MEMBER = 0,
+  MEMBER = 1,
+  ADMIN = 2,
+  OWNER = 3,
 }
