@@ -496,3 +496,39 @@ export class PlayerDayData {
   date: string = ''
   playersActive: i32 = 0
 }
+
+export class Tier {
+  id: string = ''
+  maxMemberCapacity: i32 = 0
+  maxBankCapacity: i32 = 0
+  maxImageId: i32 = 0
+  price: string = '0'
+  minimumAge: string = '0'
+}
+
+export class Clan {
+  id: string = ''
+  owner: string = ''
+  name: string = ''
+  imageId: i32 = 0
+  tier: Tier = new Tier()
+  createdTimestamp: string = ''
+  createdCount: string = ''
+  memberCount: i32 = 0
+  adminCount: i32 = 0
+}
+
+export class ClanMember {
+  id: string = '' // playerId
+  clan: Clan = new Clan()
+  requestedClan: Clan = new Clan()
+  status: i32 = 0 // 0 is not a member of a clan, 1 member, 2 is admin, 3 is owner
+}
+
+export class ClanInvite {
+  id: string = '' // playerId_clanId
+  playerId: string = ''
+  clan: Clan = new Clan()
+  invitedBy: string = ''
+  invitedTimestamp: string = ''
+}
