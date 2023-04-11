@@ -590,3 +590,22 @@ export enum ClanStatus {
   ADMIN = 2,
   OWNER = 3,
 }
+
+// Added for backwards compatibility, remove later
+// =================================================================================================
+export class PendingFlags {
+  includeLoot: boolean = true // Guaranteed loot from actions, and random loot if claiming quite late
+  includePastRandomRewards: boolean = true // This is random loot from previous actions
+  includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
+}
+
+export class PendingOutput {
+  consumed: Equipment[] = []
+  produced: Equipment[] = []
+  producedPastRandomRewards: Equipment[] = []
+  producedXPRewards: Equipment[] = []
+  xpGained: u32 = 0
+  died: boolean = false
+}
+
+// =================================================================================================
