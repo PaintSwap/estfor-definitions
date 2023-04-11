@@ -573,6 +573,7 @@ export class ClanMember {
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
   status: ClanStatus = ClanStatus.NOT_MEMBER
+  joinedTimestamp: string = ''
 }
 
 export class ClanInvite {
