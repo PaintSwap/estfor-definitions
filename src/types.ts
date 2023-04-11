@@ -203,6 +203,7 @@ export class PendingQueuedActionState {
   producedXPRewards: Equipment[] = []
   questRewards: Equipment[] = []
   questConsumed: Equipment[] = []
+  activeQuestInfo: QuestWithCompletionInfo[] = []
   died: DiedInfo[] = []
   rolls: RollInfo[] = []
   xpGained: XPInfo[] = []
@@ -496,6 +497,68 @@ export class RandomWords {
 export class PlayerDayData {
   date: string = ''
   playersActive: i32 = 0
+}
+
+export class Quest {
+  id: string = '' // quest id
+
+  dependentQuest: Quest = new Quest() // The quest that must be completed before this one can be started
+  action: Action = new Action() // action to do
+  actionNum: u16 = 0 // how many (up to 65535)
+  action1: Action = new Action() // another action to do
+  actionNum1: u16 = 0 // how many (up to 65535)
+  actionChoice: ActionChoice = new ActionChoice() // actionChoice to perform
+  actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
+  skillReward: Skill = Skill.NONE // The skill to reward XP to
+  skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
+  rewardItem: Item = new Item() // Reward an item
+  rewardAmount: u16 = 0 // amount of the reward (up to 65535)
+  rewardItem1: Item = new Item() // Reward another item
+  rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
+  burnItem: Item = new Item() // Burn an item
+  burnAmount: u16 = 0 // amount of the burn (up to 65535)
+
+  isActive: boolean = false
+  isFixed: boolean = false
+}
+
+export class QuestFromPending {
+  questId: u32 = 0 // Unique id for this quest
+  dependentQuestId: u16 = 0 // The quest that must be completed before this one can be started
+  actionId: u16 = 0 // action to do
+  actionNum: u16 = 0 // how many (up to 65535)
+  actionId1: u16 = 0 // another action to do
+  actionNum1: u16 = 0 // how many (up to 65535)
+  actionChoiceId: u16 = 0 // actionChoice to perform
+  actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
+  skillReward: Skill = Skill.NONE // The skill to reward XP to
+  skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
+  rewardItemTokenId: u16 = 0 // Reward an item
+  rewardAmount: u16 = 0 // amount of the reward (up to 65535)
+  rewardItemTokenId1: u16 = 0 // Reward another item
+  rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
+  burnItemTokenId: u16 = 0 // Burn an item
+  burnAmount: u16 = 0 // amount of the burn (up to 65535)
+}
+
+export class QuestWithCompletionInfo {
+  quest: QuestFromPending = new QuestFromPending()
+  actionCompletedNum: u32 = 0
+  actionCompletedNum1: u32 = 0
+  actionChoiceCompletedNum: u32 = 0
+}
+
+export class PlayerQuest {
+  id: string = '' // playerId_questId
+  playerId: string = ''
+  quest: Quest = new Quest()
+
+  // Progression in this quest
+  actionNum: u32 = 0
+  actionNum1: u32 = 0
+  actionChoiceNum: u32 = 0
+
+  completed: boolean = false
 }
 
 export class Tier {
