@@ -561,7 +561,7 @@ export class PlayerQuest {
   completed: boolean = false
 }
 
-export class Tier {
+export class ClanTier {
   id: string = ''
   maxMemberCapacity: i32 = 0
   maxBankCapacity: i32 = 0
@@ -575,7 +575,7 @@ export class Clan {
   owner: string = ''
   name: string = ''
   imageId: i32 = 0
-  tier: Tier = new Tier()
+  tier: ClanTier = new ClanTier()
   createdTimestamp: string = ''
   createdCount: string = ''
   memberCount: i32 = 0
