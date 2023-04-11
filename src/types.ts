@@ -153,7 +153,7 @@ export class CombatStats {
 
 export class NonCombatStats {
   skill: Skill = Skill.NONE
-  diff: u32 = 0
+  diff: u8 = 0
 }
 
 export const emptyCombatStats = new CombatStats()
@@ -161,19 +161,52 @@ export const emptyNonCombatStats = new NonCombatStats()
 export const defaultInputItem = new InputItem()
 export const noAttire = new Attire()
 
-export class PendingOutput {
-  consumed: Equipment[] = []
-  produced: Equipment[] = []
-  producedPastRandomRewards: Equipment[] = []
-  producedXPRewards: Equipment[] = []
-  xpGained: u32 = 0
-  died: boolean = false
+export class EquipmentInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  itemTokenId: u16 = 0
+  amount: u32 = 0
 }
 
-export class PendingFlags {
-  includeLoot: boolean = true // Guaranteed loot from actions, and random loot if claiming quite late
-  includePastRandomRewards: boolean = true // This is random loot from previous actions
-  includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
+export class XPInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  xp: u32 = 0
+}
+
+export class DiedInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+}
+
+export class RollInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  numRolls: number = 0
+}
+
+export class PastRandomRewardInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  itemTokenId: u16 = 0
+  amount: u32 = 0
+}
+
+export class PendingQueuedActionState {
+  consumed: EquipmentInfo[] = []
+  produced: EquipmentInfo[] = []
+  producedPastRandomRewards: PastRandomRewardInfo[] = []
+  producedXPRewards: Equipment[] = []
+  questRewards: Equipment[] = []
+  questConsumed: Equipment[] = []
+  activeQuestInfo: PlayerQuestOutput[] = []
+  died: DiedInfo[] = []
+  rolls: RollInfo[] = []
+  xpGained: XPInfo[] = []
 }
 
 export class XPThresholdRewardInput {
@@ -198,11 +231,11 @@ export class Player {
   mintedNumber: string = '0' // Will be unique, use for sorting
   mintedTimestamp: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
-  numActivities: u32 = 0 // Not used yet
+  numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   speedMultiplier: u32 = 1
 
-  /* Action XP */
+  /* Skill XP */
   woodcuttingXP: string = '0'
   firemakingXP: string = '0'
   fishingXP: string = '0'
@@ -260,6 +293,7 @@ export class GlobalPlayerStats {
   lastMintedPlayer: Player = new Player()
   lastQueuedActionPlayer: Player = new Player()
   lastQueuedActions: i32[] = []
+  lastQueuedQueuedActions: QueuedAction[] = []
   lastQueuedActionTimestamp: string = '0'
 }
 
@@ -367,6 +401,7 @@ export class Item {
   minXP: string = '0'
   name: string = ''
   isTransferable: boolean = true
+  firstMinted: string = '' // Timestamp of the first mintied one, can reset if all burned
 }
 
 export class UserItemNFT {
@@ -381,6 +416,7 @@ export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
   price: string = '0'
+  allocationRemaining: string = '0'
 }
 
 export class ActionChoiceInput {
@@ -404,7 +440,7 @@ export class ActionChoice {
   id: string = ''
   actionId: u32 = 0
   skill: Skill = Skill.NONE
-  diff: u32 = 0
+  diff: u16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   minXP: u32 = 0
@@ -462,3 +498,114 @@ export class PlayerDayData {
   date: string = ''
   playersActive: i32 = 0
 }
+
+export class Quest {
+  id: string = '' // quest id
+
+  dependentQuest: Quest = new Quest() // The quest that must be completed before this one can be started
+  action: Action = new Action() // action to do
+  actionNum: u16 = 0 // how many (up to 65535)
+  action1: Action = new Action() // another action to do
+  actionNum1: u16 = 0 // how many (up to 65535)
+  actionChoice: ActionChoice = new ActionChoice() // actionChoice to perform
+  actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
+  skillReward: Skill = Skill.NONE // The skill to reward XP to
+  skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
+  rewardItem: Item = new Item() // Reward an item
+  rewardAmount: u16 = 0 // amount of the reward (up to 65535)
+  rewardItem1: Item = new Item() // Reward another item
+  rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
+  burnItem: Item = new Item() // Burn an item
+  burnAmount: u16 = 0 // amount of the burn (up to 65535)
+
+  isActive: boolean = false
+  isFixed: boolean = false
+  createdTimestamp: string = ''
+}
+
+export class PlayerQuestOutput {
+  questId: string = ''
+  actionCompletedNum: u32 = 0
+  actionCompletedNum1: u32 = 0
+  actionChoiceCompletedNum: u32 = 0
+}
+
+export class PlayerQuest {
+  id: string = '' // playerId_questId
+  playerId: string = ''
+  quest: Quest = new Quest()
+
+  createdTimestamp: string = ''
+  lastUpdatedTimestamp: string = ''
+
+  // Progression in this quest
+  actionCompletedNum: u32 = 0
+  actionCompletedNum1: u32 = 0
+  actionChoiceCompletedNum: u32 = 0
+
+  completed: boolean = false
+}
+
+export class ClanTier {
+  id: string = ''
+  maxMemberCapacity: i32 = 0
+  maxBankCapacity: i32 = 0
+  maxImageId: i32 = 0
+  price: string = '0'
+  minimumAge: string = '0'
+}
+
+export class Clan {
+  id: string = ''
+  owner: string = ''
+  name: string = ''
+  imageId: i32 = 0
+  tier: ClanTier = new ClanTier()
+  createdTimestamp: string = ''
+  createdCount: string = ''
+  memberCount: i32 = 0
+  adminCount: i32 = 0
+  bankAddress: string = ''
+}
+
+export class ClanMember {
+  id: string = '' // playerId
+  clan: Clan = new Clan()
+  requestedClan: Clan = new Clan()
+  status: ClanStatus = ClanStatus.NOT_MEMBER
+  joinedTimestamp: string = ''
+}
+
+export class ClanInvite {
+  id: string = '' // playerId_clanId
+  playerId: string = ''
+  clan: Clan = new Clan()
+  invitedBy: Player = new Player()
+  invitedTimestamp: string = ''
+}
+
+export enum ClanStatus {
+  NOT_MEMBER = 0,
+  MEMBER = 1,
+  ADMIN = 2,
+  OWNER = 3,
+}
+
+// Added for backwards compatibility, remove later
+// =================================================================================================
+export class PendingFlags {
+  includeLoot: boolean = true // Guaranteed loot from actions, and random loot if claiming quite late
+  includePastRandomRewards: boolean = true // This is random loot from previous actions
+  includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
+}
+
+export class PendingOutput {
+  consumed: Equipment[] = []
+  produced: Equipment[] = []
+  producedPastRandomRewards: Equipment[] = []
+  producedXPRewards: Equipment[] = []
+  xpGained: u32 = 0
+  died: boolean = false
+}
+
+// =================================================================================================
