@@ -554,9 +554,9 @@ export class PlayerQuest {
   quest: Quest = new Quest()
 
   // Progression in this quest
-  actionNum: u32 = 0
-  actionNum1: u32 = 0
-  actionChoiceNum: u32 = 0
+  actionCompletedNum: u32 = 0
+  actionCompletedNum1: u32 = 0
+  actionChoiceCompletedNum: u32 = 0
 
   completed: boolean = false
 }
@@ -593,7 +593,7 @@ export class ClanInvite {
   id: string = '' // playerId_clanId
   playerId: string = ''
   clan: Clan = new Clan()
-  invitedBy: string = ''
+  invitedBy: Player = new Player()
   invitedTimestamp: string = ''
 }
 
