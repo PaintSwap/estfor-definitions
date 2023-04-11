@@ -580,6 +580,7 @@ export class Clan {
   createdCount: string = ''
   memberCount: i32 = 0
   adminCount: i32 = 0
+  bankAddress: string = ''
 }
 
 export class ClanMember {
