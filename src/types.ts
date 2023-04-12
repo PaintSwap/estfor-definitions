@@ -245,6 +245,7 @@ export class Player {
   craftingXP: string = '0'
   thievingXP: string = '0'
   totalXP: string = '0'
+  totalLevel: number = 0
 
   /* Combat XP */
   healthXP: string = '0'
@@ -566,6 +567,7 @@ export class Clan {
   memberCount: i32 = 0
   adminCount: i32 = 0
   bankAddress: string = ''
+  totalLevel: number = 0
 }
 
 export class ClanMember {
