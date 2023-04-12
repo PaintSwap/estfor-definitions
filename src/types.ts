@@ -234,6 +234,7 @@ export class Player {
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   speedMultiplier: u32 = 1
+  activeQuest: Quest
 
   /* Skill XP */
   woodcuttingXP: string = '0'
