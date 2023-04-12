@@ -70,7 +70,7 @@ export enum CombatStyle {
 
 export class Equipment {
   itemTokenId: u16 = 0
-  amount: u16 = 0
+  amount: u32 = 0
 }
 
 export class QueuedActionInput {
