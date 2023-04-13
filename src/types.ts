@@ -207,6 +207,7 @@ export class PendingQueuedActionState {
   died: DiedInfo[] = []
   rolls: RollInfo[] = []
   xpGained: XPInfo[] = []
+  dailyRewards: Equipment[] = []
 }
 
 export class XPThresholdRewardInput {
@@ -304,6 +305,11 @@ export class GlobalUserStats {
   totalSold: string = '0'
   totalBought: string = '0'
   totalBrushBurned: string = '0'
+}
+
+export class GlobalClanStats {
+  totalClans: string = '0'
+  totalClanMembers: string = '0'
 }
 
 export enum ActivityType {
