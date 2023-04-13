@@ -11,5 +11,6 @@ export const whitelistedAdmins = [
   '0xa69950c58fd6f885088f492c80162eba237931c2',
   '0x1d877c5e1452a635b3feaa47994b03c7c0976ad3',
   '0xb4dda75e5dee0a9e999152c3b72816fc1004d1dd',
+  '0xdea975931e3c827cb64cd978c5b43504e56d675c',
 ]
 export default whitelistedAdmins
