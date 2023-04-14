@@ -580,6 +580,7 @@ export class Clan {
 
 export class ClanMember {
   id: string = '' // playerId
+  player: Player = new Player()
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
   status: ClanStatus = ClanStatus.NOT_MEMBER
