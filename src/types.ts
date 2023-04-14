@@ -161,6 +161,34 @@ export const emptyNonCombatStats = new NonCombatStats()
 export const defaultInputItem = new InputItem()
 export const noAttire = new Attire()
 
+export class EquipmentInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  itemTokenId: u16 = 0
+  amount: u32 = 0
+}
+
+export class XPInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  xp: u32 = 0
+}
+
+export class DiedInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+}
+
+export class RollInfo {
+  actionId: u16 = 0
+  queueId: string = '0'
+  elapsedTime: u32 = 0
+  numRolls: number = 0
+}
+
 export class PastRandomRewardInfo {
   actionId: u16 = 0
   queueId: string = '0'
@@ -168,28 +196,17 @@ export class PastRandomRewardInfo {
   amount: u32 = 0
 }
 
-export class PendingQueuedActionEquipmentState {
-  consumed: Equipment[] = []
-  produced: Equipment[] = []
-}
-
-export class PendingQueuedActionMetadata {
-  xpGained: u32 = 0
-  rolls: u32 = 0
-  died: bool = false
-  actionId: u16 = 0
-  queueId: u64 = 0
-  elapsedTime: u32 = 0
-}
-
 export class PendingQueuedActionState {
-  equipmentStates: PendingQueuedActionEquipmentState[] = []
-  actionMetadatas: PendingQueuedActionMetadata[] = []
+  consumed: EquipmentInfo[] = []
+  produced: EquipmentInfo[] = []
   producedPastRandomRewards: PastRandomRewardInfo[] = []
   producedXPRewards: Equipment[] = []
   questRewards: Equipment[] = []
   questConsumed: Equipment[] = []
   activeQuestInfo: PlayerQuestOutput[] = []
+  died: DiedInfo[] = []
+  rolls: RollInfo[] = []
+  xpGained: XPInfo[] = []
   dailyRewards: Equipment[] = []
 }
 
@@ -563,7 +580,6 @@ export class Clan {
 
 export class ClanMember {
   id: string = '' // playerId
-  player: Player = new Player()
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
   status: ClanStatus = ClanStatus.NOT_MEMBER
