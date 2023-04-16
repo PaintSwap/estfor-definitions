@@ -105,7 +105,7 @@ export class GuaranteedReward {
 }
 
 export class RandomReward {
-  itemTokenId: i32 = 0
+  itemTokenId: u32 = 0
   chance: u16 = 0 // out of 65335
   amount: u8 = 0
 }
@@ -211,7 +211,7 @@ export class PendingQueuedActionState {
 }
 
 export class XPThresholdRewardInput {
-  xpThreshold: i32 = 0
+  xpThreshold: u32 = 0
   equipments: Equipment[] = []
 }
 
@@ -295,8 +295,7 @@ export class GlobalPlayerStats {
   totalAvatars: string[] = []
   lastMintedPlayer: Player = new Player()
   lastQueuedActionPlayer: Player = new Player()
-  lastQueuedActions: i32[] = []
-  lastQueuedQueuedActions: QueuedAction[] = []
+  lastQueuedActions: QueuedAction[] = []
   lastQueuedActionTimestamp: string = '0'
 }
 
@@ -557,9 +556,9 @@ export class PlayerQuest {
 
 export class ClanTier {
   id: string = ''
-  maxMemberCapacity: i32 = 0
-  maxBankCapacity: i32 = 0
-  maxImageId: i32 = 0
+  maxMemberCapacity: u32 = 0
+  maxBankCapacity: u32 = 0
+  maxImageId: u32 = 0
   price: string = '0'
   minimumAge: string = '0'
 }
@@ -568,12 +567,11 @@ export class Clan {
   id: string = ''
   owner: string = ''
   name: string = ''
-  imageId: i32 = 0
+  imageId: u16 = 0
   tier: ClanTier = new ClanTier()
   createdTimestamp: string = ''
   createdCount: string = ''
-  memberCount: i32 = 0
-  adminCount: i32 = 0
+  memberCount: u32 = 0
   bankAddress: string = ''
   totalLevel: number = 0
 }
@@ -583,7 +581,7 @@ export class ClanMember {
   player: Player = new Player()
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
-  status: ClanStatus = ClanStatus.NOT_MEMBER
+  rank: ClanRank = ClanRank.NONE
   joinedTimestamp: string = ''
 }
 
@@ -595,11 +593,12 @@ export class ClanInvite {
   invitedTimestamp: string = ''
 }
 
-export enum ClanStatus {
-  NOT_MEMBER = 0,
-  MEMBER = 1,
-  ADMIN = 2,
-  OWNER = 3,
+export enum ClanRank {
+  NONE, // Not in a clan
+  COMMONER, // Member of the clan
+  SCOUT, // Invite and kick commoners
+  TREASURER, // Can withdraw from bank
+  LEADER, // Can edit clan details
 }
 
 // Added for backwards compatibility, remove later
