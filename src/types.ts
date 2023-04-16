@@ -572,7 +572,6 @@ export class Clan {
   createdTimestamp: string = ''
   createdCount: string = ''
   memberCount: u32 = 0
-  adminCount: u32 = 0
   bankAddress: string = ''
   totalLevel: number = 0
 }
@@ -582,7 +581,7 @@ export class ClanMember {
   player: Player = new Player()
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
-  status: ClanStatus = ClanStatus.NOT_MEMBER
+  rank: ClanRank = ClanRank.NONE
   joinedTimestamp: string = ''
 }
 
@@ -594,11 +593,12 @@ export class ClanInvite {
   invitedTimestamp: string = ''
 }
 
-export enum ClanStatus {
-  NOT_MEMBER = 0,
-  MEMBER = 1,
-  ADMIN = 2,
-  OWNER = 3,
+export enum ClanRank {
+  NONE, // Not in a clan
+  COMMONER, // Member of the clan
+  SCOUT, // Invite and kick commoners
+  TREASURER, // Can withdraw from bank
+  LEADER, // Can edit clan details
 }
 
 // Added for backwards compatibility, remove later
