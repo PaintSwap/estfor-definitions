@@ -565,7 +565,7 @@ export class ClanTier {
 
 export class Clan {
   id: string = ''
-  owner: string = ''
+  owner: Player = new Player()
   name: string = ''
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
