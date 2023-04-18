@@ -565,7 +565,7 @@ export class ClanTier {
 
 export class Clan {
   id: string = ''
-  owner: Player = new Player()
+  owner: ClanMember = new ClanMember()
   name: string = ''
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
@@ -587,9 +587,9 @@ export class ClanMember {
 
 export class ClanInvite {
   id: string = '' // playerId_clanId
-  playerId: string = ''
+  member: ClanMember = new ClanMember()
   clan: Clan = new Clan()
-  invitedBy: Player = new Player()
+  invitedBy: ClanMember = new ClanMember()
   invitedTimestamp: string = ''
 }
 
