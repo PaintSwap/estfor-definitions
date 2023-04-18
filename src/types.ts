@@ -579,6 +579,7 @@ export class Clan {
 export class ClanMember {
   id: string = '' // playerId
   player: Player = new Player()
+  playerId: string = ''
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
   rank: ClanRank = ClanRank.NONE
