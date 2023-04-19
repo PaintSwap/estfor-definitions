@@ -581,6 +581,7 @@ export class ClanMember {
   player: Player = new Player()
   clan: Clan = new Clan()
   requestedClan: Clan = new Clan()
+  requestedClanTimestamp: string = ''
   rank: ClanRank = ClanRank.NONE
   joinedTimestamp: string = ''
 }
