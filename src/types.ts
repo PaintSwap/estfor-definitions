@@ -190,7 +190,7 @@ export class PendingQueuedActionState {
   producedXPRewards: Equipment[] = []
   questRewards: Equipment[] = []
   questConsumed: Equipment[] = []
-  activeQuestInfo: PlayerQuest[] = []
+  activeQuestInfo: PlayerQuestOutput[] = []
   dailyRewards: Equipment[] = []
 }
 
