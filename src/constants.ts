@@ -734,9 +734,14 @@ export const ACTIONCHOICE_CRAFTING_BONEMEAL_LARGE = ACTIONCHOICE_CRAFTING_BASE +
 export const ACTIONCHOICE_CRAFTING_BONEMEAL_DRAGON = ACTIONCHOICE_CRAFTING_BASE + 72
 export const ACTIONCHOICE_CRAFTING_MAX = 2999
 
-export const QUEST_STARTER_FIREMAKING = 1;
-export const QUEST_STARTER_TRADER = 2;
-export const QUEST_STARTER_FEEDER = 3;
+export const QUEST_BURN_BAN = 1
+export const QUEST_NYMPTH_WATCH = 2
+export const QUEST_SUPPLY_RUN = 3
+export const QUEST_HIDDEN_BOUNTY = 4
+export const QUEST_PURSE_STRINGS = 5
+export const QUEST_ALMS_POOR = 6
+export const QUEST_BURNER_WATCH = 7
+export const QUEST_TWO_BIRDS = 8
 
 // 0 xp = level 1 (up to level 100)
 export const levelXp: Array<i32> = [
