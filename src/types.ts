@@ -366,8 +366,6 @@ export class QueuedAction {
   playerId: string = ''
   regenerateId: u16 = 0
   choice: ActionChoice = new ActionChoice()
-  choice1: ActionChoice = new ActionChoice()
-  choice2: ActionChoice = new ActionChoice()
   rightHandEquipmentTokenId: u16 = 0
   leftHandEquipmentTokenId: u16 = 0
   startTime: string = ''
