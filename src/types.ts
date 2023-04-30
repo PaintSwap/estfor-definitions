@@ -175,7 +175,7 @@ export class PendingQueuedActionMetadata {
   xpElapsedTime: i32 = 0
 }
 
-class PendingQueuedActionXPGained {
+export class PendingQueuedActionXPGained {
   // The amount of XP that the queued action has already gained
   // XP gained during this session
   skills: Skill[] = []
