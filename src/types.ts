@@ -239,6 +239,7 @@ export class Player {
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   activeQuest: PlayerQuest = new PlayerQuest()
+  numFixedQuestsCompleted: u32 = 0
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -323,6 +324,7 @@ export enum ActivityType {
   DailyReward,
   WeeklyReward,
   PendingRandomRewardsClaimed,
+  QuestCompleted
 }
 
 export enum Direction {
@@ -605,4 +607,10 @@ export enum ClanRank {
   SCOUT, // Invite and kick commoners
   TREASURER, // Can withdraw from bank
   LEADER, // Can edit clan details
+}
+
+export class CoreData {
+  clanEditNameCost: string = '0'
+  playerEditNameCost: string = '0'
+  gamePaused: boolean = false
 }
