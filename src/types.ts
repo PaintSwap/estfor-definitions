@@ -15,6 +15,7 @@ export enum Skill {
   MAGIC,
   DEFENCE,
   HEALTH,
+  RESERVED_COMBAT,
   MINING,
   WOODCUTTING,
   FISHING,
@@ -78,8 +79,6 @@ export class QueuedActionInput {
   actionId: u32 = 0
   regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
   choiceId: u32 = 0 // Melee/Arrow/Magic (combat), logs, ore (non-combat)
-  choiceId1: u32 = 0 // Reserved (TBD)
-  choiceId2: u32 = 0 // Reserved (TBD)
   combatStyle: CombatStyle = CombatStyle.NONE
   timespan: u32 = 0 // How long to queue the action for
   rightHandEquipmentTokenId: u16 = 0
@@ -92,7 +91,7 @@ export class ActionInfo {
   isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
-  numSpawned: u32 = 0
+  numSpawned: u32 = 0 // Base 10000
   minXP: u32 = 0
   handItemTokenIdRangeMin: u16 = 0
   handItemTokenIdRangeMax: u16 = 0
@@ -121,7 +120,6 @@ export class ActionInput {
 // Contains everything you need to create an item
 export class InputItem {
   combatStats: CombatStats = new CombatStats()
-  nonCombatStats: NonCombatStats = new NonCombatStats()
   tokenId: u16 = 0
   equipPosition: EquipPosition = EquipPosition.NONE
   // Can this be transferred to another player?
@@ -151,13 +149,7 @@ export class CombatStats {
   health: i16 = 0
 }
 
-export class NonCombatStats {
-  skill: Skill = Skill.NONE
-  diff: u8 = 0
-}
-
 export const emptyCombatStats = new CombatStats()
-export const emptyNonCombatStats = new NonCombatStats()
 export const defaultInputItem = new InputItem()
 export const noAttire = new Attire()
 
@@ -174,24 +166,52 @@ export class PendingQueuedActionEquipmentState {
 }
 
 export class PendingQueuedActionMetadata {
-  xpGained: u32 = 0
+  xpGained: u32 = 0 // total xp gained
   rolls: u32 = 0
   died: boolean = false
   actionId: u16 = 0
   queueId: u64 = 0
   elapsedTime: u32 = 0
+  xpElapsedTime: i32 = 0
+}
+
+export class PendingQueuedActionXPGained {
+  // The amount of XP that the queued action has already gained
+  // XP gained during this session
+  skills: Skill[] = []
+  xpGainedSkills: u32[] = []
+  alreadyProcessedSkill: Skill = Skill.NONE
+  alreadyProcessedXPGained: u32 = 0
+  alreadyProcessedSkill1: Skill = Skill.NONE
+  alreadyProcessedXPGained1: u32 = 0
+}
+
+export class QuestState {
+  consumedItemTokenIds: string[] = []
+  consumedAmounts: string[] = []
+  rewardItemTokenIds: string[] = []
+  rewardAmounts: u32[] = []
+  activeQuestInfo: PlayerQuestOutput[] = []
+  actionIds: string[] = []
+  actionAmounts: string[] = []
+  choiceIds: u32[] = []
+  choiceAmounts: u32[] = []
+  questsCompleted: u32[] = []
+  skills: Skill[] = [] // Skills gained XP in
+  xpGainedSkills: u32[] = [] // XP gained in these skills
 }
 
 export class PendingQueuedActionState {
   // First 2 are in sync
   equipmentStates: PendingQueuedActionEquipmentState[] = []
   actionMetadatas: PendingQueuedActionMetadata[] = []
+  xpGained: PendingQueuedActionXPGained = new PendingQueuedActionXPGained()
   producedPastRandomRewards: PastRandomRewardInfo[] = []
-  producedXPRewards: Equipment[] = []
-  questRewards: Equipment[] = []
-  questConsumed: Equipment[] = []
-  activeQuestInfo: PlayerQuestOutput[] = []
-  dailyRewards: Equipment[] = []
+  xpRewardItemTokenIds: string[] = []
+  xpRewardAmounts: string[] = []
+  dailyRewardItemTokenIds: string[] = []
+  dailyRewardAmounts: string[] = []
+  quests: QuestState = new QuestState()
 }
 
 export class XPThresholdRewardInput {
@@ -218,8 +238,8 @@ export class Player {
   isActive: boolean = false // Is this player the active one for the owner
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
-  speedMultiplier: u32 = 1
   activeQuest: PlayerQuest = new PlayerQuest()
+  numFixedQuestsCompleted: u32 = 0
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -304,6 +324,7 @@ export enum ActivityType {
   DailyReward,
   WeeklyReward,
   PendingRandomRewardsClaimed,
+  QuestCompleted
 }
 
 export enum Direction {
@@ -347,8 +368,6 @@ export class QueuedAction {
   playerId: string = ''
   regenerateId: u16 = 0
   choice: ActionChoice = new ActionChoice()
-  choice1: ActionChoice = new ActionChoice()
-  choice2: ActionChoice = new ActionChoice()
   rightHandEquipmentTokenId: u16 = 0
   leftHandEquipmentTokenId: u16 = 0
   startTime: string = ''
@@ -413,18 +432,18 @@ export class ShopItem {
 
 export class ActionChoiceInput {
   skill: Skill = Skill.NONE
-  diff: u32 = 0
+  minXP: u32 = 0
+  skillDiff: i16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
-  minXP: u32 = 0
   inputTokenId1: u16 = 0
-  num1: u16 = 0
+  inputAmount1: u16 = 0
   inputTokenId2: u16 = 0
-  num2: u16 = 0
+  inputAmount2: u16 = 0
   inputTokenId3: u16 = 0
-  num3: u16 = 0
+  inputAmount3: u16 = 0
   outputTokenId: u16 = 0
-  outputNum: u8 = 1
+  outputAmount: u8 = 1
   successPercent: u8 = 100
 }
 
@@ -437,13 +456,13 @@ export class ActionChoice {
   xpPerHour: u32 = 0
   minXP: u32 = 0
   inputTokenId1: u16 = 0
-  num1: u16 = 0
+  inputAmount1: u16 = 0
   inputTokenId2: u16 = 0
-  num2: u16 = 0
+  inputAmount2: u16 = 0
   inputTokenId3: u16 = 0
-  num3: u16 = 0
+  inputAmount3: u16 = 0
   outputTokenId: u16 = 0
-  outputNum: u8 = 1
+  outputAmount: u8 = 1
   successPercent: u8 = 100
 }
 
@@ -520,6 +539,7 @@ export class PlayerQuestOutput {
   actionCompletedNum: u32 = 0
   actionCompletedNum1: u32 = 0
   actionChoiceCompletedNum: u32 = 0
+  burnCompletedAmount: u32 = 0
 }
 
 export class PlayerQuest {
@@ -534,6 +554,7 @@ export class PlayerQuest {
   actionCompletedNum: u32 = 0
   actionCompletedNum1: u32 = 0
   actionChoiceCompletedNum: u32 = 0
+  burnCompletedAmount: u32 = 0
 
   completed: boolean = false
 }
@@ -588,21 +609,8 @@ export enum ClanRank {
   LEADER, // Can edit clan details
 }
 
-// Added for backwards compatibility, remove later
-// =================================================================================================
-export class PendingFlags {
-  includeLoot: boolean = true // Guaranteed loot from actions, and random loot if claiming quite late
-  includePastRandomRewards: boolean = true // This is random loot from previous actions
-  includeXPRewards: boolean = true // Passing any xp thresholds gives you extra rewards
+export class CoreData {
+  clanEditNameCost: string = '0'
+  playerEditNameCost: string = '0'
+  gamePaused: boolean = false
 }
-
-export class PendingOutput {
-  consumed: Equipment[] = []
-  produced: Equipment[] = []
-  producedPastRandomRewards: Equipment[] = []
-  producedXPRewards: Equipment[] = []
-  xpGained: u32 = 0
-  died: boolean = false
-}
-
-// =================================================================================================
