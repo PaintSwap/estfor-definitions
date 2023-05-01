@@ -743,6 +743,14 @@ export const QUEST_ALMS_POOR = 6
 export const QUEST_BURNER_WATCH = 7
 export const QUEST_TWO_BIRDS = 8
 
+export const WORLD_ADDRESS = '0x94cb4ff6818b0969b62ac7b44d97a996594fb1c8'
+export const SHOP_ADDRESS = '0x593ed05fa8a1c19c90657850044fbf7315f123dc'
+export const ITEM_NFT_ADDRESS = '0xbf7c0526730e85eb2934f61f9f13fa165148f501'
+
+export const ALPHA_WORLD_ADDRESS = '0x94cb4ff6818b0969b62ac7b44d97a996594fb1c8'
+export const ALPHA_SHOP_ADDRESS = '0x593ed05fa8a1c19c90657850044fbf7315f123dc'
+export const ALPHA_ITEM_NFT_ADDRESS = '0xbf7c0526730e85eb2934f61f9f13fa165148f501'
+
 // 0 xp = level 1 (up to level 100)
 export const levelXp: Array<i32> = [
   0, 84, 174, 270, 374, 486, 606, 734, 872, 1021, 1179, 1350, 1532, 1728, 1938, 2163, 2404, 2662, 2939, 3236, 3553,
