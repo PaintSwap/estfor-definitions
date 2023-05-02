@@ -161,8 +161,10 @@ export class PastRandomRewardInfo {
 }
 
 export class PendingQueuedActionEquipmentState {
-  consumed: Equipment[] = []
-  produced: Equipment[] = []
+  consumedItemTokenIds: string[] = []
+  consumedAmounts: string[] = []
+  producedItemTokenIds: string[] = []
+  producedAmounts: string[] = []
 }
 
 export class PendingQueuedActionMetadata {
