@@ -530,6 +530,7 @@ export class Quest {
   rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
   burnItem: Item = new Item() // Burn an item
   burnAmount: u16 = 0 // amount of the burn (up to 65535)
+  requireActionsCompletedBeforeBurning: boolean // Whether we can start burning before other things are completed
 
   isActive: boolean = false
   isFixed: boolean = false
