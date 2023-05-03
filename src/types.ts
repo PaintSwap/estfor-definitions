@@ -326,7 +326,7 @@ export enum ActivityType {
   DailyReward,
   WeeklyReward,
   PendingRandomRewardsClaimed,
-  QuestCompleted
+  QuestCompleted,
 }
 
 export enum Direction {
@@ -352,6 +352,7 @@ export class Activity {
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
+  playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
 }
 
 export class LastFullEquipment {
