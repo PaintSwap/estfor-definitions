@@ -194,10 +194,6 @@ export class QuestState {
   rewardItemTokenIds: string[] = []
   rewardAmounts: u32[] = []
   activeQuestInfo: PlayerQuestOutput[] = []
-  actionIds: string[] = []
-  actionAmounts: string[] = []
-  choiceIds: u32[] = []
-  choiceAmounts: u32[] = []
   questsCompleted: u32[] = []
   skills: Skill[] = [] // Skills gained XP in
   xpGainedSkills: u32[] = [] // XP gained in these skills
