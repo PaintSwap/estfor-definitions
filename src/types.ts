@@ -238,6 +238,7 @@ export class Player {
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   activeQuest: PlayerQuest = new PlayerQuest()
   numFixedQuestsCompleted: u32 = 0
+  isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
 
   /* Skill XP */
   woodcuttingXP: string = '0'
