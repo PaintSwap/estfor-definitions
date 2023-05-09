@@ -177,7 +177,7 @@ export class PendingQueuedActionMetadata {
 }
 
 // The amount of XP that the queued action has already been gained in the current action
-class PendingQueuedActionData {
+export class PendingQueuedActionData {
   // The amount of XP that the queued
   skill1: Skill = Skill.NONE
   xpGained1: u32 = 0
@@ -189,7 +189,7 @@ class PendingQueuedActionData {
   numConsumed: u16 = 0
 }
 
-class PendingQueuedActionProcessed {
+export class PendingQueuedActionProcessed {
   // XP gained during this session
   skills: Skill[] = []
   xpGainedSkills: u32[] = []
