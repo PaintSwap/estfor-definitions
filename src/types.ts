@@ -154,7 +154,6 @@ export const defaultInputItem = new InputItem()
 export const noAttire = new Attire()
 
 export class PastRandomRewardInfo {
-  actionId: u16 = 0
   queueId: u64 = 0
   itemTokenId: u16 = 0
   amount: u32 = 0
@@ -177,15 +176,24 @@ export class PendingQueuedActionMetadata {
   xpElapsedTime: i32 = 0
 }
 
-export class PendingQueuedActionXPGained {
-  // The amount of XP that the queued action has already gained
+// The amount of XP that the queued action has already been gained in the current action
+class PendingQueuedActionData {
+  // The amount of XP that the queued
+  skill1: Skill = Skill.NONE
+  xpGained1: u32 = 0
+  skill2: Skill = Skill.NONE
+  xpGained2: u32 = 0
+  // How much food is consumed in the current action so far
+  foodConsumed: u16 = 0
+  // How many base consumables are consumed in the current action so far
+  numConsumed: u16 = 0
+}
+
+class PendingQueuedActionProcessed {
   // XP gained during this session
   skills: Skill[] = []
   xpGainedSkills: u32[] = []
-  alreadyProcessedSkill: Skill = Skill.NONE
-  alreadyProcessedXPGained: u32 = 0
-  alreadyProcessedSkill1: Skill = Skill.NONE
-  alreadyProcessedXPGained1: u32 = 0
+  currentAction: PendingQueuedActionData = new PendingQueuedActionData()
 }
 
 export class QuestState {
@@ -203,7 +211,7 @@ export class PendingQueuedActionState {
   // First 2 are in sync
   equipmentStates: PendingQueuedActionEquipmentState[] = []
   actionMetadatas: PendingQueuedActionMetadata[] = []
-  xpGained: PendingQueuedActionXPGained = new PendingQueuedActionXPGained()
+  processedData: PendingQueuedActionProcessed = new PendingQueuedActionProcessed()
   producedPastRandomRewards: PastRandomRewardInfo[] = []
   xpRewardItemTokenIds: string[] = []
   xpRewardAmounts: string[] = []
@@ -514,18 +522,18 @@ export class Quest {
   id: string = '' // quest id
 
   dependentQuest: Quest = new Quest() // The quest that must be completed before this one can be started
-  action: Action = new Action() // action to do
-  actionNum: u16 = 0 // how many (up to 65535)
-  action1: Action = new Action() // another action to do
+  action1: Action = new Action() // action to do
   actionNum1: u16 = 0 // how many (up to 65535)
+  action2: Action = new Action() // another action to do
+  actionNum2: u16 = 0 // how many (up to 65535)
   actionChoice: ActionChoice = new ActionChoice() // actionChoice to perform
   actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
   skillReward: Skill = Skill.NONE // The skill to reward XP to
   skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
-  rewardItem: Item = new Item() // Reward an item
-  rewardAmount: u16 = 0 // amount of the reward (up to 65535)
-  rewardItem1: Item = new Item() // Reward another item
+  rewardItem1: Item = new Item() // Reward an item
   rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
+  rewardItem2: Item = new Item() // Reward another item
+  rewardAmount2: u16 = 0 // amount of the reward (up to 65535)
   burnItem: Item = new Item() // Burn an item
   burnAmount: u16 = 0 // amount of the burn (up to 65535)
   requireActionsCompletedBeforeBurning: boolean // Whether we can start burning before other things are completed
@@ -537,8 +545,8 @@ export class Quest {
 
 export class PlayerQuestOutput {
   questId: string = ''
-  actionCompletedNum: u32 = 0
   actionCompletedNum1: u32 = 0
+  actionCompletedNum2: u32 = 0
   actionChoiceCompletedNum: u32 = 0
   burnCompletedAmount: u32 = 0
 }
@@ -552,8 +560,8 @@ export class PlayerQuest {
   lastUpdatedTimestamp: string = ''
 
   // Progression in this quest
-  actionCompletedNum: u32 = 0
   actionCompletedNum1: u32 = 0
+  actionCompletedNum2: u32 = 0
   actionChoiceCompletedNum: u32 = 0
   burnCompletedAmount: u32 = 0
 
@@ -573,6 +581,8 @@ export class Clan {
   id: string = ''
   owner: Player = new Player()
   name: string = ''
+  discord: string | null = ''
+  telegram: string | null = ''
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
   createdTimestamp: string = ''
