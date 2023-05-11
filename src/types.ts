@@ -459,7 +459,7 @@ export class ActionChoice {
   id: string = ''
   actionId: u32 = 0
   skill: Skill = Skill.NONE
-  diff: u16 = 0
+  skillDiff: u16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   minXP: u32 = 0
