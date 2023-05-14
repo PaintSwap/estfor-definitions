@@ -176,24 +176,10 @@ export class PendingQueuedActionMetadata {
   xpElapsedTime: i32 = 0
 }
 
-// The amount of XP that the queued action has already been gained in the current action
-export class PendingQueuedActionData {
-  // The amount of XP that the queued
-  skill1: Skill = Skill.NONE
-  xpGained1: u32 = 0
-  skill2: Skill = Skill.NONE
-  xpGained2: u32 = 0
-  // How much food is consumed in the current action so far
-  foodConsumed: u16 = 0
-  // How many base consumables are consumed in the current action so far
-  numConsumed: u16 = 0
-}
-
 export class PendingQueuedActionProcessed {
   // XP gained during this session
   skills: Skill[] = []
   xpGainedSkills: u32[] = []
-  currentAction: PendingQueuedActionData = new PendingQueuedActionData()
 }
 
 export class QuestState {
