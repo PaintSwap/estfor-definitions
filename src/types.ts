@@ -406,6 +406,9 @@ export class Item {
   name: string = ''
   isTransferable: boolean = true
   firstMintedTimestamp: string = '' // Timestamp of the first minted one, can reset if all burned
+  // When selling the item
+  allocationRemaining: string = '0'
+  nextNewAllocationTimestamp: string = '0'
 }
 
 export class UserItemNFT {
@@ -420,8 +423,6 @@ export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
   price: string = '0'
-  allocationRemaining: string = '0'
-  nextNewAllocationTimestamp: string = '0'
 }
 
 export class ActionChoiceInput {
