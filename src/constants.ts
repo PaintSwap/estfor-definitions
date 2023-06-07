@@ -335,9 +335,11 @@ export const FREEZE_SCROLL = SCROLL_BASE + 6
 export const ANCIENT_SCROLL = SCROLL_BASE + 7
 export const SCROLL_MAX = SCROLL_BASE + 255
 
-// Free interval
-export const NOT_USED_BASE = 12544
-export const NOT_USED_MAX = 12799
+// Eggs
+export const EGG_BASE = 12544
+export const SECRET_EGG_1 = EGG_BASE
+export const SECRET_EGG_2 = EGG_BASE + 1
+export const EGG_MAX = 12799
 
 // Boosts
 export const BOOST_BASE = 12800
