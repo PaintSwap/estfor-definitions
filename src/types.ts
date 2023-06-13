@@ -507,6 +507,7 @@ export class PlayerDayData {
 
 export class Quest {
   id: string = '' // quest id
+  questId: u32 = 0 // quest id
 
   dependentQuest: Quest = new Quest() // The quest that must be completed before this one can be started
   action1: Action = new Action() // action to do
