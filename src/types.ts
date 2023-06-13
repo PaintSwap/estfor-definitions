@@ -528,6 +528,9 @@ export class Quest {
   isActive: boolean = false
   isFixed: boolean = false
   createdTimestamp: string = ''
+
+  minRequirementSkills: Skill[] = [] // Minimum requirements in these skills
+  minRequirementXPs: string[] = [] // Minimum requirements in these skills
 }
 
 export class PlayerQuestOutput {
