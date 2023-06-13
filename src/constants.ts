@@ -744,6 +744,14 @@ export const QUEST_PURSE_STRINGS = 5
 export const QUEST_ALMS_POOR = 6
 export const QUEST_BURNER_WATCH = 7
 export const QUEST_TWO_BIRDS = 8
+export const QUEST_APPRENTICESHIP = 9
+export const QUEST_TOWN_COOKOUT = 10
+export const QUEST_IRON_AGE = 11
+export const QUEST_CLEAR_SKIES = 12
+export const QUEST_MEADERY_MADNESS = 13
+export const QUEST_FOREST_FIRE = 14
+export const QUEST_MITHRIL_MILITIA = 15
+export const QUEST_MINOR_MINERS = 16
 
 export const WORLD_ADDRESS = '0x94cb4ff6818b0969b62ac7b44d97a996594fb1c8'
 export const SHOP_ADDRESS = '0x593ed05fa8a1c19c90657850044fbf7315f123dc'
