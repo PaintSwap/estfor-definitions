@@ -615,9 +615,11 @@ export class CoreData {
   clanEditNameCost: string = '0'
   playerEditNameCost: string = '0'
   gamePaused: boolean = false
+  dailyRewardItemTokenIds: u16[] = []
+  dailyRewardAmounts: u32[] = []
 }
 
 export enum Referrer {
   ESTFOR,
-  SECRET
+  SECRET,
 }
