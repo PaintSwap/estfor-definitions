@@ -616,3 +616,8 @@ export class CoreData {
   playerEditNameCost: string = '0'
   gamePaused: boolean = false
 }
+
+export enum Referrer {
+  ESTFOR,
+  SECRET
+}
