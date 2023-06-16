@@ -317,6 +317,7 @@ export enum ActivityType {
   DailyReward,
   WeeklyReward,
   PendingRandomRewardsClaimed,
+  PromotionRedeemed,
   QuestCompleted,
 }
 
