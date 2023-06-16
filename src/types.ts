@@ -623,3 +623,8 @@ export enum Referrer {
   ESTFOR,
   SECRET,
 }
+
+export enum Promotion {
+  NONE,
+  STARTER,
+}
