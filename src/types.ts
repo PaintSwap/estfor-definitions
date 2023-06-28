@@ -9,7 +9,7 @@ export enum BoostType {
 
 export enum Skill {
   NONE,
-  COMBAT,
+  COMBAT, // Helper skill
   MELEE,
   RANGE,
   MAGIC,
@@ -24,6 +24,30 @@ export enum Skill {
   CRAFTING,
   COOKING,
   FIREMAKING,
+  AGILITY,
+  ALCHEMY,
+  RESERVED0,
+  RESERVED1,
+  RESERVED2,
+  RESERVED3,
+  RESERVED4,
+  RESERVED5,
+  RESERVED6,
+  RESERVED7,
+  RESERVED8,
+  RESERVED9,
+  RESERVED10,
+  RESERVED11,
+  RESERVED12,
+  RESERVED13,
+  RESERVED14,
+  RESERVED15,
+  RESERVED16,
+  RESERVED17,
+  RESERVED18,
+  RESERVED19,
+  RESERVED20,
+  TRAVELLING, // Helper Skill
 }
 
 export enum EquipPosition {
@@ -88,7 +112,7 @@ export class QueuedActionInput {
 export class ActionInfo {
   skill: Skill = Skill.NONE
   isAvailable: boolean = true
-  isDynamic: boolean = false
+  worldLocation: u8 = 0
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
   numSpawned: u32 = 0 // Base 10000
@@ -148,10 +172,6 @@ export class CombatStats {
   rangeDefence: i16 = 0
   health: i16 = 0
 }
-
-export const emptyCombatStats = new CombatStats()
-export const defaultInputItem = new InputItem()
-export const noAttire = new Attire()
 
 export class PastRandomRewardInfo {
   queueId: u64 = 0
@@ -629,3 +649,8 @@ export enum Promotion {
   NONE,
   STARTER,
 }
+
+export const emptyCombatStats = new CombatStats()
+export const defaultInputItem = new InputItem()
+export const defaultActionChoice = new ActionChoiceInput()
+export const noAttire = new Attire()
