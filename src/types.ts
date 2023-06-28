@@ -70,6 +70,10 @@ export enum EquipPosition {
   BOOST_VIAL,
 }
 
+export enum WorldLocation {
+  STARTING_AREA,
+}
+
 export class Attire {
   head: u16 = 0
   neck: u16 = 0
@@ -112,7 +116,7 @@ export class QueuedActionInput {
 export class ActionInfo {
   skill: Skill = Skill.NONE
   isAvailable: boolean = true
-  worldLocation: u8 = 0
+  isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
   numSpawned: u32 = 0 // Base 10000
@@ -120,6 +124,7 @@ export class ActionInfo {
   handItemTokenIdRangeMin: u16 = 0
   handItemTokenIdRangeMax: u16 = 0
   successPercent: u8 = 0
+  worldLocation: u8 = 0
 }
 
 export class GuaranteedReward {
@@ -253,6 +258,7 @@ export class Player {
   activeQuest: PlayerQuest = new PlayerQuest()
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
+  worldLocation: WorldLocation = WorldLocation.STARTING_AREA
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -263,6 +269,8 @@ export class Player {
   smithingXP: string = '0'
   craftingXP: string = '0'
   thievingXP: string = '0'
+  agilityXP: string = '0'
+  alchemyXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
 
@@ -501,6 +509,7 @@ export class Action {
   isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   successPercent: i8 = 100
+  worldLocation: WorldLocation = WorldLocation.STARTING_AREA
 
   /* Combat Stats */
   melee: i16 = 0
