@@ -1,6 +1,6 @@
 {
   "name": "@paintswap/estfor-definitions",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Types and constants for Estfor Kingdom",
   "repository": {
     "type": "git",
