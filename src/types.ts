@@ -47,7 +47,7 @@ export enum Skill {
   RESERVED18,
   RESERVED19,
   RESERVED20,
-  TRAVELLING, // Helper Skill
+  TRAVELING, // Helper Skill
 }
 
 export enum EquipPosition {
