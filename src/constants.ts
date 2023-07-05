@@ -765,6 +765,8 @@ export const BETA_ITEM_NFT_ADDRESS = '0x1dae89b469d15b0ded980007dfdc8e68c363203d
 export const BETA_PLAYERS_ADDRESS = '0x0aac9c0966ad5ea59cd0a47a0d415a68126ab7be'
 export const BETA_PROMOTIONS_ADDRESS = '0xf28cab48e29be56fcc68574b5c147b780c35647c'
 
+export const TIER_REWARD_START_XP = [0, 5000, 25_000, 80_000, 400_000]
+
 // 0 xp = level 1 (up to level 100)
 export const levelXp: Array<i32> = [
   0, 84, 174, 270, 374, 486, 606, 734, 872, 1021, 1179, 1350, 1532, 1728, 1938, 2163, 2404, 2662, 2939, 3236, 3553,

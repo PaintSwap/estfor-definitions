@@ -11,7 +11,7 @@ export enum Skill {
   NONE,
   COMBAT, // Helper skill
   MELEE,
-  RANGE,
+  RANGED,
   MAGIC,
   DEFENCE,
   HEALTH,
@@ -26,7 +26,7 @@ export enum Skill {
   FIREMAKING,
   AGILITY,
   ALCHEMY,
-  RESERVED0,
+  FLETCHING,
   RESERVED1,
   RESERVED2,
   RESERVED3,
@@ -63,7 +63,7 @@ export enum EquipPosition {
   LEFT_HAND,
   RIGHT_HAND,
   BOTH_HANDS,
-  ARROW_SATCHEL,
+  QUIVER,
   MAGIC_BAG,
   FOOD,
   AUX, // wood, seeds etc..
@@ -106,7 +106,7 @@ export class QueuedActionInput {
   attire: Attire = new Attire()
   actionId: u32 = 0
   regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
-  choiceId: u32 = 0 // Melee/Arrow/Magic (combat), logs, ore (non-combat)
+  choiceId: u32 = 0 // Melee/Arrow/Magic (combat), logs, ore etc (non-combat)
   combatStyle: CombatStyle = CombatStyle.NONE
   timespan: u32 = 0 // How long to queue the action for
   rightHandEquipmentTokenId: u16 = 0
@@ -125,6 +125,7 @@ export class ActionInfo {
   handItemTokenIdRangeMax: u16 = 0
   successPercent: u8 = 0
   worldLocation: u8 = 0
+  isFullModeOnly: boolean = false
 }
 
 export class GuaranteedReward {
@@ -153,6 +154,7 @@ export class InputItem {
   equipPosition: EquipPosition = EquipPosition.NONE
   // Can this be transferred to another player?
   isTransferable: boolean = true
+  isFullModeOnly: boolean = false
   // Minimum requirements in this skill
   skill: Skill = Skill.NONE
   minXP: u32 = 0
@@ -469,6 +471,9 @@ export class ActionChoiceInput {
   outputTokenId: u16 = 0
   outputAmount: u8 = 1
   successPercent: u8 = 100
+  handItemTokenIdRangeMin: u32 = 0
+  handItemTokenIdRangeMax: u32 = 0
+  isFullModeOnly: boolean = false
 }
 
 export class ActionChoice {
@@ -488,6 +493,9 @@ export class ActionChoice {
   outputTokenId: u16 = 0
   outputAmount: u8 = 1
   successPercent: u8 = 100
+  handItemTokenIdRangeMin: u32 = 0
+  handItemTokenIdRangeMax: u32 = 0
+  isFullModeOnly: boolean = false
 }
 
 export class Action {
@@ -514,8 +522,8 @@ export class Action {
   /* Combat Stats */
   melee: i16 = 0
   magic: i16 = 0
-  range: i16 = 0
-  rangeDefence: i16 = 0
+  ranged: i16 = 0
+  rangedDefence: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
   health: i16 = 0
@@ -662,4 +670,5 @@ export enum Promotion {
 export const emptyCombatStats = new CombatStats()
 export const defaultInputItem = new InputItem()
 export const defaultActionChoice = new ActionChoiceInput()
+export const defaultActionInfo = new ActionInfo()
 export const noAttire = new Attire()
