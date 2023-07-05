@@ -173,10 +173,10 @@ export class InputItem {
 export class CombatStats {
   melee: i16 = 0
   magic: i16 = 0
-  range: i16 = 0
+  ranged: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
-  rangeDefence: i16 = 0
+  rangedDefence: i16 = 0
   health: i16 = 0
 }
 
@@ -281,7 +281,7 @@ export class Player {
   meleeXP: string = '0'
   defenceXP: string = '0'
   magicXP: string = '0'
-  rangeXP: string = '0'
+  rangedXP: string = '0'
 
   /** Ranks */
   woodcuttingRank: u32 = 0
@@ -294,7 +294,7 @@ export class Player {
   thievingRank: u32 = 0
   meleeRank: u32 = 0
   magicRank: u32 = 0
-  rangeRank: u32 = 0
+  rangedRank: u32 = 0
   defenceRank: u32 = 0
   healthRank: u32 = 0
   combinedRank: u32 = 0
@@ -418,10 +418,10 @@ export class Item {
   tokenId: u16 = 0
   melee: i16 = 0
   magic: i16 = 0
-  range: i16 = 0
+  ranged: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
-  rangeDefence: i16 = 0
+  rangedDefence: i16 = 0
   health: i16 = 0
   totalQuantity: string = '0'
   equipPosition: u16 = 0
