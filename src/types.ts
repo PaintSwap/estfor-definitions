@@ -148,7 +148,7 @@ export class ActionInput {
 }
 
 // Contains everything you need to create an item
-export class InputItem {
+export class ItemInput {
   combatStats: CombatStats = new CombatStats()
   tokenId: u16 = 0
   equipPosition: EquipPosition = EquipPosition.NONE
@@ -668,7 +668,7 @@ export enum Promotion {
 }
 
 export const emptyCombatStats = new CombatStats()
-export const defaultInputItem = new InputItem()
+export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
 export const defaultActionInfo = new ActionInfo()
 export const noAttire = new Attire()
