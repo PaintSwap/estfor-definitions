@@ -106,7 +106,7 @@ export class QueuedActionInput {
   attire: Attire = new Attire()
   actionId: u32 = 0
   regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
-  choiceId: u32 = 0 // Melee/Arrow/Magic (combat), logs, ore etc (non-combat)
+  choiceId: u32 = 0 // Melee/Ranged/Magic (combat), logs, ore etc (non-combat)
   combatStyle: CombatStyle = CombatStyle.NONE
   timespan: u32 = 0 // How long to queue the action for
   rightHandEquipmentTokenId: u16 = 0
