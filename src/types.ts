@@ -295,6 +295,8 @@ export class Player {
   smithingRank: u32 = 0
   craftingRank: u32 = 0
   thievingRank: u32 = 0
+  alchemyRank: u32 = 0
+  fletchingRank: u32 = 0
   meleeRank: u32 = 0
   magicRank: u32 = 0
   rangedRank: u32 = 0
@@ -377,7 +379,7 @@ export class Activity {
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
-  playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
+    playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
 }
 
 export class LastFullEquipment {
