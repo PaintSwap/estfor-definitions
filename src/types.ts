@@ -261,6 +261,8 @@ export class Player {
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
+  lastDailyRewardClaimedItemTokenId: number = 0
+  lastWeeklyRewardClaimedItemTokenId: number = 0
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -273,6 +275,7 @@ export class Player {
   thievingXP: string = '0'
   agilityXP: string = '0'
   alchemyXP: string = '0'
+  fletchingXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
 
