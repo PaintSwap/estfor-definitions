@@ -371,15 +371,17 @@ export class Activity {
   type: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
-  directions: string[] = [] // Direction
+  directions: string[] = []
   prices: string[] = []
+  gainedSkills: Skill[] = []
+  gainedXPs: string[] = []
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
-    playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
+  playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
 }
 
 export class LastFullEquipment {
