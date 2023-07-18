@@ -354,6 +354,7 @@ export enum ActivityType {
   PendingRandomRewardsClaimed,
   PromotionRedeemed,
   QuestCompleted,
+  ConsumeBoostVial,
 }
 
 export enum Direction {
