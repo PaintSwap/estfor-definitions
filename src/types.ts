@@ -355,6 +355,16 @@ export enum ActivityType {
   PromotionRedeemed,
   QuestCompleted,
   ConsumeBoostVial,
+  Donation,
+  // Coming later
+  TransferPlayer,
+  ReceivedPlayer,
+  TransferItems,
+  ReceivedItems,
+  ReceivedGift,
+  DepositBank,
+  WithdrawBank,
+  ReceivedItemsFromBank,
 }
 
 export enum Direction {
@@ -376,6 +386,7 @@ export class Activity {
   prices: string[] = []
   gainedSkills: Skill[] = []
   gainedXPs: string[] = []
+  miscs: string[] = [] // Various BigInts specific to the activity type
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
@@ -655,6 +666,14 @@ export enum ClanRank {
   SCOUT, // Invite and kick commoners
   TREASURER, // Can withdraw from bank
   LEADER, // Can edit clan details
+}
+
+export class Donation {
+  id: string = '' // user or player id
+  user: string | null = null
+  player: Player | null = new Player()
+  amount: string = '0'
+  lastUpdatedTimestamp: string = ''
 }
 
 export class CoreData {
