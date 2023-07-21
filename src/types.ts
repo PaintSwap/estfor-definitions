@@ -263,6 +263,7 @@ export class Player {
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
   lastDailyRewardClaimedItemTokenId: number = 0
   lastWeeklyRewardClaimedItemTokenId: number = 0
+  totalDonated: string = '0'
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -319,6 +320,7 @@ export class User {
   numActivities: u32 = 0
   totalSold: string = '0'
   totalBought: string = '0'
+  totalDonated: string = '0'
   activePlayerId: string = '0'
 }
 
