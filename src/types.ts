@@ -345,6 +345,13 @@ export class GlobalClanStats {
   totalClanMembers: string = '0'
 }
 
+export class GlobalDonationStats {
+  numUsersDonated: string = '0'
+  numPlayersDonated: string = '0'
+  totalDonationAmounts: string = '0'
+  numDonations: string = '0'
+}
+
 export enum ActivityType {
   Buy,
   Sell,
