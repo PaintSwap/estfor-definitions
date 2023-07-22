@@ -316,6 +316,7 @@ export class Player {
 export class User {
   id: string = '0'
   numPlayers: u32 = 0
+  numPlayersDonated: u32 = 0
   numUniqueItems: u32 = 0
   numActivities: u32 = 0
   totalSold: string = '0'
