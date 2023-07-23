@@ -68,6 +68,8 @@ export enum EquipPosition {
   FOOD,
   AUX, // wood, seeds etc..
   BOOST_VIAL,
+  EXTRA_BOOST_VIAL,
+  GLOBAL_BOOST_VIAL,
 }
 
 export enum WorldLocation {
