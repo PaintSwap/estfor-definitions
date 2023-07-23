@@ -394,6 +394,8 @@ export const ABSENCE_BOOST = BOOST_BASE + 4
 export const PRAY_TO_THE_BEARDIE = BOOST_BASE + 5
 export const GO_OUTSIDE = BOOST_BASE + 6
 export const RAINING_RARES = BOOST_BASE + 7
+export const EXTRA_HALF_XP_BOOST = BOOST_BASE + 8
+export const EXTRA_QUARTER_XP_BOOST = BOOST_BASE + 9
 export const BOOST_MAX = 13055
 
 // MISC
