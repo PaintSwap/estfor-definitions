@@ -686,6 +686,7 @@ export class Donation {
   player: Player | null = new Player()
   amount: string = '0'
   lastUpdatedTimestamp: string = ''
+  donationAmountRank: string = ''
 }
 
 export class CoreData {
