@@ -323,6 +323,13 @@ export class Player {
   boostVal: u8 = 0
   boostType: BoostType
   boostItemTokenId: u16 = 0
+
+  /* Extra Boost */
+  extraBoostStartTime: u64 = 0
+  extraBoostDuration: u32 = 0
+  extraBoostVal: u8 = 0
+  extraBoostType: BoostType
+  extraBoostItemTokenId: u16 = 0
 }
 
 export class User {
@@ -377,6 +384,8 @@ export enum ActivityType {
   PromotionRedeemed,
   QuestCompleted,
   ConsumeBoostVial,
+  ConsumeExtraBoostVial,
+  ConsumeGlobalBoostVial,
   Donation,
   // Coming later
   TransferPlayer,
@@ -699,10 +708,46 @@ export class Donation {
   donationAmountRank: string = ''
 }
 
+export class Lottery {
+  id: string = '' // lotteryId
+  raffleIdWinner: string = '' // 0 means no winner yet
+  hasClaimed: Boolean = false
+  rewardItemTokenId: number = 0
+  rewardAmount: string = '0'
+  timestamp: '0'
+}
+
+export class RaffleEntry {
+  id: string = '' // lotteryId_raffleId
+  lotteryId: string = '0'
+  raffleId: string = '0'
+  playerId: string = '0'
+  user: string = ''
+  timestamp: string = '0'
+}
+
+export class DonationDayData {
+  id: string = '' // date
+  date: string = ''
+  totalDonators: u32 = 0
+  totalDonations: string = '0' // in brush
+}
+
 export class CoreData {
   clanEditNameCost: string = '0'
   playerEditNameCost: string = '0'
   gamePaused: boolean = false
+
+  // Donation/Lottery
+  nextDonationThreshold: string = '0'
+  nextDonationThresholdRewardItemTokenId: u16 = 0
+  raffleEntryCost: string = '0'
+
+  globalBoostStartTime: string = '0'
+  globalBoostDuration: u32 = 0
+  globalBoostVal: u8 = 0
+  globalBoostType: BoostType = BoostType.NONE
+  globalBoostItemTokenId: u16 = 0
 }
 
 export enum Referrer {
