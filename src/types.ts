@@ -711,10 +711,10 @@ export class Donation {
 export class Lottery {
   id: string = '' // lotteryId
   raffleIdWinner: string = '' // 0 means no winner yet
-  hasClaimed: Boolean = false
+  hasClaimed: bool = false
   rewardItemTokenId: number = 0
   rewardAmount: string = '0'
-  timestamp: '0'
+  timestamp: string = '0'
 }
 
 export class RaffleEntry {
