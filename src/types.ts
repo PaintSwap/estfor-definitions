@@ -222,6 +222,15 @@ export class QuestState {
   xpGainedSkills: u32[] = [] // XP gained in these skills
 }
 
+export class LotteryWinnerInfo {
+  lotteryId: u16 = 0
+  raffleId: u32 = 0
+  itemTokenId: u16 = 0
+  amount: u16 = 0
+  instantConsume: bool = false
+  playerId: u64 = 0
+}
+
 export class PendingQueuedActionState {
   // First 2 are in sync
   equipmentStates: PendingQueuedActionEquipmentState[] = []
@@ -233,6 +242,7 @@ export class PendingQueuedActionState {
   dailyRewardItemTokenIds: string[] = []
   dailyRewardAmounts: string[] = []
   quests: QuestState = new QuestState()
+  lotteryWinner: LotteryWinnerInfo = new LotteryWinnerInfo()
 }
 
 export class XPThresholdRewardInput {
