@@ -396,6 +396,7 @@ export const GO_OUTSIDE = BOOST_BASE + 6
 export const RAINING_RARES = BOOST_BASE + 7
 export const EXTRA_XP_BOOST = BOOST_BASE + 8
 export const EXTRA_HALF_XP_BOOST = BOOST_BASE + 9
+export const CLAN_BOOST = BOOST_BASE + 10;
 export const BOOST_MAX = 13055
 
 // MISC

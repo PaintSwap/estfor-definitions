@@ -70,6 +70,7 @@ export enum EquipPosition {
   BOOST_VIAL,
   EXTRA_BOOST_VIAL,
   GLOBAL_BOOST_VIAL,
+  CLAN_BOOST_VIAL
 }
 
 export enum WorldLocation {
