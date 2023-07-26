@@ -70,7 +70,7 @@ export enum EquipPosition {
   BOOST_VIAL,
   EXTRA_BOOST_VIAL,
   GLOBAL_BOOST_VIAL,
-  CLAN_BOOST_VIAL
+  CLAN_BOOST_VIAL,
 }
 
 export enum WorldLocation {
@@ -369,7 +369,7 @@ export class GlobalClanStats {
 export class GlobalDonationStats {
   numUsersDonated: string = '0'
   numPlayersDonated: string = '0'
-  totalDonationAmounts: string = '0'
+  totalDonatedAmounts: string = '0'
   numDonations: string = '0'
 }
 
@@ -387,6 +387,7 @@ export enum ActivityType {
   ConsumeBoostVial,
   ConsumeExtraBoostVial,
   ConsumeGlobalBoostVial,
+  ConsumeClanBoostVial,
   Donation,
   // Coming later
   TransferPlayer,
@@ -672,6 +673,18 @@ export class Clan {
   totalLevel: number = 0
   combinedRank: number = 0
   bankValue: string = '0'
+
+  boostStartTime: u64 = 0
+  boostDuration: u32 = 0
+  boostVal: u8 = 0
+  boostType: BoostType
+  boostItemTokenId: u16 = 0
+
+  totalDonated: string = '0'
+  lastDonationThreshold: string = '0'
+  nextDonationThresholdRewardItemTokenId: u16 = 0
+
+  numDonationsToday: u16 = 0
 }
 
 export class ClanMember {
@@ -682,6 +695,8 @@ export class ClanMember {
   requestedClanTimestamp: string = ''
   rank: ClanRank = ClanRank.NONE
   joinedTimestamp: string = ''
+  // Only applies to the current clan, and gets reset when leaving the clan
+  totalDonated: string = '0'
 }
 
 export class ClanInvite {
@@ -698,6 +713,15 @@ export enum ClanRank {
   SCOUT, // Invite and kick commoners
   TREASURER, // Can withdraw from bank
   LEADER, // Can edit clan details
+}
+
+// An individual donation
+export class ClanDonation {
+  id: string = '0' // clanId_playerId_timestamp
+  playerId: string = '0'
+  clanId: string = '0'
+  amount: string = '0'
+  timestamp: u64 = 0
 }
 
 export class Donation {
@@ -731,7 +755,7 @@ export class DonationDayData {
   id: string = '' // date
   date: string = ''
   totalDonators: u32 = 0
-  totalDonations: string = '0' // in brush
+  totalDonated: string = '0' // in brush
 }
 
 export class CoreData {
@@ -739,9 +763,13 @@ export class CoreData {
   playerEditNameCost: string = '0'
   gamePaused: boolean = false
 
-  // Donation/Lottery
+  // Global Donations
   nextDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
+  // Clan donation
+  clanDonationThresholdRewardIncrement: string = '0'
+  startClanDonationThresholdRewardItemTokenId: u16 = 0
+
   raffleEntryCost: string = '0'
 
   globalBoostStartTime: string = '0'
