@@ -764,9 +764,9 @@ export class CoreData {
   gamePaused: boolean = false
 
   // Global Donations
-  nextDonationThreshold: string = '0'
-  nextDonationThresholdRewardItemTokenId: u16 = 0
-  // Clan donation
+  nextGlobalDonationThreshold: string = '0'
+  nextGlobalDonationThresholdRewardItemTokenId: u16 = 0
+  // Clan donations
   clanDonationThresholdRewardIncrement: string = '0'
   startClanDonationThresholdRewardItemTokenId: u16 = 0
 
