@@ -369,7 +369,7 @@ export class GlobalClanStats {
 export class GlobalDonationStats {
   numUsersDonated: string = '0'
   numPlayersDonated: string = '0'
-  totalDonatedAmounts: string = '0'
+  totalDonatedAmount: string = '0'
   numDonations: string = '0'
 }
 
