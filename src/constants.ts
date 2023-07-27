@@ -391,12 +391,16 @@ export const XP_BOOST = BOOST_BASE + 1
 export const GATHERING_BOOST = BOOST_BASE + 2
 export const SKILL_BOOST = BOOST_BASE + 3
 export const ABSENCE_BOOST = BOOST_BASE + 4
-export const PRAY_TO_THE_BEARDIE = BOOST_BASE + 5
-export const GO_OUTSIDE = BOOST_BASE + 6
-export const RAINING_RARES = BOOST_BASE + 7
-export const EXTRA_XP_BOOST = BOOST_BASE + 8
-export const EXTRA_HALF_XP_BOOST = BOOST_BASE + 9
-export const CLAN_BOOST = BOOST_BASE + 10;
+export const GO_OUTSIDE = BOOST_BASE + 5
+export const RAINING_RARES = BOOST_BASE + 6
+export const LUCKY_POTION = BOOST_BASE + 7
+export const LUCK_OF_THE_DRAW = BOOST_BASE + 8
+export const PRAY_TO_THE_BEARDIE = BOOST_BASE + 9
+export const PRAY_TO_THE_BEARDIE_2 = BOOST_BASE + 10
+export const PRAY_TO_THE_BEARDIE_3 = BOOST_BASE + 11
+export const CLAN_BOOSTER = BOOST_BASE + 12
+export const CLAN_BOOSTER_2 = BOOST_BASE + 13
+export const CLAN_BOOSTER_3 = BOOST_BASE + 14
 export const BOOST_MAX = 13055
 
 // MISC
