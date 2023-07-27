@@ -398,9 +398,15 @@ export const LUCK_OF_THE_DRAW = BOOST_BASE + 8
 export const PRAY_TO_THE_BEARDIE = BOOST_BASE + 9
 export const PRAY_TO_THE_BEARDIE_2 = BOOST_BASE + 10
 export const PRAY_TO_THE_BEARDIE_3 = BOOST_BASE + 11
-export const CLAN_BOOSTER = BOOST_BASE + 12
-export const CLAN_BOOSTER_2 = BOOST_BASE + 13
-export const CLAN_BOOSTER_3 = BOOST_BASE + 14
+export const BOOST_RESERVED_1 = BOOST_BASE + 12
+export const BOOST_RESERVED_2 = BOOST_BASE + 13
+export const BOOST_RESERVED_3 = BOOST_BASE + 14
+export const CLAN_BOOSTER = BOOST_BASE + 15
+export const CLAN_BOOSTER_2 = BOOST_BASE + 16
+export const CLAN_BOOSTER_3 = BOOST_BASE + 17
+export const BOOST_RESERVED_4 = BOOST_BASE + 18
+export const BOOST_RESERVED_5 = BOOST_BASE + 19
+export const BOOST_RESERVED_6 = BOOST_BASE + 20
 export const BOOST_MAX = 13055
 
 // MISC
