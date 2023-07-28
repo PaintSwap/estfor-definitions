@@ -389,6 +389,7 @@ export enum ActivityType {
   ConsumeGlobalBoostVial,
   ConsumeClanBoostVial,
   Donation,
+  LevelUp,
   // Coming later
   TransferPlayer,
   ReceivedPlayer,
