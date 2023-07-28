@@ -421,6 +421,8 @@ export class Activity {
   gainedSkills: Skill[] = []
   gainedXPs: string[] = []
   miscs: string[] = [] // Various BigInts specific to the activity type
+  skill: Skill = Skill.NONE
+  otherAddress: string = ''
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
