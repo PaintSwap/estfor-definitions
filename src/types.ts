@@ -450,6 +450,8 @@ export class Activity {
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
+  player: Player = new Player()
+  otherPlayer: Player = new Player() // Only used for Clan things currently
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
