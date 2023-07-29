@@ -404,6 +404,25 @@ export enum ActivityType {
   WithdrawBank,
   GiftToBank,
   ReceivedItemsFromBank,
+
+  ClanCreatedOnMaker,
+  ClanRankUpdatedOnMaker,
+  ClanDeletedInviteByPlayerOnMaker,
+  ClanDeletedInviteByClanOnMaker,
+  ClanInviteSentOnMaker,
+  ClanJoinRequestSentOnMaker,
+  ClanJoinRequestAcceptedOnMaker,
+  ClanRankUpdatedOnReceiver,
+  ClanDeletedInviteByClanOnReceiver,
+  ClanInviteSentOnReceiver,
+  ClanJoinRequestAcceptedOnReceiver,
+  ClanCreatedOnClan,
+  ClanRankUpdatedOnClan,
+  ClanDeletedInviteByPlayerOnClan,
+  ClanDeletedInviteByClanOnClan,
+  ClanInviteSentOnClan,
+  ClanJoinRequestSentOnClan,
+  ClanJoinRequestAcceptedOnClan,
 }
 
 export enum Direction {
@@ -435,6 +454,7 @@ export class Activity {
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
+  clan: Clan = new Clan()
 }
 
 export class LastFullEquipment {
