@@ -715,6 +715,7 @@ export class Clan {
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
   numDonationsToday: u16 = 0
+  lastDonationTimestamp: u64 = 0
 }
 
 export class ClanMember {
