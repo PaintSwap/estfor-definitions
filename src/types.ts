@@ -786,8 +786,9 @@ export class RaffleEntry {
 export class DonationDayData {
   id: string = '' // date
   date: string = ''
-  totalDonators: u32 = 0
   totalDonated: string = '0' // in brush
+  numDonators: u32 = 0
+  numLotteryEntries: u32 = 0
 }
 
 export class CoreData {
