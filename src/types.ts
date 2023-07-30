@@ -455,6 +455,7 @@ export class Activity {
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
+  queuedActions: QueuedAction[] = [] // Only used for SetActionQueue
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
   clan: Clan = new Clan()
 }
