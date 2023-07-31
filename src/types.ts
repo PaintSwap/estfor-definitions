@@ -416,11 +416,13 @@ export enum ActivityType {
   ClanOwnershipTransferredOnMaker,
   ClanEditedOnMaker,
   ClanUpgradedOnMaker,
+  
   ClanRankUpdatedOnReceiver,
   ClanDeletedInviteByClanOnReceiver,
   ClanInviteSentOnReceiver,
   ClanJoinRequestAcceptedOnReceiver,
   ClanOwnershipTransferredOnReceiver,
+
   ClanCreatedOnClan,
   ClanRankUpdatedOnClan,
   ClanDeletedInviteByPlayerOnClan,
@@ -714,6 +716,7 @@ export class Clan {
   totalLevel: number = 0
   combinedRank: number = 0
   bankValue: string = '0'
+  isDeleted: boolean = false
 
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
