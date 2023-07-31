@@ -412,10 +412,15 @@ export enum ActivityType {
   ClanInviteSentOnMaker,
   ClanJoinRequestSentOnMaker,
   ClanJoinRequestAcceptedOnMaker,
+  ClanJoinRequestRemovedOnMaker,
+  ClanOwnershipTransferredOnMaker,
+  ClanEditedOnMaker,
+  ClanUpgradedOnMaker,
   ClanRankUpdatedOnReceiver,
   ClanDeletedInviteByClanOnReceiver,
   ClanInviteSentOnReceiver,
   ClanJoinRequestAcceptedOnReceiver,
+  ClanOwnershipTransferredOnReceiver,
   ClanCreatedOnClan,
   ClanRankUpdatedOnClan,
   ClanDeletedInviteByPlayerOnClan,
@@ -423,6 +428,11 @@ export enum ActivityType {
   ClanInviteSentOnClan,
   ClanJoinRequestSentOnClan,
   ClanJoinRequestAcceptedOnClan,
+  ClanJoinRequestRemovedOnClan,
+  ClanOwnershipTransferredOnClan,
+  ClanOwnerLeftOnClan,
+  ClanEditedOnClan,
+  ClanUpgradedOnClan,
 }
 
 export enum Direction {
