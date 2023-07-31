@@ -469,8 +469,8 @@ export class Activity {
   queuedAction: QueuedAction = new QueuedAction()
   queuedActions: QueuedAction[] = [] // Only used for SetActionQueue
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
-  clan: Clan = new Clan()
-  clanId: string = '0' // Useful to know if the clan is deleted
+  clanId: string = '0' // Id if this is a clan activity
+  clanName: string = '' // Name of the clan if this is a clan activity
 }
 
 export class LastFullEquipment {
