@@ -400,10 +400,13 @@ export enum ActivityType {
   ReceivedItems,
   Gift,
   ReceivedGift,
-  DepositBank,
-  WithdrawBank,
   GiftToBank,
-  ReceivedItemsFromBank,
+
+  BankDepositOnMaker,
+  BankDepositOnClan,
+  BankDistributeOnMaker,
+  BankDistributeOnReceiver,
+  BankDistributeOnClan,
 
   ClanCreatedOnMaker,
   ClanRankUpdatedOnMaker,
@@ -415,6 +418,8 @@ export enum ActivityType {
   ClanOwnershipTransferredOnMaker,
   ClanEditedOnMaker,
   ClanUpgradedOnMaker,
+  ClanMemberLeftOnMaker,
+  ClanKickedOnMaker,
 
   ClanRankUpdatedOnReceiver,
   ClanDeletedInviteByPlayerOnReceiver,
@@ -422,6 +427,7 @@ export enum ActivityType {
   ClanInviteSentOnReceiver,
   ClanJoinRequestAcceptedOnReceiver,
   ClanOwnershipTransferredOnReceiver,
+  ClanKickedOnReceiver,
 
   ClanCreatedOnClan,
   ClanRankUpdatedOnClan,
@@ -434,6 +440,8 @@ export enum ActivityType {
   ClanOwnerLeftOnClan,
   ClanEditedOnClan,
   ClanUpgradedOnClan,
+  ClanMemberLeftOnClan,
+  ClanKickedOnClan,
 }
 
 export enum Direction {
