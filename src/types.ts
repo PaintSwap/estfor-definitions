@@ -417,6 +417,7 @@ export enum ActivityType {
   ClanUpgradedOnMaker,
 
   ClanRankUpdatedOnReceiver,
+  ClanDeletedInviteByPlayerOnReceiver,
   ClanDeletedInviteByClanOnReceiver,
   ClanInviteSentOnReceiver,
   ClanJoinRequestAcceptedOnReceiver,
