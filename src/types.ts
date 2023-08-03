@@ -482,6 +482,7 @@ export class Activity {
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
   isLastInSameTransaction: boolean = false // Is this the last activity for all activities with the same hash
+  uniqueTransactionId: string = '0' // Unique id for all activities with the same hash
 }
 
 export class LastFullEquipment {
