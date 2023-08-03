@@ -468,6 +468,7 @@ export class Activity {
   miscs: string[] = [] // Various BigInts specific to the activity type
   skill: Skill = Skill.NONE
   otherAddress: string = ''
+  thirdAddress: string = ''
   timestamp: string = ''
   hash: string = ''
   playerId: string = '0'
