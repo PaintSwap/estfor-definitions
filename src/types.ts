@@ -352,6 +352,7 @@ export class GlobalPlayerStats {
   lastQueuedActionPlayer: Player = new Player()
   lastQueuedActions: QueuedAction[] = []
   lastQueuedActionTimestamp: string = '0'
+  numActivities: string = '0'
 }
 
 export class GlobalUserStats {
@@ -359,6 +360,7 @@ export class GlobalUserStats {
   totalSold: string = '0'
   totalBought: string = '0'
   totalBrushBurned: string = '0'
+  numActivities: string = '0'
 }
 
 export class GlobalClanStats {
