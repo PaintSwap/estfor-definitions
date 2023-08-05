@@ -449,6 +449,7 @@ export enum ActivityType {
 export enum Direction {
   Consumed,
   Produced,
+  ProducedAndConsumed,
 }
 
 export enum ActivityUndertaker {
