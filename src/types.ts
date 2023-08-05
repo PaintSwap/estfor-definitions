@@ -459,6 +459,7 @@ export enum ActivityUndertaker {
 
 export class Activity {
   id: string = ''
+  activityId: string = '' // Ascending numberic id for each Activity, unique only for each ActivityUndertaker
   type: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
