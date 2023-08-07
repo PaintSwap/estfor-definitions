@@ -742,7 +742,6 @@ export class Clan {
   lastDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
-  numDonationsToday: u16 = 0
   lastDonationTimestamp: u64 = 0
 }
 
@@ -788,6 +787,7 @@ export class Donation {
   user: string | null = null
   player: Player | null = new Player()
   amount: string = '0'
+  lastDonatedAmount: string = '0'
   lastUpdatedTimestamp: string = ''
   donationAmountRank: string = ''
 }
