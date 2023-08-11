@@ -444,6 +444,8 @@ export enum ActivityType {
   ClanUpgradedOnClan,
   ClanMemberLeftOnClan,
   ClanKickedOnClan,
+
+  DonationOnClan,
 }
 
 export enum Direction {
