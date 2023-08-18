@@ -446,6 +446,7 @@ export enum ActivityType {
   ClanKickedOnClan,
 
   DonationOnClan,
+  ConsumeClanBoostVialOnClan
 }
 
 export enum Direction {
