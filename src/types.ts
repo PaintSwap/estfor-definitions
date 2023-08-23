@@ -446,7 +446,7 @@ export enum ActivityType {
   ClanKickedOnClan,
 
   DonationOnClan,
-  ConsumeClanBoostVialOnClan
+  ConsumeClanBoostVialOnClan,
 }
 
 export enum Direction {
@@ -842,6 +842,12 @@ export class CoreData {
   globalBoostVal: u8 = 0
   globalBoostType: BoostType = BoostType.NONE
   globalBoostItemTokenId: u16 = 0
+}
+
+export class FirstToReachMaxSkills {
+  id: Skill = Skill.NONE
+  user: string = ''
+  playerId: string = '0'
 }
 
 export enum Referrer {
