@@ -270,6 +270,7 @@ export class Player {
   isActive: boolean = false // Is this player the active one for the owner
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
+  firstToReachMaxSkill: Skill = Skill.NONE
   activeQuest: PlayerQuest = new PlayerQuest()
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
@@ -845,9 +846,10 @@ export class CoreData {
 }
 
 export class FirstToReachMaxSkills {
-  id: Skill = Skill.NONE
+  id: string = '0'
+  skill: Skill = Skill.NONE
   user: string = ''
-  playerId: string = '0'
+  player: Player = new Player()
 }
 
 export enum Referrer {
