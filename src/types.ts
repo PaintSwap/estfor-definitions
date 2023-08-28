@@ -477,6 +477,7 @@ export class Activity {
   thirdAddress: string = ''
   timestamp: string = ''
   hash: string = ''
+  blockNumber: string = ''
   playerId: string = '0'
   player: Player = new Player()
   otherPlayer: Player = new Player() // Only used for Clan things currently
