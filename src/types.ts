@@ -829,7 +829,6 @@ export class CoreData {
   gamePaused: boolean = false
 
   // Global Donations
-  nextGlobalDonationThreshold: string = '0' // Removed later
   lastGlobalDonationThreshold: string = '0'
   globalDonationThresholdRewardIncrement: string = '0'
   nextGlobalDonationThresholdRewardItemTokenId: u16 = 0
