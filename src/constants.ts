@@ -1,8 +1,6 @@
 import adminSnapshotAddresses from './whitelisted_admins'
-import betaSnapshotAddresses from './whitelisted_beta_snapshot'
 
 export const whitelistedAdmins = adminSnapshotAddresses
-export const whitelistedSnapshot = betaSnapshotAddresses
 
 export const NONE = 0
 // 1 - 255 (head)
