@@ -852,6 +852,14 @@ export class FirstToReachMaxSkills {
   player: Player = new Player()
 }
 
+export class ClanMessage {
+  text: string = ''
+  name: string = ''
+  playerId: string = '0'
+  avatarId: string = '0'
+  id: string = ''
+}
+
 export enum Referrer {
   ESTFOR,
   SECRET,
