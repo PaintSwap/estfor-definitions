@@ -858,6 +858,7 @@ export class ClanMessage {
   playerId: string = '0'
   avatarId: string = '0'
   id: string = ''
+  timestamp: string = '0'
 }
 
 export enum Referrer {
