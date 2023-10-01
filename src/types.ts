@@ -451,7 +451,10 @@ export enum ActivityType {
 
   ClanJoinRequestRemovedByClanOnMaker,
   ClanJoinRequestRemovedByClanOnReceiver,
-  ClanJoinRequestRemovedByClanOnClan
+  ClanJoinRequestRemovedByClanOnClan,
+
+  ClanEnableJoinRequestsOnMaker,
+  ClanEnableJoinRequestsOnClan,
 }
 
 export enum Direction {
