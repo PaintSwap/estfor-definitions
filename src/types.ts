@@ -448,6 +448,10 @@ export enum ActivityType {
 
   DonationOnClan,
   ConsumeClanBoostVialOnClan,
+
+  ClanJoinRequstRemoveByClanOnMaker,
+  ClanJoinRequstRemoveByClanOnReceiver,
+  ClanJoinRequstRemoveByClanOnClan
 }
 
 export enum Direction {
