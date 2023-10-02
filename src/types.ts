@@ -849,6 +849,7 @@ export class CoreData {
   // Global Donations
   lastGlobalDonationThreshold: string = '0'
   globalDonationThresholdRewardIncrement: string = '0'
+  nextGlobalDonationThresholdRewardItemTokenId: u16 = 0
   // Clan donations
   clanDonationThresholdRewardIncrement: string = '0'
   startClanDonationThresholdRewardItemTokenId: u16 = 0
