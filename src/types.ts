@@ -462,6 +462,8 @@ export enum ActivityType {
   ClanInviteAcceptedOnMaker,
   ClanInviteAcceptedOnReceiver,
   ClanInviteAcceptedOnClan,
+  ClanGateKeepNFTsOnMaker,
+  ClanGateKeepNFTsOnClan,
 }
 
 export enum Direction {
@@ -763,6 +765,7 @@ export class Clan {
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
   lastDonationTimestamp: u64 = 0
+  gateKeepNFTs: string[] = []
 }
 
 export class ClanMember {
