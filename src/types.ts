@@ -456,7 +456,7 @@ export enum ActivityType {
   ClanEnableJoinRequestsOnClan,
   ClanInviteAcceptedOnMaker,
   ClanInviteAcceptedOnReceiver,
-  ClanInviteAcceptedOnClan
+  ClanInviteAcceptedOnClan,
 }
 
 export enum Direction {
@@ -745,6 +745,7 @@ export class Clan {
   totalLevel: number = 0
   combinedRank: number = 0
   bankValue: string = '0'
+  enableJoinRequests: boolean = false
 
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
