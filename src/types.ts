@@ -332,6 +332,11 @@ export class Player {
   extraBoostVal: u8 = 0
   extraBoostType: BoostType
   extraBoostItemTokenId: u16 = 0
+
+  /* Socials */
+  discord: string = ''
+  twitter: string = ''
+  telegram: string = ''
 }
 
 export class User {
