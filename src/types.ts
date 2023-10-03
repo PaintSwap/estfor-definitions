@@ -464,6 +464,8 @@ export enum ActivityType {
   ClanInviteAcceptedOnClan,
   ClanGateKeepNFTsOnMaker,
   ClanGateKeepNFTsOnClan,
+  ClanPinMessageOnMaker,
+  ClanPinMessageOnClan,
 }
 
 export enum Direction {
