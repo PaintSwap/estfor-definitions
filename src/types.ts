@@ -768,6 +768,7 @@ export class Clan {
 
   lastDonationTimestamp: u64 = 0
   gateKeepNFTs: string[] = []
+  pinnedMessage: string = ''
 }
 
 export class ClanMember {
