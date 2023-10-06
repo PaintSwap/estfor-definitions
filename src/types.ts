@@ -878,7 +878,8 @@ export class ClanMessage {
   name: string = ''
   playerId: string = '0'
   avatarId: string = '0'
-  id: string = ''
+  rank: ClanRank = ClanRank.NONE
+  id: string = '' // Random uuid to make messages unique
   timestamp: string = '0'
 }
 
