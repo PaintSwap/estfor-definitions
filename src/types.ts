@@ -881,6 +881,7 @@ export class ClanMessage {
   rank: ClanRank = ClanRank.NONE
   id: string = '' // Random uuid to make messages unique
   timestamp: string = '0'
+  isEdited: boolean = false
 }
 
 export enum Referrer {
