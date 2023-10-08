@@ -882,6 +882,7 @@ export class ClanMessage {
   id: string = '' // Random uuid to make messages unique
   timestamp: string = '0'
   isEdited: boolean = false
+  isDeleted: boolean = false
 }
 
 export enum Referrer {
