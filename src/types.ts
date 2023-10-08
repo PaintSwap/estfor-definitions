@@ -883,6 +883,7 @@ export class ClanMessage {
   timestamp: string = '0'
   isEdited: boolean = false
   isDeleted: boolean = false
+  deletedBy: string = '0'
 }
 
 export enum Referrer {
