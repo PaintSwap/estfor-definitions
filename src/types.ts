@@ -873,6 +873,12 @@ export class FirstToReachMaxSkills {
   player: Player = new Player()
 }
 
+class Reaction {
+  id: string = ''
+  names: string[] = []
+  playerIds: string[] = []
+}
+
 export class ClanMessage {
   text: string = ''
   name: string = ''
@@ -886,7 +892,7 @@ export class ClanMessage {
   deletedByPlayerId: string = '0'
   deletedByName: string = ''
   replyId: string = '' // If replying to a message this is the id
-  reactions: string[] = [] // Emoji ids
+  reactions: Reaction[] = [] // Emoji reactions
 }
 
 export enum Referrer {
