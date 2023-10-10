@@ -886,6 +886,7 @@ export class ClanMessage {
   deletedByPlayerId: string = '0'
   deletedByName: string = ''
   replyId: string = '' // If replying to a message this is the id
+  reactions: string[] = [] // Emoji ids
 }
 
 export enum Referrer {
