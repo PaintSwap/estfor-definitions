@@ -278,6 +278,7 @@ export class Player {
   lastDailyRewardClaimedItemTokenId: number = 0
   lastWeeklyRewardClaimedItemTokenId: number = 0
   totalDonated: string = '0'
+  isFullMode: boolean = false
 
   /* Skill XP */
   woodcuttingXP: string = '0'
@@ -847,6 +848,7 @@ export class DonationDayData {
 export class CoreData {
   clanEditNameCost: string = '0'
   playerEditNameCost: string = '0'
+  playerUpgradeCost: string = '0'
   gamePaused: boolean = false
 
   // Global Donations
