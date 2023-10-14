@@ -5,6 +5,7 @@ export enum BoostType {
   NON_COMBAT_XP,
   GATHERING,
   ABSENCE,
+  PASSIVE_SKIP_CHANCE
 }
 
 export enum Skill {
