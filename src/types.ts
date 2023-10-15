@@ -322,6 +322,7 @@ export class Player {
   agilityXP: string = '0'
   alchemyXP: string = '0'
   fletchingXP: string = '0'
+  forgingXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
 
@@ -343,6 +344,7 @@ export class Player {
   thievingRank: u32 = 0
   alchemyRank: u32 = 0
   fletchingRank: u32 = 0
+  forgingRank: u32 = 0
   meleeRank: u32 = 0
   magicRank: u32 = 0
   rangedRank: u32 = 0
