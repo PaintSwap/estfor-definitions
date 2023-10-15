@@ -673,6 +673,10 @@ export class ActionChoiceInput {
   successPercent: u8 = 100
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
+  minSkill1: Skill
+  minXP1: number
+  minSkill2: Skill
+  minXP2: number
   isFullModeOnly: boolean = false
 }
 
@@ -684,6 +688,7 @@ export class ActionChoice {
   rate: u16 = 0
   xpPerHour: u32 = 0
   minXP: u32 = 0
+  // TODO: Remove all these inputTokenIds and inputAmounts
   inputTokenId1: u16 = 0
   inputAmount1: u16 = 0
   inputTokenId2: u16 = 0
@@ -695,6 +700,10 @@ export class ActionChoice {
   successPercent: u8 = 100
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
+  minSkills: Skill[] = []
+  minXPs: string[] = []
   isFullModeOnly: boolean = false
 }
 
