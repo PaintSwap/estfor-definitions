@@ -469,6 +469,8 @@ export enum ActivityType {
   ClanGateKeepNFTsOnClan,
   ClanPinMessageOnMaker,
   ClanPinMessageOnClan,
+
+  EditPlayer
 }
 
 export enum Direction {
