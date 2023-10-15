@@ -5,7 +5,7 @@ export enum BoostType {
   NON_COMBAT_XP,
   GATHERING,
   ABSENCE,
-  PASSIVE_SKIP_CHANCE
+  PASSIVE_SKIP_CHANCE,
 }
 
 export enum Skill {
@@ -72,7 +72,7 @@ export enum EquipPosition {
   EXTRA_BOOST_VIAL,
   GLOBAL_BOOST_VIAL,
   CLAN_BOOST_VIAL,
-  PASSIVE_BOOST_VIAL
+  PASSIVE_BOOST_VIAL,
 }
 
 export enum WorldLocation {
@@ -260,6 +260,33 @@ export class XPThresholdReward {
   rewardItemTokenIds: string[] = []
 }
 
+export class PassiveAction {
+  id: string = '' // actionId
+  actionId: u16 = 0
+  durationDays: u8 = 0
+  guaranteedRewardItemTokenIds: u32[] = []
+  guaranteedRewardRates: u32[] = []
+  randomChanceItemTokenIds: u32[] = []
+  randomChanceRates: u32[] = []
+  randomChanceAmounts: u32[] = []
+  inputTokenIds: u32[] = []
+  inputAmounts: u32[] = []
+  minSkills: u32[] = []
+  minXPs: string[] = []
+  skipSuccessPercent: u8 = 0
+  worldLocation: u8 = 0
+  isFullModeOnly: boolean = false
+}
+
+export class QueuedPassiveAction {
+  id: string = '' // queueId
+  queueId: string = ''
+  action: PassiveAction = new PassiveAction()
+  playerId: string = ''
+  startTime: string = ''
+  boostItem: Item = new Item()
+}
+
 export class Player {
   id: string = '0'
   tokenId: string = '0'
@@ -273,6 +300,7 @@ export class Player {
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   firstToReachMaxSkill: Skill = Skill.NONE
+  activePassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   activeQuest: PlayerQuest = new PlayerQuest()
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
@@ -361,6 +389,9 @@ export class GlobalPlayerStats {
   lastQueuedActionPlayer: Player = new Player()
   lastQueuedActions: QueuedAction[] = []
   lastQueuedActionTimestamp: string = '0'
+  lastQueuedPassiveActionPlayer: Player = new Player()
+  lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
+  lastQueuedPassiveActionTimestamp: string = '0'
   numActivities: string = '0'
 }
 
@@ -470,7 +501,10 @@ export enum ActivityType {
   ClanPinMessageOnMaker,
   ClanPinMessageOnClan,
 
-  EditPlayer
+  EditPlayer,
+  StartPassiveAction,
+  EndPassiveAction,
+  ConsumePassiveBoostVial,
 }
 
 export enum Direction {
