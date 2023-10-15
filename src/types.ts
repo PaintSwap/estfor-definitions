@@ -673,11 +673,11 @@ export class ActionChoiceInput {
   successPercent: u8 = 100
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
+  isFullModeOnly: boolean = false
   minSkill1: Skill
   minXP1: number
   minSkill2: Skill
   minXP2: number
-  isFullModeOnly: boolean = false
 }
 
 export class ActionChoice {
