@@ -260,6 +260,32 @@ export class XPThresholdReward {
   rewardItemTokenIds: string[] = []
 }
 
+export class PassiveActionInfoInput {
+  durationDays: u32 = 1
+  inputTokenId1: u16 = 0
+  inputAmount1: u16 = 0
+  inputTokenId2: u16 = 0
+  inputAmount2: u16 = 0
+  inputTokenId3: u16 = 0
+  inputAmount3: u16 = 0
+  minSkill1: Skill = Skill.NONE
+  minXP1: u32 = 0
+  minSkill2: Skill = Skill.NONE
+  minXP2: u32 = 0
+  minSkill3: Skill = Skill.NONE
+  minXP3: u32 = 0
+  skipSuccessPercent: u8 = 0
+  worldLocation: u8 = 0
+  isFullModeOnly: boolean = false
+}
+
+export class PassiveActionInput {
+  actionId: u32 = 0
+  info: PassiveActionInfoInput = new PassiveActionInfoInput()
+  guaranteedRewards: GuaranteedReward[]
+  randomRewards: RandomReward[]
+}
+
 export class PassiveAction {
   id: string = '' // actionId
   actionId: u16 = 0
