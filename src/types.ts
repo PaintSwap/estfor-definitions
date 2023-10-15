@@ -282,8 +282,8 @@ export class PassiveActionInfoInput {
 export class PassiveActionInput {
   actionId: u32 = 0
   info: PassiveActionInfoInput = new PassiveActionInfoInput()
-  guaranteedRewards: GuaranteedReward[]
-  randomRewards: RandomReward[]
+  guaranteedRewards: GuaranteedReward[] = []
+  randomRewards: RandomReward[] = []
 }
 
 export class PassiveAction {
