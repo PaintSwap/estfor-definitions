@@ -327,7 +327,7 @@ export class InstantActionInput {
   outputTokenId: u16 = 0
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
-  actionType: InstantActionType
+  actionType: InstantActionType = InstantActionType.NONE
 }
 
 export class InstantAction {
@@ -340,7 +340,7 @@ export class InstantAction {
   outputTokenId: u16 = 0
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
-  actionType: InstantActionType
+  actionType: InstantActionType = InstantActionType.NONE
 }
 
 export class QueuedInstantAction {
