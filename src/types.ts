@@ -313,7 +313,7 @@ export class QueuedPassiveAction {
   boostItem: Item = new Item()
 }
 
-enum InstantActionType {
+export enum InstantActionType {
   NONE,
   FORGING_COMBINE,
 }
