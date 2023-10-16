@@ -689,6 +689,7 @@ export class UserItemNFT {
   tokenId: u16 = 0
   amount: string = ''
   item: Item = new Item()
+  selfMade: boolean = false
 }
 
 export class ShopItem {
