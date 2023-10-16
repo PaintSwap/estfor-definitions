@@ -316,6 +316,7 @@ export class QueuedPassiveAction {
 export enum InstantActionType {
   NONE,
   FORGING_COMBINE,
+  GENERIC,
 }
 
 export class InstantActionInput {
