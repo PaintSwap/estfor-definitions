@@ -313,6 +313,44 @@ export class QueuedPassiveAction {
   boostItem: Item = new Item()
 }
 
+enum InstantActionType {
+  NONE,
+  FORGING_COMBINE,
+}
+
+export class InstantActionInput {
+  actionId: u32 = 0
+  minSkills: Skill[] = []
+  minXPs: string[] = []
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
+  outputTokenId: u16 = 0
+  outputAmount: u16 = 0
+  isFullModeOnly: boolean = false
+  actionType: InstantActionType
+}
+
+export class InstantAction {
+  id: string = '' // actionId
+  actionId: u32 = 0
+  minSkills: Skill[] = []
+  minXPs: string[] = []
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
+  outputTokenId: u16 = 0
+  outputAmount: u16 = 0
+  isFullModeOnly: boolean = false
+  actionType: InstantActionType
+}
+
+export class QueuedInstantAction {
+  id: string = '' // queueId
+  player: Player = new Player()
+  actions: InstantAction[] = []
+  amounts: string[] = []
+  timestamp: string = ''
+}
+
 export class Player {
   id: string = '0'
   tokenId: string = '0'
@@ -326,8 +364,9 @@ export class Player {
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   firstToReachMaxSkill: Skill = Skill.NONE
-  activePassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   activeQuest: PlayerQuest = new PlayerQuest()
+  activePassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
+  lastInstantAction: QueuedInstantAction = new QueuedInstantAction()
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
@@ -419,7 +458,8 @@ export class GlobalPlayerStats {
   lastQueuedActionTimestamp: string = '0'
   lastQueuedPassiveActionPlayer: Player = new Player()
   lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
-  lastQueuedPassiveActionTimestamp: string = '0'
+  lastQueuedInstantActionPlayer: Player = new Player()
+  lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
   numActivities: string = '0'
 }
 
@@ -533,6 +573,7 @@ export enum ActivityType {
   StartPassiveAction,
   EndPassiveAction,
   ConsumePassiveBoostVial,
+  InstantAction,
 }
 
 export enum Direction {
@@ -988,4 +1029,6 @@ export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
 export const defaultActionInfo = new ActionInfo()
+export const defaultPassiveActionInput = new PassiveActionInput()
+export const defaultInstantActionInput = new InstantActionInput()
 export const noAttire = new Attire()
