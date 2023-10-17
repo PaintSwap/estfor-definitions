@@ -109,7 +109,7 @@ export class Equipment {
 
 export class QueuedActionInput {
   attire: Attire = new Attire()
-  actionId: u32 = 0
+  actionId: u16 = 0
   regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
   choiceId: u32 = 0 // Melee/Ranged/Magic (combat), logs, ore etc (non-combat)
   combatStyle: CombatStyle = CombatStyle.NONE
@@ -145,7 +145,7 @@ export class RandomReward {
 }
 
 export class ActionInput {
-  actionId: u32 = 0
+  actionId: u16 = 0
   info: ActionInfo = new ActionInfo()
   guaranteedRewards: GuaranteedReward[] = []
   randomRewards: RandomReward[] = []
@@ -261,7 +261,7 @@ export class XPThresholdReward {
 }
 
 export class PassiveActionInfoInput {
-  durationDays: u32 = 1
+  durationDays: u8 = 1
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
   minSkills: u32[] = []
@@ -272,7 +272,7 @@ export class PassiveActionInfoInput {
 }
 
 export class PassiveActionInput {
-  actionId: u32 = 0
+  actionId: u16 = 0
   info: PassiveActionInfoInput = new PassiveActionInfoInput()
   guaranteedRewards: GuaranteedReward[] = []
   randomRewards: RandomReward[] = []
@@ -312,7 +312,7 @@ export enum InstantActionType {
 }
 
 export class InstantActionInput {
-  actionId: u32 = 0
+  actionId: u16 = 0
   minSkills: Skill[] = []
   minXPs: string[] = []
   inputTokenIds: u16[] = []
@@ -325,7 +325,7 @@ export class InstantActionInput {
 
 export class InstantAction {
   id: string = '' // actionId
-  actionId: u32 = 0
+  actionId: u16 = 0
   minSkills: Skill[] = []
   minXPs: string[] = []
   inputTokenIds: u16[] = []
@@ -623,7 +623,7 @@ export class LastFullEquipment {
 
 export class QueuedAction {
   id: string = '' // queueId
-  actionId: u32 = 0
+  actionId: u16 = 0
   playerId: string = ''
   regenerateId: u16 = 0
   choice: ActionChoice = new ActionChoice()
@@ -717,7 +717,7 @@ export class ActionChoiceInput {
 
 export class ActionChoice {
   id: string = ''
-  actionId: u32 = 0
+  actionId: u16 = 0
   skill: Skill = Skill.NONE
   skillDiff: u16 = 0
   rate: u16 = 0
@@ -744,7 +744,7 @@ export class ActionChoice {
 
 export class Action {
   id: string = ''
-  actionId: u32 = 0
+  actionId: u16 = 0
   skill: Skill = Skill.NONE
   xpPerHour: u32 = 0
   numSpawned: u32 = 0
