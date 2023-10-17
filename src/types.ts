@@ -264,7 +264,7 @@ export class PassiveActionInfoInput {
   durationDays: u8 = 1
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
-  minSkills: u32[] = []
+  minSkills: Skill[] = []
   minXPs: string[] = []
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
@@ -289,7 +289,7 @@ export class PassiveAction {
   randomChanceAmounts: u32[] = []
   inputTokenIds: u32[] = []
   inputAmounts: u32[] = []
-  minSkills: u32[] = []
+  minSkills: Skill[] = []
   minXPs: string[] = []
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
