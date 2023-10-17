@@ -910,6 +910,7 @@ export enum ClanRank {
   SCOUT, // Invite and kick commoners
   TREASURER, // Can withdraw from bank
   LEADER, // Can edit clan details
+  OWNER, // Can do everything and transfer ownership
 }
 
 // An individual donation
