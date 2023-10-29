@@ -29,7 +29,7 @@ export enum Skill {
   ALCHEMY,
   FLETCHING,
   FORGING,
-  RESERVED2,
+  HUNTING,
   RESERVED3,
   RESERVED4,
   RESERVED5,
@@ -381,6 +381,7 @@ export class Player {
   alchemyXP: string = '0'
   fletchingXP: string = '0'
   forgingXP: string = '0'
+  huntingXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
 
@@ -403,6 +404,7 @@ export class Player {
   alchemyRank: u32 = 0
   fletchingRank: u32 = 0
   forgingRank: u32 = 0
+  huntingRank: u32 = 0
   meleeRank: u32 = 0
   magicRank: u32 = 0
   rangedRank: u32 = 0
@@ -1018,6 +1020,7 @@ export enum Referrer {
 export enum Promotion {
   NONE,
   STARTER,
+  HALLOWEEN_2023
 }
 
 export const emptyCombatStats = new CombatStats()
