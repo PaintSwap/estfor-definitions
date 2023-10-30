@@ -405,7 +405,25 @@ export const CLAN_BOOSTER_3 = BOOST_BASE + 17
 export const BOOST_RESERVED_4 = BOOST_BASE + 18
 export const BOOST_RESERVED_5 = BOOST_BASE + 19
 export const BOOST_RESERVED_6 = BOOST_BASE + 20
+export const PASSIVE_SKIP_CHANCE = BOOST_BASE + 21
 export const BOOST_MAX = 13055
+
+// Forging
+export const FORGING_BASE = 13056
+export const FLUX = FORGING_BASE
+export const TINY_COMPONENT = FORGING_BASE + 1
+export const SMALL_COMPONENT = FORGING_BASE + 2
+export const MEDIUM_COMPONENT = FORGING_BASE + 3
+export const LARGE_COMPONENT = FORGING_BASE + 4
+export const EXTRA_LARGE_COMPONENT = FORGING_BASE + 5
+export const FORGING_MAX = 13311
+
+// Special bonus items
+export const SPECIAL_BASE = 13312
+export const HALLOWEEN_BONUS_1 = SPECIAL_BASE
+export const HALLOWEEN_BONUS_2 = SPECIAL_BASE + 1
+export const HALLOWEEN_BONUS_3 = SPECIAL_BASE + 2
+export const SPECIAL_MAX = 13567
 
 // MISC
 export const MISC_BASE = 65535
