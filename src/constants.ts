@@ -411,11 +411,11 @@ export const BOOST_MAX = 13055
 // Forging
 export const FORGING_BASE = 13056
 export const FLUX = FORGING_BASE
-export const TINY_COMPONENT = FORGING_BASE + 1
-export const SMALL_COMPONENT = FORGING_BASE + 2
-export const MEDIUM_COMPONENT = FORGING_BASE + 3
-export const LARGE_COMPONENT = FORGING_BASE + 4
-export const EXTRA_LARGE_COMPONENT = FORGING_BASE + 5
+export const TINY_ELIXIUM = FORGING_BASE + 1
+export const SMALL_ELIXIUM = FORGING_BASE + 2
+export const MEDIUM_ELIXIUM = FORGING_BASE + 3
+export const LARGE_ELIXIUM = FORGING_BASE + 4
+export const EXTRA_LARGE_ELIXIUM = FORGING_BASE + 5
 export const FORGING_MAX = 13311
 
 // Special bonus items
