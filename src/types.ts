@@ -701,7 +701,7 @@ export class ActionChoiceInput {
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
   outputTokenId: u16 = 0
-  outputAmount: u8 = 1
+  outputAmount: u8 = 0
   successPercent: u8 = 100
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
