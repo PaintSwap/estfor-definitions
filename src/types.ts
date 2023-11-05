@@ -695,26 +695,19 @@ export class ShopItem {
 
 export class ActionChoiceInput {
   skill: Skill = Skill.NONE
-  minXP: u32 = 0
   skillDiff: i16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
-  inputTokenId1: u16 = 0
-  inputAmount1: u16 = 0
-  inputTokenId2: u16 = 0
-  inputAmount2: u16 = 0
-  inputTokenId3: u16 = 0
-  inputAmount3: u16 = 0
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
   outputTokenId: u16 = 0
   outputAmount: u8 = 1
   successPercent: u8 = 100
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
   isFullModeOnly: boolean = false
-  minSkill1: Skill
-  minXP1: number
-  minSkill2: Skill
-  minXP2: number
+  minSkills: Skill[] = []
+  minXPs: string[] = []
 }
 
 export class ActionChoice {
