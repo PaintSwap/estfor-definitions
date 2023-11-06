@@ -996,6 +996,7 @@ export class ClanMessage {
   avatarId: string = '0'
   rank: ClanRank = ClanRank.NONE
   id: string = '' // Random uuid to make messages unique
+  isFullMode: boolean = false
   timestamp: string = '0'
   isEdited: boolean = false
   isDeleted: boolean = false
