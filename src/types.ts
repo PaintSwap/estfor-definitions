@@ -348,6 +348,7 @@ export class Player {
   id: string = '0'
   tokenId: string = '0'
   avatarId: string = '1'
+  originalAvatarId: string = '1'
   owner: string = ''
   name: string = ''
   lastTimestamp: string = '0'
@@ -447,6 +448,7 @@ export class User {
 export class GlobalPlayerStats {
   totalPlayers: string = '0'
   totalAvatars: string[] = []
+  totalUpgradedAvatars: string[] = []
   lastMintedPlayer: Player = new Player()
   lastQueuedActionPlayer: Player = new Player()
   lastQueuedActions: QueuedAction[] = []
@@ -1014,7 +1016,7 @@ export enum Referrer {
 export enum Promotion {
   NONE,
   STARTER,
-  HALLOWEEN_2023
+  HALLOWEEN_2023,
 }
 
 export const emptyCombatStats = new CombatStats()
