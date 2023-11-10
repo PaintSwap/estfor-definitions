@@ -1167,6 +1167,14 @@ export const QUEST_MEADERY_MADNESS = 13
 export const QUEST_FOREST_FIRE = 14
 export const QUEST_MITHRIL_MILITIA = 15
 export const QUEST_MINOR_MINERS = 16
+export const QUEST_SO_FLETCH = 17
+export const QUEST_ENTER_THE_VEIL = 18
+export const QUEST_FORGE_AHEAD = 19
+export const QUEST_HEART_STRINGS = 20
+export const QUEST_ALCHEMICAL_PROWESS = 21
+export const QUEST_NEW_ALCHEMY = 22
+export const QUEST_FLEX_THE_BOW = 23
+export const QUEST_DRAGON_SLAYER = 24
 
 export const WORLD_ADDRESS = '0x28866bf156152966b5872bee39bc05b5b5eedb02'
 export const SHOP_ADDRESS = '0x7fb574e4fbe876f751fec90e59686c2776df19f9'
