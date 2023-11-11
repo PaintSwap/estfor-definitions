@@ -803,7 +803,8 @@ export class Quest {
   rewardAmount2: u16 = 0 // amount of the reward (up to 65535)
   burnItem: Item = new Item() // Burn an item
   burnAmount: u16 = 0 // amount of the burn (up to 65535)
-  requireActionsCompletedBeforeBurning: boolean // Whether we can start burning before other things are completed
+  isFullModeOnly: bool = false // Whether this quest can only be completed in full mode
+  worldLocation: WorldLocation = WorldLocation.STARTING_AREA // Where this quest can be completed
 
   isActive: boolean = false
   isFixed: boolean = false
