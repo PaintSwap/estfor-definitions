@@ -1018,6 +1018,7 @@ export enum Promotion {
   NONE,
   STARTER,
   HALLOWEEN_2023,
+  XMAS_2023,
 }
 
 export const emptyCombatStats = new CombatStats()
