@@ -693,6 +693,7 @@ export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
   price: string = '0'
+  item: Item = new Item()
 }
 
 export class ActionChoiceInput {
