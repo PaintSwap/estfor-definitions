@@ -720,14 +720,6 @@ export class ActionChoice {
   skillDiff: u16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
-  minXP: u32 = 0
-  // TODO: Remove all these inputTokenIds and inputAmounts
-  inputTokenId1: u16 = 0
-  inputAmount1: u16 = 0
-  inputTokenId2: u16 = 0
-  inputAmount2: u16 = 0
-  inputTokenId3: u16 = 0
-  inputAmount3: u16 = 0
   outputTokenId: u16 = 0
   outputAmount: u8 = 1
   successPercent: u8 = 100
