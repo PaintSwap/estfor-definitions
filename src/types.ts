@@ -678,6 +678,7 @@ export class Item {
   // When selling the item
   allocationRemaining: string = '0'
   nextNewAllocationTimestamp: string = '0'
+  isForgeable: boolean = false
 }
 
 export class UserItemNFT {
