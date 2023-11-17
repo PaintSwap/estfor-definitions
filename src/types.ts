@@ -1015,6 +1015,23 @@ export enum Promotion {
   XMAS_2023,
 }
 
+export class PromotionInfo {
+  id: string = '' // promotionId
+  promotionId: u16 = 0
+  startTime: u64 = 0
+  endTime: u64 = 0
+  isMultiday: boolean = false
+}
+
+export class PlayerPromotion {
+  id: string = '' // playerId_promotionId
+  playerId: string = ''
+  promotionId: u16 = 0
+  itemTokenIds: u16[] = []
+  amounts: string[] = []
+  days: u16[] = []
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
