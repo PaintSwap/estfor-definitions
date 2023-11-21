@@ -1032,6 +1032,16 @@ export class PlayerPromotion {
   days: u16[] = []
 }
 
+export enum PromotionMintStatus {
+  NONE,
+  SUCCESS,
+  PROMOTION_ALREADY_CLAIMED,
+  ORACLE_NOT_CALLED,
+  MINTING_OUTSIDE_AVAILABLE_DATE,
+  PLAYER_DOES_NOT_QUALIFY,
+  PLAYER_NOT_HIT_ENOUGH_CLAIMS_FOR_STREAK_BONUS,
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
