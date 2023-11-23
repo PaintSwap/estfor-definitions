@@ -1021,6 +1021,13 @@ export class PromotionInfo {
   startTime: u64 = 0
   endTime: u64 = 0
   isMultiday: boolean = false
+  minTotalXP: string = '0'
+  adminOnly: boolean = false
+  brushCost: string = '0'
+  evolvedHeroOnly: boolean = false
+  brushCostMissedDay: string = '0'
+  numDaysHitNeededForStreakBonus: u16 = 0
+  numDaysClaimablePeriodStreakBonus: u16 = 0
 }
 
 export class PlayerPromotion {
