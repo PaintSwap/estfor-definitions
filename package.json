@@ -18,7 +18,7 @@
     "web3",
     "thegraph"
   ],
-  "module": "CommonJS",
+  "module": "src/index.mjs",
   "ascMain": "src/index.ts",
   "main": "index.js",
   "types": "index.d.ts",
