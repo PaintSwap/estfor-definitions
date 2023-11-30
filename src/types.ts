@@ -776,6 +776,7 @@ export class RandomWords {
 export class PlayerDayData {
   date: string = ''
   playersActive: i32 = 0
+  evolvedPlayersActive: i32 = 0
 }
 
 export class Quest {
