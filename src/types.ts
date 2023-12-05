@@ -673,6 +673,7 @@ export class Item {
   skill: Skill = Skill.NONE
   minXP: string = '0'
   name: string = ''
+  lowercaseName: string = ''
   isTransferable: boolean = true
   firstMintedTimestamp: string = '' // Timestamp of the first minted one, can reset if all burned
   // When selling the item
