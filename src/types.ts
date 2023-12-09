@@ -431,6 +431,10 @@ export class Player {
   discord: string = ''
   twitter: string = ''
   telegram: string = ''
+
+  /* Clan wars */
+  territoryCombatantCooldownTimestamp: string = '0'
+  lockedVaultCombatantCooldownTimestamp: string = '0'
 }
 
 export class User {
@@ -571,6 +575,24 @@ export enum ActivityType {
   EndPassiveAction,
   ConsumePassiveBoostVial,
   InstantAction,
+
+  AssignCombatantsTerritoryOnMaker,
+  AssignCombatantsTerritoryOnReceiver,
+  AssignCombatantsTerritoryOnClan,
+  AttackTerritoryOnMaker,
+  AttackTerritoryOnReceiverClan,
+  AttackTerritoryOnClan,
+  BattleResultTerritoryOnReceiverClan,
+  BattleResultTerritoryOnClan,
+
+  AssignCombatantsLockedVaultOnMaker,
+  AssignCombatantsLockedVaultOnReceiver,
+  AssignCombatantsLockedVaultOnClan,
+  AttackLockedVaultOnMaker,
+  AttackLockedVaultOnReceiverClan,
+  AttackLockedVaultOnClan,
+  BattleResultLockedVaultOnReceiverClan,
+  BattleResultLockedVaultOnClan,
 }
 
 export enum Direction {
@@ -876,6 +898,18 @@ export class Clan {
   pinnedMessage: string = ''
   pinnedMessagePlayer: Player = new Player()
   pinnedMessageTimestamp: string = ''
+
+  // Clan wars related
+  territoryCombatants: Player[] = []
+  territoryCombatantCooldownTimestamp: string = ''
+  territoryAttackCooldownTimestamp: string = ''
+  lockedVaultCombatants: Player[] = []
+  lockedVaultCombatantCooldownTimestamp: string = ''
+  lockedVaultAttackCooldownTimestamp: string = ''
+  lockedVaults: string[] = [] // vault ids
+  brushLocked: string = ''
+
+  brushAvailable: string = ''
 }
 
 export class ClanMember {
@@ -973,6 +1007,11 @@ export class CoreData {
   globalBoostVal: u8 = 0
   globalBoostType: BoostType = BoostType.NONE
   globalBoostItemTokenId: u16 = 0
+
+  // Clan wars
+  nextTerritoryId: u16 = 0
+  totalEmissionPercentage: u16 = 0
+  nextLockedVaultId: string = '0'
 }
 
 export class FirstToReachMaxSkills {
@@ -1049,6 +1088,54 @@ export enum PromotionMintStatus {
   MINTING_OUTSIDE_AVAILABLE_DATE,
   PLAYER_DOES_NOT_QUALIFY,
   PLAYER_NOT_HIT_ENOUGH_CLAIMS_FOR_STREAK_BONUS,
+}
+
+// Clan Wars
+export class Territory {
+  id: string = '' // territoryId
+  territoryId: u16 = 0
+  clanId: string = '0'
+  clan: Clan = new Clan()
+  percentageEmissions: u16 = 0
+  clanOccupier: Clan | null = null
+  unclaimedEmissions: string = '0'
+  lastClaimTimestamp: string = '0'
+}
+
+export enum ClanBattleType {
+  TERRITORY,
+  LOCKED_VAULT,
+}
+
+export class ClanBattle {
+  id: string = '' // [t | l]_<requestId>
+  requestId: string = '0'
+  winnerPlayers: Player[] = []
+  loserPlayers: Player[] = []
+  randomSkills: Skill[] = []
+  didAttackersWin: boolean = false
+  attackingClan: Clan | null = null
+  defendingClan: Clan | null = null
+  randomWords: string[] = []
+  attackingTimestamp: string = '0'
+  ongoing: boolean = false
+  type: ClanBattleType = ClanBattleType.TERRITORY
+}
+
+export class LockedBankVaultClanBattlePair {
+  id: string = '' // <clanId>_<otherId>
+  attackingClan: Clan = new Clan()
+  defendingClan: Clan = new Clan()
+  attackingCooldownTimestamp: string = '0'
+}
+
+export class LockedBankVault {
+  id: string = '' // vaultId
+  vaultId: u16 = 0
+  clanId: string = '0'
+  clan: Clan = new Clan()
+  amount: string = '0'
+  expiresTimestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
