@@ -577,22 +577,20 @@ export enum ActivityType {
   InstantAction,
 
   AssignCombatantsTerritoryOnMaker,
-  AssignCombatantsTerritoryOnReceiver,
   AssignCombatantsTerritoryOnClan,
   AttackTerritoryOnMaker,
-  AttackTerritoryOnReceiverClan,
-  AttackTerritoryOnClan,
-  BattleResultTerritoryOnReceiverClan,
-  BattleResultTerritoryOnClan,
+  AttackTerritoryAttackingOnClan,
+  AttackTerritoryDefendingOnClan,
+  BattleResultTerritoryAttackingOnClan,
+  BattleResultTerritoryDefendingOnClan,
 
   AssignCombatantsLockedVaultOnMaker,
-  AssignCombatantsLockedVaultOnReceiver,
   AssignCombatantsLockedVaultOnClan,
   AttackLockedVaultOnMaker,
-  AttackLockedVaultOnReceiverClan,
-  AttackLockedVaultOnClan,
-  BattleResultLockedVaultOnReceiverClan,
-  BattleResultLockedVaultOnClan,
+  AttackLockedVaultAttackingOnClan,
+  AttackLockedVaultDefendingOnClan,
+  BattleResultLockedVaultAttackingOnClan,
+  BattleResultLockedVaultDefendingOnClan,
 }
 
 export enum Direction {
