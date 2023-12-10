@@ -576,14 +576,16 @@ export enum ActivityType {
   ConsumePassiveBoostVial,
   InstantAction,
 
+  // Clan wars territories
   AssignCombatantsTerritoryOnMaker,
   AssignCombatantsTerritoryOnClan,
   AttackTerritoryOnMaker,
   AttackTerritoryAttackingOnClan,
-  AttackTerritoryDefendingOnClan,
+  AttackTerritoryDefendingOnClan, // Not used atm
   BattleResultTerritoryAttackingOnClan,
   BattleResultTerritoryDefendingOnClan,
 
+  // Clan wars locked vaults
   AssignCombatantsLockedVaultOnMaker,
   AssignCombatantsLockedVaultOnClan,
   AttackLockedVaultOnMaker,
@@ -591,6 +593,8 @@ export enum ActivityType {
   AttackLockedVaultDefendingOnClan,
   BattleResultLockedVaultAttackingOnClan,
   BattleResultLockedVaultDefendingOnClan,
+  LockFundsOnMaker,
+  LockFundsOnClan,
 }
 
 export enum Direction {
