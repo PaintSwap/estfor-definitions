@@ -595,6 +595,8 @@ export enum ActivityType {
   BattleResultLockedVaultDefendingOnClan,
   LockFundsOnMaker,
   LockFundsOnClan,
+
+  HarvestDecorator,
 }
 
 export enum Direction {
@@ -908,7 +910,7 @@ export class Clan {
   lockedVaultCombatants: Player[] = []
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
-  lockedVaults: string[] = [] // vault ids
+  lockedVaults: LockedBankVault[] = []
   brushLocked: string = ''
 
   brushAvailable: string = ''
@@ -1011,9 +1013,7 @@ export class CoreData {
   globalBoostItemTokenId: u16 = 0
 
   // Clan wars
-  nextTerritoryId: u16 = 0
-  totalEmissionPercentage: u16 = 0
-  nextLockedVaultId: string = '0'
+  nextHarvestAllowedTimestamp: string = '0'
 }
 
 export class FirstToReachMaxSkills {
@@ -1096,8 +1096,6 @@ export enum PromotionMintStatus {
 export class Territory {
   id: string = '' // territoryId
   territoryId: u16 = 0
-  clanId: string = '0'
-  clan: Clan = new Clan()
   percentageEmissions: u16 = 0
   clanOccupier: Clan | null = null
   unclaimedEmissions: string = '0'
@@ -1135,7 +1133,6 @@ export class LockedBankVault {
   id: string = '' // vaultId
   vaultId: u16 = 0
   clanId: string = '0'
-  clan: Clan = new Clan()
   amount: string = '0'
   expiresTimestamp: string = '0'
 }
