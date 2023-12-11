@@ -1099,7 +1099,7 @@ export class Territory {
   percentageEmissions: u16 = 0
   clanOccupier: Clan | null = null
   unclaimedEmissions: string = '0'
-  lastClaimTimestamp: string = '0'
+  nextHarvestAllowedTimestamp: string = '0'
 }
 
 export enum ClanBattleType {
