@@ -434,7 +434,9 @@ export class Player {
 
   /* Clan wars */
   territoryCombatantCooldownTimestamp: string = '0'
+  isTerritoryCombatant: boolean = false
   lockedVaultCombatantCooldownTimestamp: string = '0'
+  isLockedVaultCombatant: boolean = false
 }
 
 export class User {
