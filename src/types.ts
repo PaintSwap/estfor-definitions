@@ -909,9 +909,11 @@ export class Clan {
   territoryCombatants: Player[] = []
   territoryCombatantCooldownTimestamp: string = ''
   territoryAttackCooldownTimestamp: string = ''
+  ongoingTerritoryCombat: bool = false
   lockedVaultCombatants: Player[] = []
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
+  ongoingLockedVaultCombat: bool = false
   lockedVaults: LockedBankVault[] = []
   brushLocked: string = ''
 
