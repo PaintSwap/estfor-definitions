@@ -1020,6 +1020,14 @@ export class CoreData {
 
   // Clan wars
   nextHarvestAllowedTimestamp: string = '0'
+  movingAverageGasPriceTerritory: string = '0'
+  expectedGasLimitFulfillTerritory: string = '0'
+  baseAttackCostTerritory: string = '0'
+  totalAttackCostTerritory: string = '0'
+  movingAverageGasPriceLockedVault: string = '0'
+  expectedGasLimitFulfillLockedVault: string = '0'
+  baseAttackCostLockedVault: string = '0'
+  totalAttackCostLockedVault: string = '0'
 }
 
 export class FirstToReachMaxSkills {
