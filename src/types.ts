@@ -369,6 +369,7 @@ export class Player {
   lastDailyRewardClaimedItemTokenId: number = 0
   lastWeeklyRewardClaimedItemTokenId: number = 0
   totalDonated: string = '0'
+  numRaffleEntries: u32 = 0
   isFullMode: boolean = false
 
   /* Skill XP */
