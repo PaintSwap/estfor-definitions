@@ -380,6 +380,8 @@ export const SCROLL_MAX = SCROLL_BASE + 255
 export const EGG_BASE = 12544
 export const SECRET_EGG_1 = EGG_BASE
 export const SECRET_EGG_2 = EGG_BASE + 1
+export const SECRET_EGG_3 = EGG_BASE + 2
+export const SECRET_EGG_4 = EGG_BASE + 3
 export const EGG_MAX = 12799
 
 // Boosts
@@ -424,6 +426,13 @@ export const HALLOWEEN_BONUS_1 = SPECIAL_BASE
 export const HALLOWEEN_BONUS_2 = SPECIAL_BASE + 1
 export const HALLOWEEN_BONUS_3 = SPECIAL_BASE + 2
 export const SPECIAL_MAX = 13567
+
+// Enchantments
+export const ENCHANTMENT_BASE = 13568
+export const PROTECTION_SHIELD = ENCHANTMENT_BASE
+export const DEVILISH_FINGERS = ENCHANTMENT_BASE + 1
+export const MIRROR_SHIELD = ENCHANTMENT_BASE + 2
+export const ENCHANTMENT_MAX = 13823
 
 // MISC
 export const MISC_BASE = 65535
