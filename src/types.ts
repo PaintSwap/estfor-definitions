@@ -589,6 +589,8 @@ export enum ActivityType {
   AttackTerritoryDefendingOnClan, // Not used atm
   BattleResultTerritoryAttackingOnClan,
   BattleResultTerritoryDefendingOnClan,
+  ClaimUnoccupiedTerritoryOnMaker,
+  ClaimUnoccupiedTerritoryOnClan,
 
   // Clan wars locked vaults
   AssignCombatantsLockedVaultOnMaker,
