@@ -6,9 +6,9 @@ export enum BoostType {
   GATHERING,
   ABSENCE,
   PASSIVE_SKIP_CHANCE,
-  LOCKED_VAULT_BLOCK,
-  LOCKED_VAULT_REATTACK,
-  TERRITORY_BLOCK,
+  // Clan wars
+  PVP_BLOCK,
+  PVP_REATTACK,
 }
 
 export enum Skill {
@@ -76,10 +76,8 @@ export enum EquipPosition {
   GLOBAL_BOOST_VIAL,
   CLAN_BOOST_VIAL,
   PASSIVE_BOOST_VIAL,
-  LOCKED_VAULT_ATTACK,
-  LOCKED_VAULT_DEFENCE,
-  TERRITORY_ATTACK,
-  TERRITORY_DEFENCE,
+  LOCKED_VAULT,
+  TERRITORY,
 }
 
 export enum WorldLocation {
