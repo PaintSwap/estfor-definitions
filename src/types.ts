@@ -6,6 +6,9 @@ export enum BoostType {
   GATHERING,
   ABSENCE,
   PASSIVE_SKIP_CHANCE,
+  LOCKED_VAULT_BLOCK,
+  LOCKED_VAULT_REATTACK,
+  TERRITORY_BLOCK,
 }
 
 export enum Skill {
