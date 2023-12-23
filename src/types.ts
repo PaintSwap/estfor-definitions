@@ -1154,7 +1154,7 @@ export class LockedBankVault {
   vaultId: u16 = 0
   clanId: string = '0'
   amount: string = '0'
-  expiresTimestamp: string = '0'
+  unlockTimestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
