@@ -594,6 +594,8 @@ export enum ActivityType {
   BattleResultTerritoryDefendingOnClan,
   ClaimUnoccupiedTerritoryOnMaker,
   ClaimUnoccupiedTerritoryOnClan,
+  BlockAttacksTerritoryOnMaker,
+  BlockAttacksTerritoryOnClan,
 
   // Clan wars locked vaults
   AssignCombatantsLockedVaultOnMaker,
@@ -603,6 +605,8 @@ export enum ActivityType {
   AttackLockedVaultDefendingOnClan,
   BattleResultLockedVaultAttackingOnClan,
   BattleResultLockedVaultDefendingOnClan,
+  BlockAttacksLockedVaultsOnMaker,
+  BlockAttacksLockedVaultsOnClan,
   LockFundsOnMaker,
   LockFundsOnClan,
 
@@ -918,11 +922,14 @@ export class Clan {
   territoryCombatantCooldownTimestamp: string = ''
   territoryAttackCooldownTimestamp: string = ''
   ongoingTerritoryCombat: bool = false
+  blockingTerritoryAttacksTimestamp: string = '0'
+  blockingTerritoryAttacksCooldownTimestamp: string = '0'
   lockedVaultCombatants: Player[] = []
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
-  ongoingLockedVaultCombat: bool = false
   lockedVaults: LockedBankVault[] = []
+  ongoingLockedVaultCombat: bool = false
+  blockingLockedVaultAttacksTimestamp: string = '0'
   brushLocked: string = ''
 
   brushAvailable: string = ''
