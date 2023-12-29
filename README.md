@@ -134,8 +134,8 @@ npm publish
 yarn publish
 ```
 
-### Via github CI
+### Via GitHub CI
 
-1. Push any changes to github
+1. Push any changes to GitHub
 2. Create a new release version with `yarn version`
-3. It will tag and push to Github which will trigger the CI to publish to NPM
+3. It will tag and push to GitHub which will trigger the CI to publish to NPM
