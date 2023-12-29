@@ -114,6 +114,7 @@ src/
 .eslintrc.json
 .gitignore
 .mocharc.json
+asconfig.json
 jest.config.json
 nyc.config.json
 tsconfig.json
