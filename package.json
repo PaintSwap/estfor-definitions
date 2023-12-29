@@ -31,7 +31,7 @@
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "author": "Paintswap Team",
+  "author": "PaintSwap Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PaintSwap/estfor-definitions/issues"
