@@ -18,16 +18,17 @@
     "web3",
     "thegraph"
   ],
-  "module": "src/index.mjs",
-  "ascMain": "src/index.ts",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "ascMain": "src/index.ts",
   "scripts": {
+    "clean": "rm -rf ./dist",
     "build": "yarn build:tsc",
     "build:tsc": "tsc",
     "build:asc": "asc --target release",
     "build:asc:debug": "asc --target debug",
-    "prepare": "yarn build",
+    "prepare": "yarn clean && yarn build:tsc && yarn build:asc && cp src/index.mjs dist/index.mjs",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
