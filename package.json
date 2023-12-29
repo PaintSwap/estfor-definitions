@@ -20,8 +20,8 @@
   ],
   "module": "src/index.mjs",
   "ascMain": "src/index.ts",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "yarn build:tsc",
     "build:tsc": "tsc",
