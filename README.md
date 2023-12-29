@@ -13,7 +13,7 @@ The items in this library will allow you to interact with Estfor Kingdom via:
 
 - Vanilla JavaScript applications
 - React, Angular, and other front end frameworks
-- NodeJS / Typescript back end services
+- NodeJS / TypeScript back end services
 - AssemblyScript / WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
 [NPMJS Package](https://www.npmjs.com/package/@paintswap/estfor-definitions)
