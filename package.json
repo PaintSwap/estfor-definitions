@@ -1,6 +1,6 @@
 {
   "name": "@paintswap/estfor-definitions",
-  "version": "1.0.90",
+  "version": "1.0.89",
   "description": "Types and constants for Estfor Kingdom",
   "repository": {
     "type": "git",
@@ -24,11 +24,12 @@
   "ascMain": "src/index.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "yarn build:tsc",
-    "build:tsc": "tsc",
+    "build": "yarn build:tsc && yarn build:asc && yarn build:mjs",
     "build:asc": "asc --target release",
     "build:asc:debug": "asc --target debug",
-    "prepare": "yarn clean && yarn build:tsc && yarn build:asc && cp src/index.mjs dist/index.mjs",
+    "build:tsc": "tsc",
+    "build:mjs": "cp src/index.mjs dist/index.mjs",
+    "prepack": "yarn clean && yarn build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
