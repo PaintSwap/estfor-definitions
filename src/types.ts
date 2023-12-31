@@ -1154,6 +1154,7 @@ export class LockedBankVaultClanBattlePair {
   attackingClan: Clan = new Clan()
   defendingClan: Clan = new Clan()
   attackingCooldownTimestamp: string = '0'
+  reattacksMadeWithinTimestamp: string = '0'
 }
 
 export class LockedBankVault {
