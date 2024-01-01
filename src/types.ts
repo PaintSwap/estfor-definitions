@@ -443,7 +443,7 @@ export class Player {
   isTerritoryCombatant: boolean = false
   lockedVaultCombatantCooldownTimestamp: string = '0'
   isLockedVaultCombatant: boolean = false
-  clanWarCombatantCooldownTimestamp = '0'
+  clanWarCombatantCooldownTimestamp: string = '0'
 }
 
 export class User {
