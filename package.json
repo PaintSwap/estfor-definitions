@@ -2,10 +2,6 @@
   "name": "@paintswap/estfor-definitions",
   "version": "1.0.89",
   "description": "Types and constants for Estfor Kingdom",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
-  },
   "keywords": [
     "estfor",
     "estfor kingdom",
@@ -18,6 +14,16 @@
     "web3",
     "thegraph"
   ],
+  "author": "PaintSwap Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PaintSwap/estfor-definitions/issues"
+  },
+  "homepage": "https://github.com/PaintSwap/estfor-definitions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
+  },
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,12 +40,6 @@
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "author": "PaintSwap Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/PaintSwap/estfor-definitions/issues"
-  },
-  "homepage": "https://github.com/PaintSwap/estfor-definitions",
   "devDependencies": {
     "assemblyscript": "0.19.23",
     "shx": "^0.3.4",
