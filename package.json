@@ -35,7 +35,7 @@
     "build:asc:debug": "asc --target debug",
     "build:tsc": "tsc",
     "build:mjs": "shx cp src/index.mjs dist/index.mjs",
-    "prepack": "npm run clean && npm run build",
+    "prepare": "npm run clean && npm run build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
