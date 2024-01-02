@@ -35,8 +35,7 @@
     "build:asc:debug": "asc --target debug",
     "build:tsc": "tsc",
     "build:mjs": "shx cp src/index.mjs dist/index.mjs",
-    "postinstall": "yarn build",
-    "prepack": "yarn clean && yarn build",
+    "prepare": "yarn clean && yarn build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
