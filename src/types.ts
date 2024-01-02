@@ -439,9 +439,7 @@ export class Player {
   telegram: string = ''
 
   /* Clan wars */
-  territoryCombatantCooldownTimestamp: string = '0'
   isTerritoryCombatant: boolean = false
-  lockedVaultCombatantCooldownTimestamp: string = '0'
   isLockedVaultCombatant: boolean = false
   clanWarCombatantCooldownTimestamp: string = '0'
 }
@@ -1135,11 +1133,18 @@ export enum ClanBattleType {
   LOCKED_VAULT,
 }
 
+export enum BattleResult {
+  DRAW,
+  WIN,
+  LOSE,
+}
+
 export class ClanBattle {
   id: string = '' // [t | l]_<requestId>
   requestId: string = '0'
-  winnerPlayers: Player[] = []
-  loserPlayers: Player[] = []
+  attackingPlayers: Player[] = []
+  defendingPlayers: Player[] = []
+  battleResults: BattleResult[] = []
   randomSkills: Skill[] = []
   didAttackersWin: boolean = false
   attackingClan: Clan | null = null
