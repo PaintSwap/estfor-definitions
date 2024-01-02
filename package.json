@@ -30,12 +30,13 @@
   "ascMain": "src/index.ts",
   "scripts": {
     "clean": "shx rm -rf ./dist",
-    "build": "yarn build:tsc && yarn build:asc && yarn build:mjs",
+    "build": "npm run build:tsc && npm run build:asc && npm run build:mjs",
     "build:asc": "asc --target release",
     "build:asc:debug": "asc --target debug",
     "build:tsc": "tsc",
     "build:mjs": "shx cp src/index.mjs dist/index.mjs",
-    "prepare": "yarn clean && yarn build",
+    "prepack": "npm run clean",
+    "prepare": "npm run build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
