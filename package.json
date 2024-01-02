@@ -23,12 +23,12 @@
   "types": "dist/index.d.ts",
   "ascMain": "src/index.ts",
   "scripts": {
-    "clean": "rm -rf ./dist",
+    "clean": "shx rm -rf ./dist",
     "build": "yarn build:tsc && yarn build:asc && yarn build:mjs",
     "build:asc": "asc --target release",
     "build:asc:debug": "asc --target debug",
     "build:tsc": "tsc",
-    "build:mjs": "cp src/index.mjs dist/index.mjs",
+    "build:mjs": "shx cp src/index.mjs dist/index.mjs",
     "postinstall": "yarn build",
     "prepack": "yarn clean && yarn build",
     "version": "git add -A src",
@@ -42,7 +42,7 @@
   "homepage": "https://github.com/PaintSwap/estfor-definitions",
   "devDependencies": {
     "assemblyscript": "0.19.23",
-    "run-script-os": "^1.1.6",
+    "shx": "^0.3.4",
     "typescript": "^5.3.3"
   }
 }
