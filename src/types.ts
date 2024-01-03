@@ -1144,6 +1144,8 @@ export class ClanBattle {
   requestId: string = '0'
   attackingPlayers: Player[] = []
   defendingPlayers: Player[] = []
+  attackingRolls: u32[] = []
+  defendingRolls: u32[] = []
   battleResults: BattleResult[] = []
   randomSkills: Skill[] = []
   didAttackersWin: boolean = false
