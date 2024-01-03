@@ -28,6 +28,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "ascMain": "src/index.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types.js",
+    "./constants": "./dist/constants.js"
+  },
   "scripts": {
     "clean": "shx rm -rf ./dist",
     "build": "npm run build:tsc && npm run build:asc && npm run build:mjs",
