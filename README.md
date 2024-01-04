@@ -11,9 +11,9 @@
 
 The items in this library will allow you to interact with Estfor Kingdom via:
 
-- Vanilla JS applications
+- Vanilla JavaScript applications
 - React, Angular, and other front end frameworks
-- NodeJS / Typescript back end services
+- NodeJS / TypeScript back end services
 - AssemblyScript / WebAssembly for use with [The Graph Protocol](https://github.com/graphprotocol/graph-node)'s web3 indexing
 
 [NPMJS Package](https://www.npmjs.com/package/@paintswap/estfor-definitions)
@@ -134,8 +134,8 @@ npm publish
 yarn publish
 ```
 
-### Via github CI
+### Via GitHub CI
 
-1. Push any changes to github
+1. Push any changes to GitHub
 2. Create a new release version with `yarn version`
-3. It will tag and push to Github which will trigger the CI to publish to NPM
+3. It will tag and push to GitHub which will trigger the CI to publish to NPM
