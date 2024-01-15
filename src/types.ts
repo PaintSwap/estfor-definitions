@@ -730,6 +730,13 @@ export class UserItemNFT {
   selfMade: boolean = false
 }
 
+export class PlayerItemNFT {
+  id: string = ''
+  playerId: string = ''
+  tokenId: u16 = 0
+  selfMade: boolean = false
+}
+
 export class ShopItem {
   id: string = ''
   tokenId: u16 = 0
