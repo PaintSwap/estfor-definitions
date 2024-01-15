@@ -374,6 +374,7 @@ export class Player {
   totalDonated: string = '0'
   numRaffleEntries: u32 = 0
   isFullMode: boolean = false
+  lockCooldownTimestamp: string = '0'
 
   /* Skill XP */
   woodcuttingXP: string = '0'
