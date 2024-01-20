@@ -469,6 +469,8 @@ export class GlobalPlayerStats {
   lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   lastQueuedInstantActionPlayer: Player = new Player()
   lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
+  lastHarvestPlayer: Player = new Player()
+  lastHarvestTimestamp: string = '0'
   numActivities: string = '0'
 }
 
