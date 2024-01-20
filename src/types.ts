@@ -586,8 +586,10 @@ export enum ActivityType {
 
   // Clan wars territories
   AssignCombatantsTerritoryOnMaker,
+  AssignCombatantsLockedVaultOnReceiver,
   AssignCombatantsTerritoryOnClan,
   AttackTerritoryOnMaker,
+  AssignCombatantsTerritoryOnReceiver,
   AttackTerritoryAttackingOnClan,
   AttackTerritoryDefendingOnClan, // Not used atm
   BattleResultTerritoryAttackingOnClan,
