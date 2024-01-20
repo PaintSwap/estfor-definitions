@@ -443,6 +443,12 @@ export class Player {
   isTerritoryCombatant: boolean = false
   isLockedVaultCombatant: boolean = false
   clanWarCombatantCooldownTimestamp: string = '0'
+  territoryWins: string = '0'
+  territoryLosses: string = '0'
+  lockedVaultWins: string = '0'
+  lockedVaultLosses: string = '0'
+  totalWins: string = '0'
+  totalLosses: string = '0'
 }
 
 export class User {
@@ -941,9 +947,20 @@ export class Clan {
   lockedVaults: LockedBankVault[] = []
   ongoingLockedVaultCombat: bool = false
   blockingLockedVaultAttacksTimestamp: string = '0'
-  brushLocked: string = ''
+  territoryWins: string = '0'
+  territoryLosses: string = '0'
+  lockedVaultWins: string = '0'
+  lockedVaultLosses: string = '0'
+  totalWins: string = '0'
+  totalLosses: string = '0'
+  brushLocked: string = '0'
+  totalBrushLockedFromTerritory: string = '0'
+  totalBrushLockedFromVaults: string = '0'
+  totalBrushLocked: string = '0'
+  totalBrushLost: string = '0'
+  totalBrushClaimed: string = '0'
 
-  brushAvailable: string = ''
+  brushAvailable: string = '0'
 }
 
 export class ClanMember {
