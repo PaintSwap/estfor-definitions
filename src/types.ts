@@ -445,10 +445,19 @@ export class Player {
   clanWarCombatantCooldownTimestamp: string = '0'
   territoryWins: string = '0'
   territoryLosses: string = '0'
+  territorySkillDraws: string = '0'
+  territorySkillWins: string = '0'
+  territorySkillLosses: string = '0'
   lockedVaultWins: string = '0'
   lockedVaultLosses: string = '0'
+  lockedVaultSkillDraws: string = '0'
+  lockedVaultSkillWins: string = '0'
+  lockedVaultSkillLosses: string = '0'
   totalWins: string = '0'
   totalLosses: string = '0'
+  totalSkillDraws: string = '0'
+  totalSkillWins: string = '0'
+  totalSkillLosses: string = '0'
 }
 
 export class User {
