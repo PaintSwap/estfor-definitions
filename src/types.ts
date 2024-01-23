@@ -1193,7 +1193,7 @@ export class ClanBattle {
   attackingTimestamp: string = '0'
   ongoing: boolean = false
   type: ClanBattleType = ClanBattleType.TERRITORY
-  territory = new Territory() // Only used for territory battles
+  territory:Territory = new Territory() // Only used for territory battles
   oracleFailed: boolean = false
   oracleHash: string = ''
 }
