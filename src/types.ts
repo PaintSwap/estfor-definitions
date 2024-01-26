@@ -1249,6 +1249,7 @@ export class Order {
   isBuyOrder: boolean = false
   maker: string = ''
   claimable: boolean = false // Has any been taken from the order that is still unclaimed?
+  amountClaimable: string = '0' // Amount that is still unclaimed (either nft amount or brush depending on order type)
   timestamp: string = '0'
 }
 
