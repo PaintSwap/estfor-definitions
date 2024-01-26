@@ -1248,6 +1248,7 @@ export class Order {
   price: string = '0'
   isBuyOrder: boolean = false
   maker: string = ''
+  timestamp: string = '0'
 }
 
 export class TokenInfo {
