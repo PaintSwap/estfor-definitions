@@ -1193,7 +1193,7 @@ export class ClanBattle {
   attackingTimestamp: string = '0'
   ongoing: boolean = false
   type: ClanBattleType = ClanBattleType.TERRITORY
-  territory:Territory = new Territory() // Only used for territory battles
+  territory: Territory = new Territory() // Only used for territory battles
   oracleFailed: boolean = false
   oracleHash: string = ''
 }
@@ -1212,6 +1212,62 @@ export class LockedBankVault {
   clanId: string = '0'
   amount: string = '0'
   unlockTimestamp: string = '0'
+}
+
+/// ERC1155 Orderbook
+export class PriceLevel {
+  id: string = '' // nftAddress_tokenId_price
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  price: string = '0'
+  totalAmount: string = '0'
+  totalOrders: string = '0'
+}
+
+export class UserTokenClaimable {
+  id: string = '' // user
+  user: string = ''
+  tokensAvailable: string = '0'
+}
+
+export class UserNFTClaimable {
+  id: string = '' // user_nftAddress_tokenId
+  user: string = ''
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  amount: string = '0'
+}
+
+export class Order {
+  id: string = '' // orderId
+  orderId: u64 = 0
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  amount: string = '0'
+  amountRemaining: string = '0'
+  price: string = '0'
+  isBuyOrder: boolean = false
+  maker: string = ''
+}
+
+export class TokenInfo {
+  id: string = '' // nftAddress_tokenId
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  tick: string = '0'
+  minQuantity: u16 = 0
+}
+
+export class FailedOrder {
+  id: string = ''
+  orderId: u64 = 0
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  amount: string = '0'
+  price: string = '0'
+  isBuy: boolean = false
+  maker: string = ''
+  timestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
