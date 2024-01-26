@@ -1248,6 +1248,7 @@ export class Order {
   price: string = '0'
   isBuyOrder: boolean = false
   maker: string = ''
+  claimable: boolean = false // Has any been taken from the order that is still unclaimed?
   timestamp: string = '0'
 }
 
