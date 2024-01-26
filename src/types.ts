@@ -1273,6 +1273,24 @@ export class FailedOrder {
   timestamp: string = '0'
 }
 
+export class LimitOrder {
+  side: OrderSide = OrderSide.BUY
+  tokenId: u16 = 0
+  price: string = '0'
+  quantity: string = '0'
+}
+
+export class CancelOrder {
+  side: OrderSide = OrderSide.BUY
+  tokenId: u16 = 0
+  price: string = '0'
+}
+
+export enum OrderSide {
+  BUY,
+  SELL,
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
