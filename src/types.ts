@@ -1291,6 +1291,19 @@ export enum OrderSide {
   SELL,
 }
 
+export class SaleHistory {
+  id: string = ''
+  nftAddress: string = ''
+  tokenId: u16 = 0
+  amount: string = '0'
+  price: string = '0'
+  maker: string = ''
+  taker: string = ''
+  timestamp: string = '0'
+  isBuyOrder: boolean = false
+  hash: string = ''
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
