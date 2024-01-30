@@ -1222,6 +1222,7 @@ export class PriceLevel {
   price: string = '0'
   totalAmount: string = '0'
   totalOrders: string = '0'
+  isBuyOrder: boolean = false
 }
 
 export class UserTokenClaimable {
