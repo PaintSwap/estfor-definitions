@@ -1194,6 +1194,7 @@ export class ClanBattle {
   ongoing: boolean = false
   type: ClanBattleType = ClanBattleType.TERRITORY
   territory: Territory = new Territory() // Only used for territory battles
+  brushWon: string = '0'
   oracleFailed: boolean = false
   oracleHash: string = ''
 }
