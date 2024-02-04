@@ -945,6 +945,7 @@ export class Clan {
 
   // Clan wars related
   territoryCombatants: Player[] = []
+  territoryCombatantsLength: u32 = 0
   territoryCombatantCooldownTimestamp: string = ''
   territoryAttackCooldownTimestamp: string = ''
   ongoingTerritoryCombat: bool = false
@@ -954,6 +955,7 @@ export class Clan {
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
   lockedVaults: LockedBankVault[] = []
+  lockedVaultsLength: u32 = 0
   ongoingLockedVaultCombat: bool = false
   blockingLockedVaultAttacksTimestamp: string = '0'
   territoryWins: string = '0'
@@ -963,6 +965,7 @@ export class Clan {
   totalWins: string = '0'
   totalLosses: string = '0'
   brushLocked: string = '0'
+  brushLockedMinusUnclaimed: string = '0'
   totalBrushLockedFromTerritory: string = '0'
   totalBrushLockedFromVaults: string = '0'
   totalBrushLocked: string = '0'
