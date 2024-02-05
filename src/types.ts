@@ -500,6 +500,8 @@ export class GlobalUserStats {
 export class GlobalClanStats {
   totalClans: string = '0'
   totalClanMembers: string = '0'
+  totalTerritoryBattles: string = '0'
+  totalLockedVaultBattles: string = '0'
 }
 
 export class GlobalDonationStats {
