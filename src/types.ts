@@ -9,6 +9,7 @@ export enum BoostType {
   // Clan wars
   PVP_BLOCK,
   PVP_REATTACK,
+  PVP_SUPER_ATTTACK,
 }
 
 export enum Skill {
