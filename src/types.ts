@@ -959,7 +959,6 @@ export class Clan {
   lockedVaultAttackCooldownTimestamp: string = ''
   lockedVaultSuperAttackCooldownTimestamp: string = ''
   lockedVaults: LockedBankVault[] = []
-  lockedVaultsLength: u32 = 0
   ongoingLockedVaultCombat: bool = false
   blockingLockedVaultAttacksTimestamp: string = '0'
   territoryWins: string = '0'
