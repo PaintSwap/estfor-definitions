@@ -1268,6 +1268,9 @@ export class TokenInfo {
   tokenId: u16 = 0
   tick: string = '0'
   minQuantity: u16 = 0
+  lastTradedPrice: string = '0'
+  lastTradedQuantity: string = '0'
+  lastTradedTimestamp: string = '0'
 }
 
 export class FailedOrder {
