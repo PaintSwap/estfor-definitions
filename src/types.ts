@@ -927,7 +927,6 @@ export class Clan {
   bankAddress: string = ''
   totalLevel: number = 0
   combinedRank: number = 0
-  bankValue: string = '0'
   joinRequestsEnabled: boolean = false
 
   boostStartTime: u64 = 0
@@ -976,6 +975,8 @@ export class Clan {
   totalBrushClaimed: string = '0'
 
   brushAvailable: string = '0'
+  bankValue: string = '0'
+  bankBrushValue: string = '0'
 }
 
 export class ClanMember {
