@@ -1266,12 +1266,13 @@ export class Order {
 export class TokenInfo {
   id: string = '' // nftAddress_tokenId
   nftAddress: string = ''
-  tokenId: u16 = 0
+  tokenId: string = '0'
   tick: string = '0'
-  minQuantity: u16 = 0
+  minQuantity: string = '0'
   lastTradedPrice: string = '0'
   lastTradedQuantity: string = '0'
   lastTradedTimestamp: string = '0'
+  lastTradedWasBuy: boolean = false
 }
 
 export class FailedOrder {
