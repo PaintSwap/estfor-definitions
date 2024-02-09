@@ -1318,6 +1318,13 @@ export class SaleHistory {
   hash: string = ''
 }
 
+export class OrderBookDayData {
+  id: string = ''
+  tokenId: string = '0'
+  date: string = ''
+  averagePrice: string = '0'
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
