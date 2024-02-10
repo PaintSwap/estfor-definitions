@@ -918,6 +918,7 @@ export class Clan {
   owner: Player = new Player()
   name: string = ''
   discord: string | null = ''
+  twitter: string | null = ''
   telegram: string | null = ''
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
