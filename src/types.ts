@@ -980,6 +980,23 @@ export class Clan {
   bankBrushValue: string = '0'
 }
 
+export class ClanSimplified {
+  id: string = ''
+  name: string = ''
+  lowercaseName: string = ''
+  imageId: u16 = 0
+  tier: ClanTier = new ClanTier()
+  createdTimestamp: string = ''
+  createdCount: string = ''
+  memberCount: u32 = 0
+  bankAddress: string = ''
+  totalLevel: number = 0
+  bankValue: string = '0'
+  bankBrushValue: string = '0'
+  totalWins: string = '0'
+  totalLosses: string = '0'
+}
+
 export class ClanMember {
   id: string = '' // playerId
   player: Player = new Player()
@@ -1186,7 +1203,7 @@ export enum BattleResult {
 }
 
 export class ClanBattle {
-  id: string = '' // [t | l]_<requestId>
+  id: string = '' // [t | b]<requestId>
   requestId: string = '0'
   attackingPlayers: Player[] = []
   defendingPlayers: Player[] = []
@@ -1206,6 +1223,23 @@ export class ClanBattle {
   item: Item = new Item()
   oracleFailed: boolean = false
   oracleHash: string = ''
+}
+
+export class ClanBattleSimplified {
+  id: string = '' // [t | b]<requestId>
+  requestId: string = '0'
+  attackingPlayerIds: string[] = []
+  defendingPlayerIds: string[] = []
+  attackingRolls: u32[] = []
+  defendingRolls: u32[] = []
+  battleResults: BattleResult[] = []
+  didAttackersWin: boolean = false
+  attackingClan: ClanSimplified = new ClanSimplified()
+  defendingClan: ClanSimplified = new ClanSimplified()
+  attackingTimestamp: string = '0'
+  ongoing: boolean = false
+  type: ClanBattleType = ClanBattleType.TERRITORY
+  brushWon: string = '0'
 }
 
 export class LockedBankVaultClanBattlePair {
