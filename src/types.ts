@@ -991,6 +991,7 @@ export class ClanSimplified {
   memberCount: u32 = 0
   bankAddress: string = ''
   totalLevel: number = 0
+  combinedRank: number = 0
   bankValue: string = '0'
   bankBrushValue: string = '0'
   totalWins: string = '0'
