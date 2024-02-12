@@ -1280,7 +1280,7 @@ export class UserNFTClaimable {
   id: string = '' // user_nftAddress_tokenId
   user: string = ''
   nftAddress: string = ''
-  tokenId: u16 = 0
+  tokenId: string = '0'
   amount: string = '0'
 }
 
@@ -1288,7 +1288,7 @@ export class Order {
   id: string = '' // orderId
   orderId: u64 = 0
   nftAddress: string = ''
-  tokenId: u16 = 0
+  tokenId: string = '0'
   amount: string = '0'
   amountRemaining: string = '0'
   price: string = '0'
@@ -1315,7 +1315,7 @@ export class FailedOrder {
   id: string = ''
   orderId: u64 = 0
   nftAddress: string = ''
-  tokenId: u16 = 0
+  tokenId: string = '0'
   amount: string = '0'
   price: string = '0'
   isBuy: boolean = false
