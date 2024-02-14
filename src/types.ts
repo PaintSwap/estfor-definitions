@@ -1270,20 +1270,6 @@ export class PriceLevel {
   isBuyOrder: boolean = false
 }
 
-export class UserTokenClaimable {
-  id: string = '' // user
-  user: string = ''
-  tokensAvailable: string = '0'
-}
-
-export class UserNFTClaimable {
-  id: string = '' // user_nftAddress_tokenId
-  user: string = ''
-  nftAddress: string = ''
-  tokenId: string = '0'
-  amount: string = '0'
-}
-
 export class Order {
   id: string = '' // nftAddress_orderId
   orderId: u64 = 0
