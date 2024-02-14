@@ -1285,7 +1285,7 @@ export class UserNFTClaimable {
 }
 
 export class Order {
-  id: string = '' // orderId
+  id: string = '' // nftAddress_orderId
   orderId: u64 = 0
   nftAddress: string = ''
   tokenId: string = '0'
@@ -1295,7 +1295,8 @@ export class Order {
   isBuyOrder: boolean = false
   maker: string = ''
   claimable: boolean = false // Has any been taken from the order that is still unclaimed?
-  amountClaimable: string = '0' // Amount that is still unclaimed (either nft amount or brush depending on order type)
+  tokenAmountClaimable: string = '0' // Brush amount that is still unclaimed
+  nftAmountClaimable: string = '0' // NFT amount that is still unclaimed
   timestamp: string = '0'
 }
 
@@ -1318,7 +1319,7 @@ export class FailedOrder {
   tokenId: string = '0'
   amount: string = '0'
   price: string = '0'
-  isBuy: boolean = false
+  isBuyOrder: boolean = false
   maker: string = ''
   timestamp: string = '0'
 }
