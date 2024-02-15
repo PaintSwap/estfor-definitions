@@ -1284,7 +1284,7 @@ export class Order {
   tokenAmountClaimable: string = '0' // Brush amount that is still unclaimed
   nftAmountClaimable: string = '0' // NFT amount that is still unclaimed
   timestamp: string = '0'
-  lastTradeTimestamp: string = '0'
+  lastTradedTimestamp: string = '0'
 }
 
 export class TokenInfo {
