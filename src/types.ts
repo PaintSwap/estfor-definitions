@@ -1312,14 +1312,14 @@ export class FailedOrder {
 
 export class LimitOrder {
   side: OrderSide = OrderSide.BUY
-  tokenId: u16 = 0
+  tokenId: string = '0'
   price: string = '0'
   quantity: string = '0'
 }
 
 export class CancelOrder {
   side: OrderSide = OrderSide.BUY
-  tokenId: u16 = 0
+  tokenId: string = '0'
   price: string = '0'
 }
 
@@ -1331,7 +1331,7 @@ export enum OrderSide {
 export class SaleHistory {
   id: string = ''
   nftAddress: string = ''
-  tokenId: u16 = 0
+  tokenId: string = '0'
   amount: string = '0'
   price: string = '0'
   maker: string = ''
