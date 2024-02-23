@@ -356,7 +356,7 @@ export class InstantVRFActionInput {
   inputTokenIds: u16[] = [];
   inputAmounts: u16[] = [];
   randomRewards: RandomReward[] = [];
-  isFullModeOnly = true;
+  isFullModeOnly: boolean = true;
 }
 
 export class Player {
