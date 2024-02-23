@@ -145,9 +145,9 @@ export class GuaranteedReward {
 }
 
 export class RandomReward {
-  itemTokenId: u32 = 0
+  itemTokenId: u16 = 0
   chance: u16 = 0 // out of 65335
-  amount: u8 = 0
+  amount: u16 = 0
 }
 
 export class ActionInput {
@@ -348,6 +348,15 @@ export class QueuedInstantAction {
   actions: InstantAction[] = []
   amounts: string[] = []
   timestamp: string = ''
+}
+
+export class InstantVRFActionInput {
+  actionId: u16 = 0;
+  // Add an array for inputTokenIds
+  inputTokenIds: u16[] = [];
+  inputAmounts: u16[] = [];
+  randomRewards: RandomReward[] = [];
+  isFullModeOnly = true;
 }
 
 export class Player {
@@ -1355,4 +1364,5 @@ export const defaultActionChoice = new ActionChoiceInput()
 export const defaultActionInfo = new ActionInfo()
 export const defaultPassiveActionInput = new PassiveActionInput()
 export const defaultInstantActionInput = new InstantActionInput()
+export const defaultInstantVRFActionInput = new InstantVRFActionInput();
 export const noAttire = new Attire()
