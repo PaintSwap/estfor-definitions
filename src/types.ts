@@ -1308,6 +1308,12 @@ export class TokenInfo {
   lastTradedWasBuy: boolean = false
 }
 
+export class TokenIdInfo {
+  tokenId: string = '0'
+  tick: string = '0'
+  minQuantity: string = '0'
+}
+
 export class FailedOrder {
   id: string = ''
   orderId: u64 = 0
