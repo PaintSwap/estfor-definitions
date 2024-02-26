@@ -1309,7 +1309,7 @@ export class TokenInfo {
 }
 
 export class TokenIdInfo {
-  tokenId: string = '0'
+  tokenId: u16 = 0
   tick: string = '0'
   minQuantity: string = '0'
 }
