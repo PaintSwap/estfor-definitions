@@ -1329,6 +1329,7 @@ export class Order {
   nftAmountClaimable: string = '0' // NFT amount that is still unclaimed
   timestamp: string = '0'
   lastTradedTimestamp: string = '0'
+  lastTradedBlockNumber: string = '0'
 }
 
 export class TokenInfo {
@@ -1359,6 +1360,7 @@ export class FailedOrder {
   isBuyOrder: boolean = false
   maker: string = ''
   timestamp: string = '0'
+  blockNumber: string = '0'
 }
 
 export class LimitOrder {
@@ -1388,6 +1390,7 @@ export class SaleHistory {
   maker: string = ''
   taker: string = ''
   timestamp: string = '0'
+  blockNumber: string = '0'
   isBuyOrder: boolean = false
   hash: string = ''
 }
