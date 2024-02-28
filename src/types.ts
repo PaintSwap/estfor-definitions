@@ -518,8 +518,8 @@ export class GlobalPlayerStats {
   lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   lastQueuedInstantActionPlayer: Player = new Player()
   lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
-  lastQueuedInstantVRFActionPlayer: Player
-  lastQueuedInstantVRFAction: QueuedInstantVRFAction
+  lastQueuedInstantVRFActionPlayer: Player = new Player()
+  lastQueuedInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
   lastHarvestPlayer: Player = new Player()
   lastHarvestTimestamp: string = '0'
   numActivities: string = '0'
