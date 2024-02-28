@@ -146,7 +146,7 @@ export class GuaranteedReward {
 
 export class RandomReward {
   itemTokenId: u16 = 0
-  chance: u16 = 0 // out of 65335
+  chance: u16 = 0 // out of 65535
   amount: u16 = 0
 }
 
@@ -351,12 +351,35 @@ export class QueuedInstantAction {
 }
 
 export class InstantVRFActionInput {
-  actionId: u16 = 0;
+  actionId: u16 = 0
   // Add an array for inputTokenIds
-  inputTokenIds: u16[] = [];
-  inputAmounts: u16[] = [];
-  randomRewards: RandomReward[] = [];
-  isFullModeOnly: boolean = true;
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
+  randomRewards: RandomReward[] = []
+  isFullModeOnly: boolean = true
+}
+
+export class InstantVRFAction {
+  id: string = '' // actionId
+  actionId: u16 = 0
+  inputTokenIds: u16[] = []
+  inputAmounts: u16[] = []
+  randomChanceItemTokenIds: u16[] = []
+  randomChanceRates: u16[] = []
+  randomChanceAmounts: u16[] = []
+  isFullModeOnly: boolean = false
+}
+
+export class QueuedInstantVRFAction {
+  id: string = '' // requestId
+  queueId: string = '' // requestId
+  playerId: string = ''
+  actions: InstantVRFAction[] = []
+  amounts: string[] = []
+  ongoing: boolean = false
+  producedItems: Item[] = []
+  producedAmounts: string[] = []
+  timestamp: string = ''
 }
 
 export class Player {
@@ -376,6 +399,7 @@ export class Player {
   activeQuest: PlayerQuest = new PlayerQuest()
   activePassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   lastInstantAction: QueuedInstantAction = new QueuedInstantAction()
+  lastInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
@@ -494,6 +518,8 @@ export class GlobalPlayerStats {
   lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   lastQueuedInstantActionPlayer: Player = new Player()
   lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
+  lastQueuedInstantVRFActionPlayer: Player
+  lastQueuedInstantVRFAction: QueuedInstantVRFAction
   lastHarvestPlayer: Player = new Player()
   lastHarvestTimestamp: string = '0'
   numActivities: string = '0'
@@ -642,6 +668,8 @@ export enum ActivityType {
   LockFundsOnClan,
 
   HarvestDecorator,
+  InstantVRFAction,
+  InstantVRFActionCompleted,
 }
 
 export enum Direction {
@@ -1113,6 +1141,13 @@ export class CoreData {
   expectedGasLimitFulfillLockedVault: string = '0'
   baseAttackCostLockedVault: string = '0'
   totalAttackCostLockedVault: string = '0'
+
+  // Instant VRF actions
+  gasCostPerUnitInstantVRFAction: string = '0'
+
+  // Generic VRF
+  baseRequestCost: string = '0'
+  movingAverageGasPrice: string = '0'
 }
 
 export class FirstToReachMaxSkills {
@@ -1370,5 +1405,5 @@ export const defaultActionChoice = new ActionChoiceInput()
 export const defaultActionInfo = new ActionInfo()
 export const defaultPassiveActionInput = new PassiveActionInput()
 export const defaultInstantActionInput = new InstantActionInput()
-export const defaultInstantVRFActionInput = new InstantVRFActionInput();
+export const defaultInstantVRFActionInput = new InstantVRFActionInput()
 export const noAttire = new Attire()
