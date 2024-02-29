@@ -1329,6 +1329,7 @@ export class Order {
   nftAmountClaimable: string = '0' // NFT amount that is still unclaimed
   timestamp: string = '0'
   blockNumber: string = '0'
+  hash: string = '' // transaction hash when this order was created
   lastTradedTimestamp: string = '0'
   lastTradedBlockNumber: string = '0'
 }
