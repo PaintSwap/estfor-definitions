@@ -992,6 +992,7 @@ export class Clan {
   blockingTerritoryAttacksTimestamp: string = '0'
   blockingTerritoryAttacksCooldownTimestamp: string = '0'
   lockedVaultCombatants: Player[] = []
+  lockedVaultCombatantsLength: u32 = 0
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
   lockedVaultSuperAttackCooldownTimestamp: string = ''
@@ -1033,6 +1034,10 @@ export class ClanSimplified {
   bankBrushValue: string = '0'
   totalWins: string = '0'
   totalLosses: string = '0'
+
+  lockedVaultCombatantsLength: u32 = 0
+  blockingLockedVaultAttacksTimestamp: string = '0'
+  lockedVaults: LockedBankVault[] = []
 }
 
 export class ClanMember {
