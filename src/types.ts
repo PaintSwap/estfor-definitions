@@ -669,7 +669,6 @@ export enum ActivityType {
 
   HarvestDecorator,
   ClaimFundsOnMaker,
-  ClaimFundsOnClan,
   InstantVRFAction,
   InstantVRFActionCompleted,
 }
