@@ -494,6 +494,63 @@ export class Player {
   totalSkillLosses: string = '0'
 }
 
+export class PlayerSimplified {
+  id: string = '0'
+  tokenId: string = '0'
+  name: string = ''
+  avatarId: string = '1'
+  isActive: boolean = false
+  mintedTimestamp: string = '0'
+  totalDonated: string = '0'
+  isFullMode: boolean = false
+
+  /* Skill XP */
+  woodcuttingXP: string = '0'
+  firemakingXP: string = '0'
+  fishingXP: string = '0'
+  cookingXP: string = '0'
+  miningXP: string = '0'
+  smithingXP: string = '0'
+  craftingXP: string = '0'
+  thievingXP: string = '0'
+  agilityXP: string = '0'
+  alchemyXP: string = '0'
+  fletchingXP: string = '0'
+  forgingXP: string = '0'
+  huntingXP: string = '0'
+  totalXP: string = '0'
+  totalLevel: number = 0
+
+  /* Combat XP */
+  healthXP: string = '0'
+  meleeXP: string = '0'
+  defenceXP: string = '0'
+  magicXP: string = '0'
+  rangedXP: string = '0'
+
+  /* Socials */
+  discord: string = ''
+  twitter: string = ''
+  telegram: string = ''
+
+  /* Clan Wars */
+  territoryWins: string = '0'
+  territoryLosses: string = '0'
+  territorySkillDraws: string = '0'
+  territorySkillWins: string = '0'
+  territorySkillLosses: string = '0'
+  lockedVaultWins: string = '0'
+  lockedVaultLosses: string = '0'
+  lockedVaultSkillDraws: string = '0'
+  lockedVaultSkillWins: string = '0'
+  lockedVaultSkillLosses: string = '0'
+  totalWins: string = '0'
+  totalLosses: string = '0'
+  totalSkillDraws: string = '0'
+  totalSkillWins: string = '0'
+  totalSkillLosses: string = '0'
+}
+
 export class User {
   id: string = '0'
   numPlayers: u32 = 0
@@ -715,6 +772,37 @@ export class Activity {
   uniqueTransactionId: string = '0' // Unique id for all activities with the same hash
 }
 
+export class ActivitySimplified {
+  id: string = ''
+  activityId: string = '' // Ascending numberic id for each Activity, unique only for each ActivityUndertaker
+  type: string = '' // ActivityType
+  itemTokenIds: u16[] = []
+  amounts: string[] = []
+  directions: string[] = []
+  prices: string[] = []
+  gainedSkills: Skill[] = []
+  gainedXPs: string[] = []
+  miscs: string[] = [] // Various BigInts specific to the activity type
+  skill: Skill = Skill.NONE
+  otherAddress: string = ''
+  thirdAddress: string = ''
+  timestamp: string = ''
+  hash: string = ''
+  blockNumber: string = ''
+  playerId: string = '0'
+  player: PlayerSimplified = new PlayerSimplified()
+  otherPlayer: PlayerSimplified = new PlayerSimplified() // Only used for Clan things currently
+  user: string = ''
+  undertaker: string = '' // ActivityUndertaker
+  queuedAction: QueuedAction = new QueuedAction()
+  queuedActions: QueuedAction[] = [] // Only used for SetActionQueue
+  playerQuest: PlayerQuestSimplified = new PlayerQuestSimplified() // Only set for QuestsCompleted
+  clanId: string = '0' // Id if this is a clan activity
+  clanName: string = '' // Name of the clan if this is a clan activity
+  isLastInSameTransaction: boolean = false // Is this the last activity for all activities with the same hash
+  uniqueTransactionId: string = '0' // Unique id for all activities with the same hash
+}
+
 export class LastFullEquipment {
   id: string = '0' // playerId
   playerId: string = '0'
@@ -917,6 +1005,11 @@ export class Quest {
   minRequirementXPs: string[] = [] // Minimum requirements in these skills
 }
 
+export class QuestSimplified {
+  id: string = '' // quest id
+  questId: u32 = 0 // quest id
+}
+
 export class PlayerQuestOutput {
   questId: string = ''
   actionCompletedNum1: u32 = 0
@@ -940,6 +1033,11 @@ export class PlayerQuest {
   burnCompletedAmount: u32 = 0
 
   completed: boolean = false
+}
+
+export class PlayerQuestSimplified {
+  id: string = '' // playerId_questId
+  quest: QuestSimplified = new QuestSimplified()
 }
 
 export class ClanTier {
