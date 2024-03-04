@@ -1187,6 +1187,16 @@ export class Donation {
   donationAmountRank: string = ''
 }
 
+export class DonationSimplified {
+  id: string = '' // user or player id
+  user: string | null = null
+  player: PlayerSimplified | null = new PlayerSimplified()
+  amount: string = '0'
+  lastDonatedAmount: string = '0'
+  lastUpdatedTimestamp: string = ''
+  donationAmountRank: string = ''
+}
+
 export class Lottery {
   id: string = '' // lotteryId
   raffleIdWinner: string = '' // 0 means no winner yet
