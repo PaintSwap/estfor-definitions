@@ -899,7 +899,7 @@ export class ActionChoiceInput {
   rate: u16 = 0
   xpPerHour: u32 = 0
   inputTokenIds: u16[] = []
-  inputAmounts: u16[] = []
+  inputAmounts: u32[] = []
   outputTokenId: u16 = 0
   outputAmount: u8 = 0
   successPercent: u8 = 100
