@@ -113,6 +113,19 @@ export class Equipment {
   amount: u32 = 0
 }
 
+export class MetaBlock {
+  number: string = '0'
+  timestamp: string = '0'
+}
+
+export class Meta {
+  block: MetaBlock = new MetaBlock()
+}
+
+export class MetaBase {
+  _meta: Meta = new Meta()
+}
+
 export class QueuedActionInputV2 {
   attire: Attire = new Attire()
   actionId: u16 = 0
@@ -1440,7 +1453,7 @@ export class PriceLevel {
   isBuyOrder: boolean = false
 }
 
-export class Order {
+export class Order extends MetaBase {
   id: string = '' // nftAddress_orderId
   orderId: u64 = 0
   nftAddress: string = ''
