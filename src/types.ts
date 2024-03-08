@@ -1453,7 +1453,7 @@ export class PriceLevel {
   isBuyOrder: boolean = false
 }
 
-export class Order extends MetaBase {
+export class Order {
   id: string = '' // nftAddress_orderId
   orderId: u64 = 0
   nftAddress: string = ''
@@ -1471,6 +1471,11 @@ export class Order extends MetaBase {
   hash: string = '' // transaction hash when this order was created
   lastTradedTimestamp: string = '0'
   lastTradedBlockNumber: string = '0'
+}
+
+// Api output of orders
+export class OrderData extends MetaBase {
+  orders: Order[] = []
 }
 
 export class TokenInfo {
