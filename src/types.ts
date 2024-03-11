@@ -840,6 +840,7 @@ export class LastFullEquipment {
 
 export class QueuedAction {
   id: string = '' // queueId
+  queuedId: string = '' // queueId
   actionId: u16 = 0
   playerId: string = ''
   regenerateId: u16 = 0
