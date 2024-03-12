@@ -375,7 +375,7 @@ export class QueuedInstantAction {
   timestamp: string = ''
 }
 
-enum InstantVRFActionType {
+export enum InstantVRFActionType {
   NONE,
   GENERIC,
   FORGING,
