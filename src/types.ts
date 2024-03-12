@@ -375,12 +375,21 @@ export class QueuedInstantAction {
   timestamp: string = ''
 }
 
+enum InstantVRFActionType {
+  NONE,
+  GENERIC,
+  FORGING,
+  EGG,
+}
+
 export class InstantVRFActionInput {
   actionId: u16 = 0
   // Add an array for inputTokenIds
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
   randomRewards: RandomReward[] = []
+  actionType: InstantVRFActionType = InstantVRFActionType.NONE
+  strategy: string = ''
   isFullModeOnly: boolean = true
 }
 
