@@ -400,6 +400,7 @@ export class InstantVRFAction {
   randomChanceItemTokenIds: u16[] = []
   randomChanceRates: u16[] = []
   randomChanceAmounts: u16[] = []
+  actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
 }
 
