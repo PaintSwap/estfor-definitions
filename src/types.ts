@@ -389,7 +389,6 @@ export class InstantVRFActionInput {
   inputAmounts: u16[] = []
   randomRewards: RandomReward[] = []
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
-  strategy: string = ''
   isFullModeOnly: boolean = true
 }
 
