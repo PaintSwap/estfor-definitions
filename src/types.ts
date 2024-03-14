@@ -384,10 +384,9 @@ export enum InstantVRFActionType {
 
 export class InstantVRFActionInput {
   actionId: u16 = 0
-  // Add an array for inputTokenIds
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
-  randomRewards: RandomReward[] = []
+  data: string = ''
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = true
 }
