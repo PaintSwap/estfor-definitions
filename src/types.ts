@@ -396,9 +396,7 @@ export class InstantVRFAction {
   actionId: u16 = 0
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
-  randomChanceItemTokenIds: u16[] = []
-  randomChanceRates: u16[] = []
-  randomChanceAmounts: u16[] = []
+  //  data: string = '' // Unsure if we need this, can be quite large
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
 }
@@ -902,6 +900,8 @@ export class Item {
   allocationRemaining: string = '0'
   nextNewAllocationTimestamp: string = '0'
   isForgeable: boolean = false
+  isSellableToShop: boolean = false
+  isFullModeOnly: boolean = false
 }
 
 export class UserItemNFT {
