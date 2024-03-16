@@ -1557,6 +1557,40 @@ export class OrderBookDayData {
   averagePrice: string = '0'
 }
 
+// Pets
+export enum Skin {
+  NONE,
+  DEFAULT,
+  TESTER,
+  ONEKIN,
+  FROST1,
+  FROST2,
+}
+
+export enum PetEnhancementType {
+  NONE,
+  MELEE,
+  MAGIC,
+  RANGED,
+  DEFENCE,
+  HEALTH,
+  MELEE_AND_DEFENCE,
+  MAGIC_AND_DEFENCE,
+  RANGED_AND_DEFENCE,
+}
+
+export class PetInput {
+  description: string = ''
+  tier: u8 = 0
+  skin: Skin = Skin.NONE
+  enhancementType: PetEnhancementType = PetEnhancementType.NONE
+  baseId: u32 = 0
+  skillEnhancements: StaticArray<Skill> = [Skill.NONE, Skill.NONE]
+  percentageMins: StaticArray<u8> = [0, 0]
+  percentageMaxs: StaticArray<u8> = [0, 0]
+  percentageIncrements: StaticArray<u8> = [0, 0]
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
