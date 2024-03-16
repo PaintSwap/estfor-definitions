@@ -1558,7 +1558,7 @@ export class OrderBookDayData {
 }
 
 // Pets
-export enum Skin {
+export enum PetSkin {
   NONE,
   DEFAULT,
   TESTER,
@@ -1579,10 +1579,10 @@ export enum PetEnhancementType {
   RANGED_AND_DEFENCE,
 }
 
-export class PetInput {
+export class BasePetInput {
   description: string = ''
   tier: u8 = 0
-  skin: Skin = Skin.NONE
+  skin: PetSkin = PetSkin.NONE
   enhancementType: PetEnhancementType = PetEnhancementType.NONE
   baseId: u32 = 0
   skillEnhancements: StaticArray<Skill> = [Skill.NONE, Skill.NONE]
