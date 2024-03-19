@@ -588,6 +588,7 @@ export class User {
   numPlayersDonated: u32 = 0
   numUniqueItems: u32 = 0
   numActivities: u32 = 0
+  numPets: u32 = 0
   totalSold: string = '0'
   totalBought: string = '0'
   totalDonated: string = '0'
@@ -783,6 +784,9 @@ export class Activity {
   gainedSkills: Skill[] = []
   gainedXPs: string[] = []
   miscs: string[] = [] // Various BigInts specific to the activity type
+  petBaseTokenIds: u32[] = []
+  petIds: string[] = []
+  petDirections: string[] = []
   skill: Skill = Skill.NONE
   otherAddress: string = ''
   thirdAddress: string = ''
@@ -1296,6 +1300,11 @@ export class CoreData {
   // Generic VRF
   baseRequestCost: string = '0'
   movingAverageGasPrice: string = '0'
+
+  // Pets
+  petEditNameCost: string = '0'
+  totalPets = '0'
+  lastMintedPet: Pet = new Pet()
 }
 
 export class FirstToReachMaxSkills {
@@ -1589,6 +1598,29 @@ export class BasePetInput {
   percentageMins: StaticArray<u8> = [0, 0]
   percentageMaxs: StaticArray<u8> = [0, 0]
   percentageIncrements: StaticArray<u8> = [0, 0]
+}
+
+export class BasePet {
+  id: string = '' // baseId
+  baseId: string = '0'
+  description: string = ''
+  tier: u8 = 0
+  skin: PetSkin = PetSkin.NONE
+  enhancementType: PetEnhancementType = PetEnhancementType.NONE
+  skillEnhancement1: Skill = Skill.NONE
+  skillEnhancement2: Skill = Skill.NONE
+}
+
+export class Pet {
+  id: string = '' // tokenId
+  tokenId: string = '0'
+  basePet: BasePet = new BasePet()
+  owner: string = ''
+  name: string = ''
+  lowercaseName: string = ''
+  percentEnhancement1: u8 = 0
+  percentEnhancement2: u8 = 0
+  timestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
