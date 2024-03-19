@@ -1303,7 +1303,7 @@ export class CoreData {
 
   // Pets
   petEditNameCost: string = '0'
-  totalPets = '0'
+  totalPets: string = '0'
   lastMintedPet: Pet = new Pet()
 }
 
