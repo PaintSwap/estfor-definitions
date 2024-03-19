@@ -502,6 +502,25 @@ export const SECRET_EGG_1 = EGG_BASE
 export const SECRET_EGG_2 = EGG_BASE + 1
 export const SECRET_EGG_3 = EGG_BASE + 2
 export const SECRET_EGG_4 = EGG_BASE + 3
+
+export const EGG_TIER1 = EGG_BASE + 20
+export const EGG_TIER2 = EGG_BASE + 21
+export const EGG_TIER3 = EGG_BASE + 22
+export const EGG_TIER4 = EGG_BASE + 23
+export const EGG_TIER5 = EGG_BASE + 24
+
+export const SECRET_EGG_1_TIER4 = EGG_TIER1 + 10
+export const SECRET_EGG_1_TIER5 = EGG_TIER1 + 11
+
+export const SECRET_EGG_2_TIER3 = SECRET_EGG_1_TIER4 + 10
+export const SECRET_EGG_2_TIER4 = SECRET_EGG_1_TIER4 + 11
+export const SECRET_EGG_2_TIER5 = SECRET_EGG_1_TIER4 + 12
+
+export const SECRET_EGG_3_TIER4 = SECRET_EGG_2_TIER3 + 10
+export const SECRET_EGG_3_TIER5 = SECRET_EGG_2_TIER3 + 11
+
+export const SECRET_EGG_4_TIER4 = SECRET_EGG_3_TIER4 + 10
+export const SECRET_EGG_4_TIER5 = SECRET_EGG_3_TIER4 + 11
 export const EGG_MAX = 12799
 
 // Boosts
