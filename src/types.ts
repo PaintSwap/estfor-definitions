@@ -874,6 +874,7 @@ export class QueuedAction {
   feetEquipped: u16 = 0
   ringEquipped: u16 = 0
 
+  basePetId: u32 = 0
   pet: Pet = new Pet()
 }
 
