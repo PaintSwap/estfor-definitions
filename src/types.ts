@@ -873,6 +873,8 @@ export class QueuedAction {
   legsEquipped: u16 = 0
   feetEquipped: u16 = 0
   ringEquipped: u16 = 0
+
+  pet: Pet = new Pet()
 }
 
 export class Item {
