@@ -498,10 +498,10 @@ export const SCROLL_MAX = SCROLL_BASE + 255
 
 // Eggs
 export const EGG_BASE = 12544
-export const SECRET_EGG_1 = EGG_BASE
-export const SECRET_EGG_2 = EGG_BASE + 1
-export const SECRET_EGG_3 = EGG_BASE + 2
-export const SECRET_EGG_4 = EGG_BASE + 3
+export const SECRET_EGG_1_TIER3 = EGG_BASE
+export const SECRET_EGG_2_TIER2 = EGG_BASE + 1
+export const SECRET_EGG_3_TIER3 = EGG_BASE + 2
+export const SECRET_EGG_4_TIER3 = EGG_BASE + 3
 
 export const EGG_TIER1 = EGG_BASE + 20
 export const EGG_TIER2 = EGG_BASE + 21
