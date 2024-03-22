@@ -1598,9 +1598,11 @@ export class BasePetInput {
   enhancementType: PetEnhancementType = PetEnhancementType.NONE
   baseId: u32 = 0
   skillEnhancements: StaticArray<Skill> = [Skill.NONE, Skill.NONE]
-  percentageMins: StaticArray<u8> = [0, 0]
-  percentageMaxs: StaticArray<u8> = [0, 0]
-  percentageIncrements: StaticArray<u8> = [0, 0]
+  skillFixedMins: StaticArray<u8> = [0, 0]
+  skillFixedMaxs: StaticArray<u8> = [0, 0]
+  skillPercentageMins: StaticArray<u8> = [0, 0]
+  skillPercentageMaxs: StaticArray<u8> = [0, 0]
+  skillPercentageIncrements: StaticArray<u8> = [0, 0]
 }
 
 export class BasePet {
@@ -1621,8 +1623,8 @@ export class Pet {
   owner: string = ''
   name: string = ''
   lowercaseName: string = ''
-  percentEnhancement1: u8 = 0
-  percentEnhancement2: u8 = 0
+  skillEnhancementPercent1: u8 = 0
+  skillEnhancementPercent2: u8 = 0
   timestamp: string = '0'
 }
 
