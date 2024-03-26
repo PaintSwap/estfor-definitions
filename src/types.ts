@@ -172,7 +172,7 @@ export class GuaranteedReward {
 export class RandomReward {
   itemTokenId: u16 = 0
   chance: u16 = 0 // out of 65535
-  amount: u16 = 0
+  amount: u8 = 0
 }
 
 export class ActionInput {
