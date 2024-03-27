@@ -1573,10 +1573,10 @@ export class OrderBookDayData {
 export enum PetSkin {
   NONE,
   DEFAULT,
-  TESTER,
+  OG,
   ONEKIN,
-  FROST1,
-  FROST2,
+  FROST,
+  CRYSTAL,
 }
 
 export enum PetEnhancementType {
@@ -1603,6 +1603,7 @@ export class BasePetInput {
   skillPercentageMins: StaticArray<u8> = [0, 0]
   skillPercentageMaxs: StaticArray<u8> = [0, 0]
   skillPercentageIncrements: StaticArray<u8> = [0, 0]
+  skillMinLevels: StaticArray<u8> = [0, 0]
 }
 
 export class BasePet {
@@ -1612,8 +1613,8 @@ export class BasePet {
   tier: u8 = 0
   skin: PetSkin = PetSkin.NONE
   enhancementType: PetEnhancementType = PetEnhancementType.NONE
-  skillEnhancement1: Skill = Skill.NONE
-  skillEnhancement2: Skill = Skill.NONE
+  skillEnhancements: Skill[] = []
+  skillMinLevels: u8[] = []
 }
 
 export class Pet {
@@ -1623,8 +1624,8 @@ export class Pet {
   owner: string = ''
   name: string = ''
   lowercaseName: string = ''
-  skillEnhancementPercent1: u8 = 0
-  skillEnhancementPercent2: u8 = 0
+  skillEnhancementFixeds: u8[] = []
+  skillEnhancementPercents: u8[] = []
   timestamp: string = '0'
 }
 
