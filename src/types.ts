@@ -457,6 +457,7 @@ export class Player {
   huntingXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
+  battlePoints: number = 0
 
   /* Combat XP */
   healthXP: string = '0'
@@ -1600,6 +1601,7 @@ export class BasePetInput {
   skillEnhancements: StaticArray<Skill> = [Skill.NONE, Skill.NONE]
   skillFixedMins: StaticArray<u8> = [0, 0]
   skillFixedMaxs: StaticArray<u8> = [0, 0]
+  skillFixedIncrements: StaticArray<u8> = [0, 0]
   skillPercentageMins: StaticArray<u8> = [0, 0]
   skillPercentageMaxs: StaticArray<u8> = [0, 0]
   skillPercentageIncrements: StaticArray<u8> = [0, 0]
@@ -1624,8 +1626,8 @@ export class Pet {
   owner: string = ''
   name: string = ''
   lowercaseName: string = ''
-  skillEnhancementFixeds: u8[] = []
-  skillEnhancementPercents: u8[] = []
+  skillFixedsEnhancements: u8[] = []
+  skillPercentageEnhancements: u8[] = []
   timestamp: string = '0'
 }
 
