@@ -819,6 +819,9 @@ export class ActivitySimplified {
   gainedSkills: Skill[] = []
   gainedXPs: string[] = []
   miscs: string[] = [] // Various BigInts specific to the activity type
+  petBaseTokenIds: u32[] = []
+  petIds: string[] = []
+  petDirections: string[] = []
   skill: Skill = Skill.NONE
   otherAddress: string = ''
   thirdAddress: string = ''
@@ -830,8 +833,8 @@ export class ActivitySimplified {
   otherPlayer: PlayerSimplified = new PlayerSimplified() // Only used for Clan things currently
   user: string = ''
   undertaker: string = '' // ActivityUndertaker
-  queuedAction: QueuedAction = new QueuedAction()
-  queuedActions: QueuedAction[] = [] // Only used for SetActionQueue
+  queuedAction: QueuedActionSimplified = new QueuedActionSimplified()
+  queuedActions: QueuedActionSimplified[] = [] // Only used for SetActionQueue
   playerQuest: PlayerQuestSimplified = new PlayerQuestSimplified() // Only set for QuestsCompleted
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
@@ -877,6 +880,35 @@ export class QueuedAction {
 
   basePetId: u32 = 0
   pet: Pet = new Pet()
+}
+
+export class QueuedActionSimplified {
+  id: string = '' // queueId
+  queuedId: string = '' // queueId
+  actionId: u16 = 0
+  playerId: string = ''
+  regenerateId: u16 = 0
+  choice: ActionChoice = new ActionChoice()
+  rightHandEquipmentTokenId: u16 = 0
+  leftHandEquipmentTokenId: u16 = 0
+  startTime: string = ''
+  timespan: u32 = 0
+  originalStartTime: string = ''
+  originalTimespan: u32 = 0
+  isValid: boolean = true
+  isActive: boolean = true
+  skill: Skill = Skill.NONE
+  combatStyle: CombatStyle = CombatStyle.NONE
+
+  headEquipped: u16 = 0
+  neckEquipped: u16 = 0
+  bodyEquipped: u16 = 0
+  armsEquipped: u16 = 0
+  legsEquipped: u16 = 0
+  feetEquipped: u16 = 0
+  ringEquipped: u16 = 0
+
+  basePetId: u32 = 0
 }
 
 export class Item {
