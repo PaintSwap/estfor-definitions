@@ -761,6 +761,10 @@ export enum ActivityType {
   ClaimFundsOnMaker,
   InstantVRFAction,
   InstantVRFActionCompleted,
+
+  TransferPets,
+  ReceivedPets,
+  EditPet,
 }
 
 export enum Direction {
