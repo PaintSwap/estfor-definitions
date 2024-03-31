@@ -1662,7 +1662,7 @@ export class Pet {
   owner: string = ''
   name: string = ''
   lowercaseName: string = ''
-  skillFixedsEnhancements: u8[] = []
+  skillFixedEnhancements: u8[] = []
   skillPercentageEnhancements: u8[] = []
   timestamp: string = '0'
 }
