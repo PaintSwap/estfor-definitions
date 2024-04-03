@@ -321,7 +321,7 @@ export class PassiveAction {
   inputTokenIds: u16[] = []
   inputAmounts: u32[] = []
   minSkills: Skill[] = []
-  minLevels: string[] = []
+  minLevels: u16[] = []
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
