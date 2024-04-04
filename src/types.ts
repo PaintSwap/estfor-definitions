@@ -1643,6 +1643,8 @@ export class BasePetInput {
   skillPercentageMaxs: StaticArray<u8> = [0, 0]
   skillPercentageIncrements: StaticArray<u8> = [0, 0]
   skillMinLevels: StaticArray<u8> = [0, 0]
+  fixedStarThreshold: u16 = 0
+  percentageStarThreshold: u16 = 0
 }
 
 export class BasePet {
@@ -1654,6 +1656,8 @@ export class BasePet {
   enhancementType: PetEnhancementType = PetEnhancementType.NONE
   skillEnhancements: Skill[] = []
   skillMinLevels: u8[] = []
+  fixedStarThreshold: u16 = 0
+  percentageStarThreshold: u16 = 0
 }
 
 export class Pet {
