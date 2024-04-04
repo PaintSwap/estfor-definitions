@@ -457,7 +457,6 @@ export class Player {
   huntingXP: string = '0'
   totalXP: string = '0'
   totalLevel: number = 0
-  battlePoints: number = 0
 
   /* Combat XP */
   healthXP: string = '0'
@@ -524,6 +523,7 @@ export class Player {
   totalSkillDraws: string = '0'
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
+  battlePoints: number = 0
 }
 
 export class PlayerSimplified {
@@ -581,6 +581,7 @@ export class PlayerSimplified {
   totalSkillDraws: string = '0'
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
+  battlePoints: number = 0
 }
 
 export class User {
