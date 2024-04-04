@@ -465,7 +465,7 @@ export class Player {
   magicXP: string = '0'
   rangedXP: string = '0'
 
-  /** Ranks */
+  /* Ranks */
   woodcuttingRank: u32 = 0
   firemakingRank: u32 = 0
   fishingRank: u32 = 0
