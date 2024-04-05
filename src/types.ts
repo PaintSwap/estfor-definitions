@@ -914,6 +914,7 @@ export class QueuedActionSimplified {
   ringEquipped: u16 = 0
 
   basePetId: u32 = 0
+  petId: string = ''
 }
 
 export class Item {
