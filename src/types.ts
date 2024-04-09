@@ -427,6 +427,7 @@ export class Player {
   numActivities: u32 = 0
   pendingRandomRewards: string[] = [] // Timestamps for any rewards which are waiting on the next seed
   firstToReachMaxSkill: Skill = Skill.NONE
+  queuedActions: QueuedAction[] = []
   activeQuest: PlayerQuest = new PlayerQuest()
   activePassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
   lastInstantAction: QueuedInstantAction = new QueuedInstantAction()
