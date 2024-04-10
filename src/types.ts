@@ -337,6 +337,16 @@ export class QueuedPassiveAction {
   boostItem: Item = new Item()
 }
 
+export class PendingPassiveActionState {
+  producedItemTokenIds: string[] = []
+  producedAmounts: string[] = []
+  producedRandomRewardItemTokenIds: string[] = [] // Oracle loot
+  producedRandomRewardAmounts: string[] = []
+  numDaysSkipped: u32 = 0
+  skippedToday: bool = false
+  isReady: bool = false
+}
+
 export enum InstantActionType {
   NONE,
   FORGING_COMBINE,
