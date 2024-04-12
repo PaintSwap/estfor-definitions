@@ -1320,6 +1320,7 @@ export class CoreData {
   playerEditNameCost: string = '0'
   playerUpgradeCost: string = '0'
   gamePaused: boolean = false
+  minItemQuantityBeforeSellsAllowed: string = '0'
 
   // Global Donations
   lastGlobalDonationThreshold: string = '0'
