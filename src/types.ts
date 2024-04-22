@@ -543,8 +543,9 @@ export class PlayerSimplified {
   tokenId: string = '0'
   name: string = ''
   avatarId: string = '1'
-  isActive: boolean = false
+  lastTimestamp: string = '0'
   mintedTimestamp: string = '0'
+  isActive: boolean = false
   totalDonated: string = '0'
   isFullMode: boolean = false
 
@@ -578,6 +579,8 @@ export class PlayerSimplified {
   telegram: string = ''
 
   /* Clan Wars */
+  isTerritoryCombatant: boolean = false
+  isLockedVaultCombatant: boolean = false
   territoryWins: string = '0'
   territoryLosses: string = '0'
   territorySkillDraws: string = '0'
@@ -1246,7 +1249,7 @@ export class ClanSimplified {
 
 export class ClanMember {
   id: string = '' // playerId
-  player: Player = new Player()
+  player: PlayerSimplified = new PlayerSimplified()
   clan: ClanSimplified = new ClanSimplified()
   requestedClan: ClanSimplified = new ClanSimplified()
   requestedClanTimestamp: string = ''
