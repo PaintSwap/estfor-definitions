@@ -1232,6 +1232,8 @@ export class ClanSimplified {
   lastDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
+  gateKeepNFTs: string[] = []
+
   bankValue: string = '0'
   bankBrushValue: string = '0'
   totalWins: string = '0'
