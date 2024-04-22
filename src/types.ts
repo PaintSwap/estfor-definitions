@@ -541,6 +541,7 @@ export class Player {
 export class PlayerSimplified {
   id: string = '0'
   tokenId: string = '0'
+  owner: string = ''
   name: string = ''
   avatarId: string = '1'
   lastTimestamp: string = '0'
@@ -581,6 +582,7 @@ export class PlayerSimplified {
   /* Clan Wars */
   isTerritoryCombatant: boolean = false
   isLockedVaultCombatant: boolean = false
+  clanWarCombatantCooldownTimestamp: string = '0'
   territoryWins: string = '0'
   territoryLosses: string = '0'
   territorySkillDraws: string = '0'
