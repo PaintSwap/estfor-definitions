@@ -1221,6 +1221,17 @@ export class ClanSimplified {
   bankAddress: string = ''
   totalLevel: number = 0
   combinedRank: number = 0
+
+  boostStartTime: u64 = 0
+  boostDuration: u32 = 0
+  boostVal: u8 = 0
+  boostType: BoostType
+  boostItemTokenId: u16 = 0
+
+  totalDonated: string = '0'
+  lastDonationThreshold: string = '0'
+  nextDonationThresholdRewardItemTokenId: u16 = 0
+
   bankValue: string = '0'
   bankBrushValue: string = '0'
   totalWins: string = '0'
