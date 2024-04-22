@@ -1171,18 +1171,18 @@ export class Clan {
   lastDonationTimestamp: u64 = 0
   gateKeepNFTs: string[] = []
   pinnedMessage: string = ''
-  pinnedMessagePlayer: Player = new Player()
+  pinnedMessagePlayer: PlayerSimplified = new PlayerSimplified()
   pinnedMessageTimestamp: string = ''
 
   // Clan wars related
-  territoryCombatants: Player[] = []
+  territoryCombatants: PlayerSimplified[] = []
   territoryCombatantsLength: u32 = 0
   territoryCombatantCooldownTimestamp: string = ''
   territoryAttackCooldownTimestamp: string = ''
   ongoingTerritoryCombat: bool = false
   blockingTerritoryAttacksTimestamp: string = '0'
   blockingTerritoryAttacksCooldownTimestamp: string = '0'
-  lockedVaultCombatants: Player[] = []
+  lockedVaultCombatants: PlayerSimplified[] = []
   lockedVaultCombatantsLength: u32 = 0
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
@@ -1234,8 +1234,8 @@ export class ClanSimplified {
 export class ClanMember {
   id: string = '' // playerId
   player: Player = new Player()
-  clan: Clan = new Clan()
-  requestedClan: Clan = new Clan()
+  clan: ClanSimplified = new ClanSimplified()
+  requestedClan: ClanSimplified = new ClanSimplified()
   requestedClanTimestamp: string = ''
   rank: ClanRank = ClanRank.NONE
   joinedTimestamp: string = ''
@@ -1246,7 +1246,7 @@ export class ClanMember {
 export class ClanInvite {
   id: string = '' // playerId_clanId
   member: ClanMember = new ClanMember()
-  clan: Clan = new Clan()
+  clan: ClanSimplified = new ClanSimplified()
   invitedBy: ClanMember = new ClanMember()
   invitedTimestamp: string = ''
 }
