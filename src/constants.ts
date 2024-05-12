@@ -2481,6 +2481,6 @@ const specialItemsToIgnore = generateSpecialItemsToIgnore()
 export { specialItemsToIgnore }
 export const totalCombinedLevel = 1600
 export const totalQuests = allQuestsLogicalOrdering.length
-export const totalPlayerItems = allItems.filter((id) => !itemsToIgnore.includes(id) && !specialItemsToIgnore.includes(id))?.length
+export const totalPlayerItems = allItems.filter((id) => !itemsToIgnore.includes(id) && !specialItemsToIgnore.includes(id)).length
 
 export default NONE
