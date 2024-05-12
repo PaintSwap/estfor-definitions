@@ -2438,49 +2438,71 @@ export const revealedItems = [
   GODLY_BOW_5,
 ]
 
-function range(start: number, end: number): number[] {
-  const array = []
-  for (let i = start; i <= end; i++) {
-    array.push(i)
+function range(start: i32, end: i32): Array<i32> {
+  const array = new Array<i32>()
+  for (let i: i32 = start; i <= end; i++) {
+    array.push(i32(i))
   }
   return array
 }
 
 // Collection items for hero and account to ignore
-export const itemsToIgnore = [
-  // Boosts
-  ...range(BOOST_BASE, BOOST_MAX),
-  // Enchantments
-  ...range(ENCHANTMENT_BASE, ENCHANTMENT_MAX),
-]
+function concatenateRanges(): Array<i32> {
+  const boosts = range(BOOST_BASE, BOOST_MAX)
+  const enchantments = range(ENCHANTMENT_BASE, ENCHANTMENT_MAX)
+  const result = new Array<i32>()
+
+  // Concatenate boosts and enchantments arrays
+  for (let i = 0; i < boosts.length; i++) {
+    result.push(boosts[i])
+  }
+  for (let i = 0; i < enchantments.length; i++) {
+    result.push(enchantments[i])
+  }
+
+  return result
+}
+
+function includes(array: Array<i32>, value: i32): bool {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == value) {
+      return true
+    }
+  }
+  return false
+}
 
 // Allow genesis eggs but not the others for hero collection
 const allowedEggRange = range(EGG_TIER1, EGG_TIER5)
 
 // Collection items for hero to ignore
-function generateSpecialItemsToIgnore(): number[] {
-  const itemsToIgnore = []
+function generateSpecialItemsToIgnore(): Array<i32> {
+  const itemsToIgnore = new Array<i32>()
 
   // Generate EGG range and filter based on allowedEggRange
-  for (let i = EGG_BASE; i <= EGG_MAX; i++) {
-    if (!allowedEggRange.includes(i)) {
-      itemsToIgnore.push(i)
+  for (let i: i32 = EGG_BASE; i <= EGG_MAX; i++) {
+    if (!includes(allowedEggRange, i32(i))) {
+      itemsToIgnore.push(i32(i))
     }
   }
 
   // Generate SPECIAL range
-  for (let i = SPECIAL_BASE; i <= SPECIAL_MAX; i++) {
-    itemsToIgnore.push(i)
+  for (let i: i32 = SPECIAL_BASE; i <= SPECIAL_MAX; i++) {
+    itemsToIgnore.push(i32(i))
   }
 
   // Include revealedItems
-  return itemsToIgnore.concat(revealedItems)
+  for (let i = 0; i < revealedItems.length; i++) {
+    itemsToIgnore.push(revealedItems[i])
+  }
+
+  return itemsToIgnore
 }
 
-const specialItemsToIgnore = generateSpecialItemsToIgnore()
-export { specialItemsToIgnore }
+export const itemsToIgnore = concatenateRanges()
+export const specialItemsToIgnore = generateSpecialItemsToIgnore()
 export const totalCombinedLevel = 1600
 export const totalQuests = allQuestsLogicalOrdering.length
-export const totalPlayerItems = allItems.filter((id) => !itemsToIgnore.includes(id) && !specialItemsToIgnore.includes(id)).length
+export const totalPlayerItems = allItems.filter((id: i32) => !includes(itemsToIgnore, id) && !includes(specialItemsToIgnore, id)).length
 
 export default NONE
