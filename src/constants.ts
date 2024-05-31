@@ -336,11 +336,14 @@ export const FISHING_BASE = 3072
 export const NET_STICK = FISHING_BASE
 export const MEDIUM_NET = FISHING_BASE + 1
 export const WOOD_FISHING_ROD = FISHING_BASE + 2
-export const TITANIUM_FISHING_ROD = FISHING_BASE + 3
-export const HARPOON = FISHING_BASE + 4
-export const LARGE_NET = FISHING_BASE + 5
-export const MAGIC_NET = FISHING_BASE + 6
-export const CAGE = FISHING_BASE + 7
+export const UNUSED_FISHING_1 = FISHING_BASE + 3
+export const UNUSED_FISHING_2 = FISHING_BASE + 4
+export const CAGE = FISHING_BASE + 5
+export const UNUSED_FISHING_3 = FISHING_BASE + 6
+export const LARGE_NET = FISHING_BASE + 7
+export const HARPOON = FISHING_BASE + 8
+export const MAGIC_NET = FISHING_BASE + 9
+export const TITANIUM_FISHING_ROD = FISHING_BASE + 10
 export const FISHING_MAX = FISHING_BASE + 255
 
 // Firemaking (3328 - 3583)
