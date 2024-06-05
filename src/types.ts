@@ -64,7 +64,7 @@ export enum EquipPosition {
   ARMS,
   LEGS,
   FEET,
-  SPARE1,
+  RING,
   SPARE2,
   LEFT_HAND,
   RIGHT_HAND,
