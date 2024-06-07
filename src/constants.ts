@@ -249,6 +249,7 @@ export const RING_MAX = RING_BASE + 255
 
 // Extra Slot(1792 - 2047)
 
+
 // Combat (right hand and shield) (2048 - 2303)
 export const COMBAT_BASE = 2048
 // Melee
@@ -386,6 +387,8 @@ export const FRAGMENT_MAX = FRAGMENT_BASE + 255
 
 // Reserved extra Fragments (3840 - 4095)
 // Empty (3853 - 10239)
+// Crafting (none needed)
+// Cooking (none needed)
 
 // 10000+ it'a all other items
 
@@ -534,11 +537,11 @@ export const SCROLL_MAX = SCROLL_BASE + 255
 
 // Chests (12288 - 12543)
 export const CHEST_BASE = 12288
-export const FISHIING_CHEST_1 = CHEST_BASE
-export const FISHIING_CHEST_2 = CHEST_BASE + 1
-export const FISHIING_CHEST_3 = CHEST_BASE + 2
-export const FISHIING_CHEST_4 = CHEST_BASE + 3
-export const FISHIING_CHEST_5 = CHEST_BASE + 4
+export const FISHING_CHEST_1 = CHEST_BASE
+export const FISHING_CHEST_2 = CHEST_BASE + 1
+export const FISHING_CHEST_3 = CHEST_BASE + 2
+export const FISHING_CHEST_4 = CHEST_BASE + 3
+export const FISHING_CHEST_5 = CHEST_BASE + 4
 export const WOODCUTTING_CHEST_1 = CHEST_BASE + 5
 export const WOODCUTTING_CHEST_2 = CHEST_BASE + 6
 export const WOODCUTTING_CHEST_3 = CHEST_BASE + 7
@@ -1165,7 +1168,6 @@ export const allItems = [
   INFUSED_SCORCHING_CHAPS,
   INFUSED_SCORCHING_BRACERS,
   INFUSED_SCORCHING_BOOTS,
-  COIN,
   RING1,
   RING2,
   RING3,
@@ -1192,11 +1194,11 @@ export const allItems = [
   INFUSED_SCORCHING_BRACERS_FRAGMENT,
   INFUSED_SCORCHING_CHAPS_FRAGMENT,
   INFUSED_SCORCHING_BOOTS_FRAGMENT,
-  FISHIING_CHEST_1,
-  FISHIING_CHEST_2,
-  FISHIING_CHEST_3,
-  FISHIING_CHEST_4,
-  FISHIING_CHEST_5,
+  FISHING_CHEST_1,
+  FISHING_CHEST_2,
+  FISHING_CHEST_3,
+  FISHING_CHEST_4,
+  FISHING_CHEST_5,
   WOODCUTTING_CHEST_1,
   WOODCUTTING_CHEST_2,
   WOODCUTTING_CHEST_3,
@@ -1210,6 +1212,7 @@ export const allItems = [
   DRAGON_CHEST,
   BONE_CHEST,
   BRIMSTONE,
+  COIN,
 ]
 
 /** ACTIONS */
