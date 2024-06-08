@@ -239,16 +239,15 @@ export const FEET_MAX = FEET_BASE + 254
 
 // Ring(1536 - 1791)
 export const RING_BASE = 1536
-export const RING1 = RING_BASE
-export const RING2 = RING_BASE + 1
-export const RING3 = RING_BASE + 2
-export const RING4 = RING_BASE + 3
-export const RING5 = RING_BASE + 4
-export const RING6 = RING_BASE + 5
+export const RING_1 = RING_BASE
+export const RING_2 = RING_BASE + 1
+export const RING_3 = RING_BASE + 2
+export const RING_4 = RING_BASE + 3
+export const RING_5 = RING_BASE + 4
+export const RING_6 = RING_BASE + 5
 export const RING_MAX = RING_BASE + 255
 
 // Extra Slot(1792 - 2047)
-
 
 // Combat (right hand and shield) (2048 - 2303)
 export const COMBAT_BASE = 2048
@@ -1168,12 +1167,12 @@ export const allItems = [
   INFUSED_SCORCHING_CHAPS,
   INFUSED_SCORCHING_BRACERS,
   INFUSED_SCORCHING_BOOTS,
-  RING1,
-  RING2,
-  RING3,
-  RING4,
-  RING5,
-  RING6,
+  RING_1,
+  RING_2,
+  RING_3,
+  RING_4,
+  RING_5,
+  RING_6,
   INFUSED_ORICHALCUM_HELMET_FRAGMENT,
   INFUSED_ORICHALCUM_ARMOR_FRAGMENT,
   INFUSED_ORICHALCUM_TASSETS_FRAGMENT,
