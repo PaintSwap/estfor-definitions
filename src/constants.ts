@@ -2685,3 +2685,5 @@ export const totalQuests = allQuestsLogicalOrdering.length
 export const totalPlayerItems =
   allItems.length - revealedItems.length - bonusEggs.length - specialItems.length - boosts.length - enchantments.length
 export const totalAccountItems = allItems.length - boosts.length - enchantments.length
+
+export default NONE
