@@ -1046,6 +1046,7 @@ export class Action {
   actionChoiceRequired: boolean = false
   successPercent: i8 = 100
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
+  isFullModeOnly: boolean = false
 
   /* Combat Stats */
   melee: i16 = 0
