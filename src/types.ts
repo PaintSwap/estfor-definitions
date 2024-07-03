@@ -1160,6 +1160,8 @@ class ClanShared {
   totalLevel: u16 = 0
   combinedRank: u64 = 0
 
+  gateKeepNFTs: string[] = []
+
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
   boostVal: u8 = 0
@@ -1170,8 +1172,6 @@ class ClanShared {
   lastDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
-  gateKeepNFTs: string[] = []
-
   bankValue: string = '0'
   bankBrushValue: string = '0'
   totalWins: string = '0'
@@ -1180,6 +1180,7 @@ class ClanShared {
   lockedVaultCombatantsLength: u32 = 0
   blockingLockedVaultAttacksTimestamp: string = '0'
   lockedVaults: LockedBankVault[] = []
+  mmr: u16 = 0
 }
 
 export class Clan extends ClanShared {
@@ -1188,14 +1189,6 @@ export class Clan extends ClanShared {
   discord: string | null = ''
   twitter: string | null = ''
   telegram: string | null = ''
-  imageId: u16 = 0
-  tier: ClanTier = new ClanTier()
-  createdTimestamp: string = ''
-  createdCount: string = ''
-  memberCount: u32 = 0
-  bankAddress: string = ''
-  totalLevel: u32 = 0
-  combinedRank: u32 = 0
   joinRequestsEnabled: boolean = false
 
   lastDonationTimestamp: u64 = 0
@@ -1216,13 +1209,10 @@ export class Clan extends ClanShared {
   lockedVaultAttackCooldownTimestamp: string = ''
   lockedVaultSuperAttackCooldownTimestamp: string = ''
   ongoingLockedVaultCombat: bool = false
-  blockingLockedVaultAttacksTimestamp: string = '0'
   territoryWins: string = '0'
   territoryLosses: string = '0'
   lockedVaultWins: string = '0'
   lockedVaultLosses: string = '0'
-  totalWins: string = '0'
-  totalLosses: string = '0'
   brushLocked: string = '0'
   brushLockedMinusUnclaimed: string = '0'
   brushUnclaimed: string = '0'
@@ -1231,11 +1221,8 @@ export class Clan extends ClanShared {
   totalBrushLocked: string = '0'
   totalBrushLost: string = '0'
   totalBrushClaimed: string = '0'
-  mmr: u16 = 0
 
   brushAvailable: string = '0'
-  bankValue: string = '0'
-  bankBrushValue: string = '0'
 }
 
 export class ClanSimplified extends ClanShared {}
@@ -1490,23 +1477,11 @@ export class ClanBattleShared {
 }
 
 export class ClanBattle extends ClanBattleShared {
-  id: string = '' // [t | b]<requestId>
-  requestId: string = '0'
-  attackingPlayers: Player[] = []
-  defendingPlayers: Player[] = []
-  attackingRolls: u32[] = []
-  defendingRolls: u32[] = []
-  battleResults: BattleResult[] = []
   randomSkills: Skill[] = []
-  didAttackersWin: boolean = false
   attackingClan: Clan | null = null
   defendingClan: Clan | null = null
   randomWords: string[] = []
-  attackingTimestamp: string = '0'
-  ongoing: boolean = false
-  type: ClanBattleType = ClanBattleType.TERRITORY
   territory: Territory = new Territory() // Only used for territory battles
-  brushWon: string = '0'
   item: Item = new Item()
   oracleFailed: boolean = false
   oracleHash: string = ''
