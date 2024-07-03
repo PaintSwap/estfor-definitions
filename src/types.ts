@@ -446,8 +446,8 @@ export class Player {
   numFixedQuestsCompleted: u32 = 0
   isBurnt: boolean = false // Whether the NFT associated with this player has been burnt
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
-  lastDailyRewardClaimedItemTokenId: number = 0
-  lastWeeklyRewardClaimedItemTokenId: number = 0
+  lastDailyRewardClaimedItemTokenId: u16 = 0
+  lastWeeklyRewardClaimedItemTokenId: u16 = 0
   totalDonated: string = '0'
   numRaffleEntries: u32 = 0
   isFullMode: boolean = false
@@ -468,7 +468,7 @@ export class Player {
   forgingXP: string = '0'
   huntingXP: string = '0'
   totalXP: string = '0'
-  totalLevel: number = 0
+  totalLevel: u16 = 0
 
   /* Combat XP */
   healthXP: string = '0'
@@ -535,7 +535,7 @@ export class Player {
   totalSkillDraws: string = '0'
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
-  battlePoints: number = 0
+  battlePoints: u32 = 0
 }
 
 export class PlayerSimplified {
@@ -565,7 +565,7 @@ export class PlayerSimplified {
   forgingXP: string = '0'
   huntingXP: string = '0'
   totalXP: string = '0'
-  totalLevel: number = 0
+  totalLevel: u16 = 0
 
   /* Combat XP */
   healthXP: string = '0'
@@ -598,7 +598,7 @@ export class PlayerSimplified {
   totalSkillDraws: string = '0'
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
-  battlePoints: number = 0
+  battlePoints: u16 = 0
 }
 
 export class User {
@@ -1147,22 +1147,18 @@ export class ClanTier {
   minimumAge: string = '0'
 }
 
-export class Clan {
+class ClanShared {
   id: string = ''
-  owner: Player = new Player()
   name: string = ''
-  discord: string | null = ''
-  twitter: string | null = ''
-  telegram: string | null = ''
+  lowercaseName: string = ''
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
   createdTimestamp: string = ''
   createdCount: string = ''
   memberCount: u32 = 0
   bankAddress: string = ''
-  totalLevel: number = 0
-  combinedRank: number = 0
-  joinRequestsEnabled: boolean = false
+  totalLevel: u16 = 0
+  combinedRank: u64 = 0
 
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
@@ -1174,8 +1170,35 @@ export class Clan {
   lastDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
-  lastDonationTimestamp: u64 = 0
   gateKeepNFTs: string[] = []
+
+  bankValue: string = '0'
+  bankBrushValue: string = '0'
+  totalWins: string = '0'
+  totalLosses: string = '0'
+
+  lockedVaultCombatantsLength: u32 = 0
+  blockingLockedVaultAttacksTimestamp: string = '0'
+  lockedVaults: LockedBankVault[] = []
+}
+
+export class Clan extends ClanShared {
+  clanId: string = ''
+  owner: Player = new Player()
+  discord: string | null = ''
+  twitter: string | null = ''
+  telegram: string | null = ''
+  imageId: u16 = 0
+  tier: ClanTier = new ClanTier()
+  createdTimestamp: string = ''
+  createdCount: string = ''
+  memberCount: u32 = 0
+  bankAddress: string = ''
+  totalLevel: u32 = 0
+  combinedRank: u32 = 0
+  joinRequestsEnabled: boolean = false
+
+  lastDonationTimestamp: u64 = 0
   pinnedMessage: string = ''
   pinnedMessagePlayer: PlayerSimplified = new PlayerSimplified()
   pinnedMessageTimestamp: string = ''
@@ -1189,11 +1212,9 @@ export class Clan {
   blockingTerritoryAttacksTimestamp: string = '0'
   blockingTerritoryAttacksCooldownTimestamp: string = '0'
   lockedVaultCombatants: PlayerSimplified[] = []
-  lockedVaultCombatantsLength: u32 = 0
   lockedVaultCombatantCooldownTimestamp: string = ''
   lockedVaultAttackCooldownTimestamp: string = ''
   lockedVaultSuperAttackCooldownTimestamp: string = ''
-  lockedVaults: LockedBankVault[] = []
   ongoingLockedVaultCombat: bool = false
   blockingLockedVaultAttacksTimestamp: string = '0'
   territoryWins: string = '0'
@@ -1204,51 +1225,20 @@ export class Clan {
   totalLosses: string = '0'
   brushLocked: string = '0'
   brushLockedMinusUnclaimed: string = '0'
+  brushUnclaimed: string = '0'
   totalBrushLockedFromTerritory: string = '0'
   totalBrushLockedFromVaults: string = '0'
   totalBrushLocked: string = '0'
   totalBrushLost: string = '0'
   totalBrushClaimed: string = '0'
+  mmr: u16 = 0
 
   brushAvailable: string = '0'
   bankValue: string = '0'
   bankBrushValue: string = '0'
 }
 
-export class ClanSimplified {
-  id: string = ''
-  name: string = ''
-  lowercaseName: string = ''
-  imageId: u16 = 0
-  tier: ClanTier = new ClanTier()
-  createdTimestamp: string = ''
-  createdCount: string = ''
-  memberCount: u32 = 0
-  bankAddress: string = ''
-  totalLevel: number = 0
-  combinedRank: number = 0
-
-  boostStartTime: u64 = 0
-  boostDuration: u32 = 0
-  boostVal: u8 = 0
-  boostType: BoostType
-  boostItemTokenId: u16 = 0
-
-  totalDonated: string = '0'
-  lastDonationThreshold: string = '0'
-  nextDonationThresholdRewardItemTokenId: u16 = 0
-
-  gateKeepNFTs: string[] = []
-
-  bankValue: string = '0'
-  bankBrushValue: string = '0'
-  totalWins: string = '0'
-  totalLosses: string = '0'
-
-  lockedVaultCombatantsLength: u32 = 0
-  blockingLockedVaultAttacksTimestamp: string = '0'
-  lockedVaults: LockedBankVault[] = []
-}
+export class ClanSimplified extends ClanShared {}
 
 export class ClanMember {
   id: string = '' // playerId
@@ -1312,7 +1302,7 @@ export class Lottery {
   id: string = '' // lotteryId
   raffleIdWinner: string = '' // 0 means no winner yet
   hasClaimed: bool = false
-  rewardItemTokenId: number = 0
+  rewardItemTokenId: u16 = 0
   rewardAmount: string = '0'
   timestamp: string = '0'
 }
@@ -1367,6 +1357,10 @@ export class CoreData {
   expectedGasLimitFulfillLockedVault: string = '0'
   baseAttackCostLockedVault: string = '0'
   totalAttackCostLockedVault: string = '0'
+  initialMMR: u16 = 0
+  mmrAttackDistance: u8 = 0
+  Ka: u8 = 0
+  Kd: u8 = 0
 
   // Instant VRF actions
   gasCostPerUnitInstantVRFAction: string = '0'
@@ -1478,7 +1472,24 @@ export enum BattleResult {
   LOSE,
 }
 
-export class ClanBattle {
+export class ClanBattleShared {
+  id: string = '' // [t | b]<requestId>
+  requestId: string = '0'
+  attackingPlayerIds: string[] = []
+  defendingPlayerIds: string[] = []
+  attackingRolls: u32[] = []
+  defendingRolls: u32[] = []
+  battleResults: BattleResult[] = []
+  didAttackersWin: boolean = false
+  attackingMMRDiff: i16 = 0
+  attackingMMRDiffTotal: i16 = 0
+  attackingTimestamp: string = '0'
+  ongoing: boolean = false
+  type: ClanBattleType = ClanBattleType.TERRITORY
+  brushWon: string = '0'
+}
+
+export class ClanBattle extends ClanBattleShared {
   id: string = '' // [t | b]<requestId>
   requestId: string = '0'
   attackingPlayers: Player[] = []
@@ -1501,21 +1512,9 @@ export class ClanBattle {
   oracleHash: string = ''
 }
 
-export class ClanBattleSimplified {
-  id: string = '' // [t | b]<requestId>
-  requestId: string = '0'
-  attackingPlayerIds: string[] = []
-  defendingPlayerIds: string[] = []
-  attackingRolls: u32[] = []
-  defendingRolls: u32[] = []
-  battleResults: BattleResult[] = []
-  didAttackersWin: boolean = false
+export class ClanBattleSimplified extends ClanBattleShared {
   attackingClan: ClanSimplified = new ClanSimplified()
   defendingClan: ClanSimplified = new ClanSimplified()
-  attackingTimestamp: string = '0'
-  ongoing: boolean = false
-  type: ClanBattleType = ClanBattleType.TERRITORY
-  brushWon: string = '0'
 }
 
 export class LockedBankVaultClanBattlePair {

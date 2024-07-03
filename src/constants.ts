@@ -1,4 +1,3 @@
-import { Skill } from './types'
 import adminSnapshotAddresses from './whitelisted_admins'
 
 export const whitelistedAdmins = adminSnapshotAddresses
