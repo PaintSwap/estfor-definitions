@@ -1477,6 +1477,8 @@ export class ClanBattleShared {
 }
 
 export class ClanBattle extends ClanBattleShared {
+  attackingPlayers: Player[] = []
+  defendingPlayers: Player[] = []
   randomSkills: Skill[] = []
   attackingClan: Clan | null = null
   defendingClan: Clan | null = null
