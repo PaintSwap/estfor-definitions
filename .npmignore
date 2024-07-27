@@ -80,7 +80,6 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -103,4 +102,18 @@ dist
 # TernJS port file
 .tern-port
 
-/build
+# Don't publish the source
+src/
+
+# Config files we don't need
+.github
+.vscode
+.prettierrc
+.eslintignore
+.eslintrc.json
+.gitignore
+.mocharc.json
+asconfig.json
+jest.config.json
+nyc.config.json
+tsconfig.json
