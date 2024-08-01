@@ -1447,6 +1447,7 @@ export class Territory {
   clanOccupier: Clan | null = null
   unclaimedEmissions: string = '0'
   nextHarvestAllowedTimestamp: string = '0'
+  minMMR: u16 = 0
 }
 
 export enum ClanBattleType {
