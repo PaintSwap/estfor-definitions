@@ -1317,6 +1317,7 @@ export class CoreData {
   playerUpgradeCost: string = '0'
   gamePaused: boolean = false
   minItemQuantityBeforeSellsAllowed: string = '0'
+  alphaCombatHealing: string = '8'
 
   // Global Donations
   lastGlobalDonationThreshold: string = '0'
