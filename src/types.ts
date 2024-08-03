@@ -1471,7 +1471,7 @@ export class ClanBattleShared {
   battleResults: BattleResult[] = []
   didAttackersWin: boolean = false
   attackingMMRDiff: i16 = 0
-  attackingMMRDiffTotal: i16 = 0
+  defendingMMRDiff: i16 = 0
   attackingTimestamp: string = '0'
   ongoing: boolean = false
   type: ClanBattleType = ClanBattleType.TERRITORY
