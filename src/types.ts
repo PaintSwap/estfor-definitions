@@ -326,6 +326,7 @@ export class PassiveAction {
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
 }
 
 export class QueuedPassiveAction {
@@ -410,6 +411,7 @@ export class InstantVRFAction {
   //  data: string = '' // Unsure if we need this, can be quite large
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
 }
 
 export class QueuedInstantVRFAction {
