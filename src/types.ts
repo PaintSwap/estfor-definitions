@@ -1626,6 +1626,7 @@ export enum PetSkin {
   ONEKIN,
   FROST,
   CRYSTAL,
+  ANNIV1,
 }
 
 export enum PetEnhancementType {
