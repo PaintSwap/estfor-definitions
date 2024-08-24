@@ -2817,7 +2817,19 @@ export const bonusEggs = [
 ]
 
 // Special items to ignore for the hero progress
-export const specialItems = [HALLOWEEN_BONUS_1, HALLOWEEN_BONUS_2, HALLOWEEN_BONUS_3]
+export const specialItems = [
+  HALLOWEEN_BONUS_1,
+  HALLOWEEN_BONUS_2,
+  HALLOWEEN_BONUS_3,
+  ANNIV1_CHEST,
+  ANNIV1_KEY,
+  ANNIV1_RING,
+  ANNIV1_EGG_TIER1,
+  ANNIV1_EGG_TIER2,
+  ANNIV1_EGG_TIER3,
+  ANNIV1_EGG_TIER4,
+  ANNIV1_EGG_TIER5,
+]
 
 // Boosts to ignore for the account and hero progress
 export const boosts = [
