@@ -1156,7 +1156,6 @@ class ClanShared {
   imageId: u16 = 0
   tier: ClanTier = new ClanTier()
   createdTimestamp: string = ''
-  createdCount: string = ''
   memberCount: u32 = 0
   bankAddress: string = ''
   totalLevel: u16 = 0
