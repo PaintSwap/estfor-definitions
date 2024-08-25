@@ -1151,6 +1151,7 @@ export class ClanTier {
 
 class ClanShared {
   id: string = ''
+  clanId: string = ''
   name: string = ''
   lowercaseName: string = ''
   imageId: u16 = 0
@@ -1185,7 +1186,6 @@ class ClanShared {
 }
 
 export class Clan extends ClanShared {
-  clanId: string = ''
   owner: Player = new Player()
   discord: string | null = ''
   twitter: string | null = ''
