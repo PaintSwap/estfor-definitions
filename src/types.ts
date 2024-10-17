@@ -1404,6 +1404,7 @@ export enum Promotion {
   STARTER,
   HALLOWEEN_2023,
   XMAS_2023,
+  HALLOWEEN_2024,
 }
 
 export class PromotionInfo {
