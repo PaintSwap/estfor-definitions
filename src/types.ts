@@ -301,6 +301,7 @@ export class PassiveActionInfoInput {
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
 }
 
 export class PassiveActionInput {
