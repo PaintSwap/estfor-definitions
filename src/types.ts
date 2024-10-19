@@ -365,6 +365,7 @@ export class InstantActionInput {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
+  isAvailable: boolean = true
 }
 
 export class InstantAction {
