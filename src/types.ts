@@ -29,7 +29,7 @@ export enum Skill {
   CRAFTING,
   COOKING,
   FIREMAKING,
-  AGILITY,
+  FARMING,
   ALCHEMY,
   FLETCHING,
   FORGING,
