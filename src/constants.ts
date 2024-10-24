@@ -2785,7 +2785,7 @@ export const BETA_PET_ADDRESS = '0x1681f593ac5cba407c2a190de0ca2beb4a69b5d3'
 
 export const TIER_REWARD_START_XP = [0, 7650, 33_913, 195_864, 784_726] // tier 6 when it's added 2_219_451
 
-// 0 xp = level 1 (up to level 130)
+// 0 xp = level 1 (up to level 140)
 export const levelXp: Array<i32> = [
   0, 84, 174, 270, 374, 486, 606, 734, 872, 1021, 1179, 1350, 1532, 1728, 1938, 2163, 2404, 2662, 2939, 3236, 3553,
   3894, 4258, 4649, 5067, 5515, 5995, 6510, 7060, 7650, 8282, 8959, 9685, 10461, 11294, 12185, 13140, 14162, 15258,
