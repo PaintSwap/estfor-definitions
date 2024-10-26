@@ -601,51 +601,10 @@ export class User {
   numUniqueItems: u32 = 0
   numActivities: u32 = 0
   numPets: u32 = 0
-  totalSold: string = '0'
-  totalBought: string = '0'
+  shopTotalSold: string = '0'
+  shopTotalBought: string = '0'
   totalDonated: string = '0'
   activePlayerId: string = '0'
-}
-
-export class GlobalPlayerStats {
-  totalPlayers: string = '0'
-  totalAvatars: string[] = []
-  totalUpgradedAvatars: string[] = []
-  lastMintedPlayer: Player = new Player()
-  lastQueuedActionPlayer: Player = new Player()
-  lastQueuedActions: QueuedAction[] = []
-  lastQueuedActionTimestamp: string = '0'
-  lastQueuedPassiveActionPlayer: Player = new Player()
-  lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
-  lastQueuedInstantActionPlayer: Player = new Player()
-  lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
-  lastQueuedInstantVRFActionPlayer: Player = new Player()
-  lastQueuedInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
-  lastHarvestPlayer: Player = new Player()
-  lastHarvestTimestamp: string = '0'
-  numActivities: string = '0'
-}
-
-export class GlobalUserStats {
-  totalUsers: string = '0'
-  totalSold: string = '0'
-  totalBought: string = '0'
-  totalBrushBurned: string = '0'
-  numActivities: string = '0'
-}
-
-export class GlobalClanStats {
-  totalClans: string = '0'
-  totalClanMembers: string = '0'
-  totalTerritoryBattles: string = '0'
-  totalLockedVaultBattles: string = '0'
-}
-
-export class GlobalDonationStats {
-  numUsersDonated: string = '0'
-  numPlayersDonated: string = '0'
-  totalDonatedAmount: string = '0'
-  numDonations: string = '0'
 }
 
 export enum ActivityType {
@@ -1319,8 +1278,14 @@ export class CoreData {
   clanDonationThresholdRewardIncrement: string = '0'
   startClanDonationThresholdRewardItemTokenId: u16 = 0
 
+  // Donations
   raffleEntryCost: string = '0'
+  numUsersDonated: string = '0'
+  numPlayersDonated: string = '0'
+  totalDonatedAmount: string = '0'
+  numDonations: string = '0'
 
+  // Global boost
   globalBoostStartTime: string = '0'
   globalBoostDuration: u32 = 0
   globalBoostVal: u8 = 0
@@ -1351,8 +1316,47 @@ export class CoreData {
 
   // Pets
   petEditNameCost: string = '0'
+  petBurntPercentage: string = '0'
+  petPoolPercentage: string = '0'
+  petDevPercentage: string = '0'
   totalPets: string = '0'
   lastMintedPet: Pet = new Pet()
+
+  // Promotions
+  promotionBurntPercentage: string = '0'
+  promotionPoolPercentage: string = '0'
+  promotionDevPercentage: string = '0'
+
+  // Players
+  totalPlayers: string = '0'
+  totalAvatars: string[] = []
+  totalUpgradedAvatars: string[] = []
+  lastMintedPlayer: Player = new Player()
+  lastQueuedActionPlayer: Player = new Player()
+  lastQueuedActions: QueuedAction[] = []
+  lastQueuedActionTimestamp: string = '0'
+  lastQueuedPassiveActionPlayer: Player = new Player()
+  lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
+  lastQueuedInstantActionPlayer: Player = new Player()
+  lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
+  lastQueuedInstantVRFActionPlayer: Player = new Player()
+  lastQueuedInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
+  lastHarvestPlayer: Player = new Player()
+  lastHarvestTimestamp: string = '0'
+  numActivities: string = '0'
+
+  // Clans
+  totalClans: string = '0'
+  totalClanMembers: string = '0'
+  totalTerritoryBattles: string = '0'
+  totalLockedVaultBattles: string = '0'
+
+  // Users
+  totalUsers: string = '0'
+  shopTotalSold: string = '0'
+  shopTotalBought: string = '0'
+  totalBrushBurned: string = '0'
+  numActivitiesUsers: string = '0'
 }
 
 export class FirstToReachMaxSkills {
