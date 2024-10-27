@@ -1302,6 +1302,9 @@ export class CoreData {
   mmrAttackDistance: u8 = 0
   Ka: u8 = 0
   Kd: u8 = 0
+  lockedBankVaultBurntPercentage: string = '0'
+  lockedBankVaultTreasuryPercentage: string = '0'
+  lockedBankVaultDevPercentage: string = '0'
 
   // Instant VRF actions
   gasCostPerUnitInstantVRFAction: string = '0'
@@ -1310,17 +1313,22 @@ export class CoreData {
   baseRequestCost: string = '0'
   movingAverageGasPrice: string = '0'
 
+  // Shop
+  shopBurntPercentage: string = '0'
+  shopTreasuryPercentage: string = '0'
+  shopDevPercentage: string = '0'
+
   // Pets
   petEditNameCost: string = '0'
   petBurntPercentage: string = '0'
-  petPoolPercentage: string = '0'
+  petTreasuryPercentage: string = '0'
   petDevPercentage: string = '0'
   totalPets: string = '0'
   lastMintedPet: Pet = new Pet()
 
   // Promotions
   promotionBurntPercentage: string = '0'
-  promotionPoolPercentage: string = '0'
+  promotionTreasuryPercentage: string = '0'
   promotionDevPercentage: string = '0'
 
   // Players
@@ -1340,6 +1348,9 @@ export class CoreData {
   lastHarvestPlayer: Player = new Player()
   lastHarvestTimestamp: string = '0'
   numActivities: string = '0'
+  playerBurntPercentage: string = '0'
+  playerTreasuryPercentage: string = '0'
+  playerDevPercentage: string = '0'
 
   // Clans
   totalClans: string = '0'
