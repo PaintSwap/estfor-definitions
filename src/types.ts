@@ -1357,6 +1357,9 @@ export class CoreData {
   totalClanMembers: string = '0'
   totalTerritoryBattles: string = '0'
   totalLockedVaultBattles: string = '0'
+  clanBurntPercentage: string = '0'
+  clanTreasuryPercentage: string = '0'
+  clanDevPercentage: string = '0'
 
   // Users
   totalUsers: string = '0'
