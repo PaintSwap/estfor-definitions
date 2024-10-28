@@ -2970,8 +2970,12 @@ export const boosts = [
 // Enchantments to ignore for the account and hero progress
 export const enchantments = [PROTECTION_SHIELD, DEVILISH_FINGERS, MIRROR_SHIELD, SHARPENED_CLAW]
 
+// Player details
+export const INITIAL_LEVEL = 16
+export const MAX_LEVEL = 135
+
 // For game progress
-export const totalCombinedLevel = 1600
+export const totalCombinedLevel = INITIAL_LEVEL * MAX_LEVEL
 export const totalQuests = allQuestsLogicalOrdering.length
 export const totalPlayerItems =
   allItems.length - revealedItems.length - bonusEggs.length - specialItems.length - boosts.length - enchantments.length
