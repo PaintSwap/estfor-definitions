@@ -397,6 +397,7 @@ export class InstantVRFActionInput {
   data: string = ''
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = true
+  isAvailable: boolean = true
   questPrerequisiteId: u16 = 0
 }
 
@@ -958,6 +959,7 @@ export class ActionChoiceInput {
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
   questPrerequisiteId: u16 = 0
   minSkills: Skill[] = []
   minXPs: u32[] = []
@@ -980,6 +982,7 @@ export class ActionChoice {
   minSkills: Skill[] = []
   minXPs: string[] = []
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
   questPrerequisite: Quest | null = null
 }
 
