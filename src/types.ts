@@ -1429,6 +1429,7 @@ export class PromotionInfo {
   brushCostMissedDay: string = '0'
   numDaysHitNeededForStreakBonus: u16 = 0
   numDaysClaimablePeriodStreakBonus: u16 = 0
+  questPrerequisite: Quest | null = null
 }
 
 export class PlayerPromotion {
