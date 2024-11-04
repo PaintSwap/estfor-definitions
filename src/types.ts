@@ -151,7 +151,7 @@ export class ActionInfo {
   handItemTokenIdRangeMax: u16 = 0
   successPercent: u8 = 0
   worldLocation: u8 = 0
-  isFullModeOnly: boolean = false,
+  isFullModeOnly: boolean = false
   questPrerequisiteId: u16 = 0
 }
 
@@ -193,7 +193,7 @@ export class ItemInput {
   boostDuration: u32 = 0 // How long the effect of the boost last
   // uri
   metadataURI: string = ''
-  // name of the item 
+  // name of the item
   name: string = ''
 }
 
@@ -319,7 +319,7 @@ export class PassiveAction {
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
-  questPrerequisiteId: u16 = 0
+  questPrerequisite: Quest | null = null
 }
 
 export class QueuedPassiveAction {
@@ -372,7 +372,7 @@ export class InstantAction {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
-  questPrerequisiteId: u16 = 0
+  questPrerequisite: Quest | null = null
 }
 
 export class QueuedInstantAction {
@@ -409,7 +409,7 @@ export class InstantVRFAction {
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
-  questPrerequisiteId: u16 = 0
+  questPrerequisite: Quest | null = null
 }
 
 export class QueuedInstantVRFAction {
@@ -980,7 +980,7 @@ export class ActionChoice {
   minSkills: Skill[] = []
   minXPs: string[] = []
   isFullModeOnly: boolean = false
-  questPrerequisiteId: u16 = 0
+  questPrerequisite: Quest | null = null
 }
 
 export class Action {
@@ -1004,7 +1004,7 @@ export class Action {
   successPercent: i8 = 100
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
   isFullModeOnly: boolean = false
-  questPrerequisiteId: u16 = 0
+  questPrerequisite: Quest | null = null
 
   /* Combat Stats */
   melee: i16 = 0
