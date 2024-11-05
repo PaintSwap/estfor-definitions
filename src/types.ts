@@ -174,29 +174,6 @@ export class ActionInput {
   combatStats: CombatStats = new CombatStats()
 }
 
-// Contains everything you need to create an item
-export class ItemInput {
-  combatStats: CombatStats = new CombatStats()
-  tokenId: u16 = 0
-  equipPosition: EquipPosition = EquipPosition.NONE
-  // Can this be transferred to another player?
-  isTransferable: boolean = true
-  isFullModeOnly: boolean = false
-  // Minimum requirements in this skill
-  skill: Skill = Skill.NONE
-  minXP: u32 = 0
-  // Food
-  healthRestored: u32 = 0
-  // Boost
-  boostType: BoostType = BoostType.NONE
-  boostValue: u16 = 0 // Varies, could be the % increase
-  boostDuration: u32 = 0 // How long the effect of the boost last
-  // uri
-  metadataURI: string = ''
-  // name of the item
-  name: string = ''
-}
-
 export class CombatStats {
   melee: i16 = 0
   magic: i16 = 0
@@ -890,6 +867,31 @@ export class QueuedActionSimplified {
   petId: string = ''
 }
 
+// Contains everything you need to create an item
+export class ItemInput {
+  combatStats: CombatStats = new CombatStats()
+  tokenId: u16 = 0
+  equipPosition: EquipPosition = EquipPosition.NONE
+  // Can this be transferred to another player?
+  isTransferable: boolean = true
+  isFullModeOnly: boolean = false
+  isAvailable: boolean = false
+  questPrerequisiteId: u16 = 0
+  // Minimum requirements in this skill
+  skill: Skill = Skill.NONE
+  minXP: u32 = 0
+  // Food
+  healthRestored: u32 = 0
+  // Boost
+  boostType: BoostType = BoostType.NONE
+  boostValue: u16 = 0 // Varies, could be the % increase
+  boostDuration: u32 = 0 // How long the effect of the boost last
+  // uri
+  metadataURI: string = ''
+  // name of the item
+  name: string = ''
+}
+
 export class Item {
   id: string = '0'
   tokenId: u16 = 0
@@ -921,6 +923,8 @@ export class Item {
   isForgeable: boolean = false
   isSellableToShop: boolean = false
   isFullModeOnly: boolean = false
+  isAvailable: boolean = false
+  questPrerequisiteId: u16 = 0
 }
 
 export class UserItemNFT {
