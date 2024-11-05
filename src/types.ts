@@ -142,7 +142,6 @@ export class QueuedActionInput {
 export class ActionInfo {
   skill: Skill = Skill.NONE
   isAvailable: boolean = true
-  isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
   numSpawned: u32 = 0 // Base 10000
@@ -349,6 +348,7 @@ export class InstantAction {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
+  isAvailable: boolean = true
   questPrerequisite: Quest | null = null
 }
 
@@ -1006,7 +1006,6 @@ export class Action {
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
   isAvailable: boolean = false
-  isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   successPercent: i8 = 100
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
@@ -1456,6 +1455,7 @@ export enum PromotionMintStatus {
   MINTING_OUTSIDE_AVAILABLE_DATE,
   PLAYER_DOES_NOT_QUALIFY,
   PLAYER_NOT_HIT_ENOUGH_CLAIMS_FOR_STREAK_BONUS,
+  DEPENDENT_QUEST_NOT_COMPLETED,
 }
 
 // Clan Wars
