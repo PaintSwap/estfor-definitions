@@ -333,7 +333,6 @@ export class InstantActionInput {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
-  isAvailable: boolean = true
   questPrerequisiteId: u16 = 0
 }
 
@@ -348,7 +347,6 @@ export class InstantAction {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
-  isAvailable: boolean = true
   questPrerequisite: Quest | null = null
 }
 
