@@ -97,7 +97,7 @@ export class Attire {
   reserved1: u16 = 0
 }
 
-export enum ActionQueueStatus {
+export enum ActionQueueStrategy {
   NONE,
   APPEND,
   KEEP_LAST_IN_PROGRESS,
