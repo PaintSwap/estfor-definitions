@@ -332,6 +332,7 @@ export class InstantActionInput {
   outputTokenId: u16 = 0
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
   actionType: InstantActionType = InstantActionType.NONE
   questPrerequisiteId: u16 = 0
 }
