@@ -10,6 +10,11 @@ export enum BoostType {
   PVP_BLOCK,
   PVP_REATTACK,
   PVP_SUPER_ATTACK,
+  MELEE_FIXED,
+  RANGED_FIXED,
+  MAGIC_FIXED,
+  DEFENCE_FIXED,
+  HEALTH_FIXED,
 }
 
 export enum Skill {
