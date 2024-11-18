@@ -1682,6 +1682,7 @@ export class BasePetInput {
   skillMinLevels: StaticArray<u8> = [0, 0]
   fixedStarThreshold: u16 = 0
   percentageStarThreshold: u16 = 0
+  isTransferable: boolean = false
 }
 
 export class BasePet {
