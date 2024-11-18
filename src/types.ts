@@ -1710,6 +1710,44 @@ export class Pet {
   timestamp: string = '0'
 }
 
+export class BaseRaid {
+  id: string = '' // baseRaidId
+  baseRaidId: string = '0'
+  tier: u8 = 0
+  minHealth: i16 = 0
+  maxHealth: i16 = 0
+  minMeleeAttack: i16 = 0
+  maxMeleeAttack: i16 = 0
+  minMagicAttack: i16 = 0
+  maxMagicAttack: i16 = 0
+  minRangedAttack: i16 = 0
+  maxRangedAttack: i16 = 0
+  minMeleeDefence: i16 = 0
+  maxMeleeDefence: i16 = 0
+  minMagicDefence: i16 = 0
+  maxMagicDefence: i16 = 0
+  minRangedDefence: i16 = 0
+  maxRangedDefence: i16 = 0
+  randomLootTokenIds: u16[] = []
+  randomLootTokenAmounts: u32[] = []
+  randomChances: u16[] = []
+}
+
+export class Raid {
+  id: string = '' // raidId
+  raidId: string = '0'
+  baseRaid: BaseRaid = new BaseRaid()
+  health: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
+  meleeDefence: i16 = 0
+  magicDefence: i16 = 0
+  rangedDefence: i16 = 0
+  tier: u8 = 0
+  combatActionIds: u16[] = []
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
@@ -1719,3 +1757,4 @@ export const defaultInstantActionInput = new InstantActionInput()
 export const defaultInstantVRFActionInput = new InstantVRFActionInput()
 export const noAttire = new Attire()
 export const defaultAttire = new Attire()
+export const defaultRaid = new BaseRaid()
