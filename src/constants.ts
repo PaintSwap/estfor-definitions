@@ -3375,9 +3375,9 @@ export const BETA_PLAYERS_ADDRESS = '0x0aac9c0966ad5ea59cd0a47a0d415a68126ab7be'
 export const BETA_PROMOTIONS_ADDRESS = '0xf28cab48e29be56fcc68574b5c147b780c35647c'
 export const BETA_PET_ADDRESS = '0x1681f593ac5cba407c2a190de0ca2beb4a69b5d3'
 
-export const SPAWN_MUL = 1000;
-export const RATE_MUL = 1000;
-export const GUAR_MUL = 10;
+export const SPAWN_MUL = 1000
+export const RATE_MUL = 1000
+export const GUAR_MUL = 10
 
 export const TIER_REWARD_START_XP = [0, 7650, 33_913, 195_864, 784_726] // tier 6 when it's added 2_219_451
 

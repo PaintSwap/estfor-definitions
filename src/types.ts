@@ -956,7 +956,6 @@ export class ShopItem {
 
 export class ActionChoiceInput {
   skill: Skill = Skill.NONE
-  skillDiff: i16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   inputTokenIds: u16[] = []
@@ -971,13 +970,13 @@ export class ActionChoiceInput {
   questPrerequisiteId: u16 = 0
   minSkills: Skill[] = []
   minXPs: u32[] = []
+  minSkillDiffs: i16[] = []
 }
 
 export class ActionChoice {
   id: string = ''
   actionId: u16 = 0
   skill: Skill = Skill.NONE
-  skillDiff: u16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   outputTokenId: u16 = 0
@@ -989,6 +988,7 @@ export class ActionChoice {
   inputAmounts: u16[] = []
   minSkills: Skill[] = []
   minXPs: string[] = []
+  minSkillDiffs: i16[] = []
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
   questPrerequisite: Quest | null = null
