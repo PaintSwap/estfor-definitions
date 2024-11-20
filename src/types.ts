@@ -968,9 +968,9 @@ export class ActionChoiceInput {
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
   questPrerequisiteId: u16 = 0
-  minSkills: Skill[] = []
-  minXPs: u32[] = []
-  minSkillDiffs: i16[] = []
+  skills: Skill[] = [] // Attach other data to the skills, like minXP and a stats change (diff)
+  skillMinXPs: u32[] = []
+  skillDiffs: i16[] = []
 }
 
 export class ActionChoice {
@@ -986,9 +986,9 @@ export class ActionChoice {
   handItemTokenIdRangeMax: u32 = 0
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
-  minSkills: Skill[] = []
-  minXPs: string[] = []
-  minSkillDiffs: i16[] = []
+  skills: Skill[] = []
+  skillMinXPs: string[] = []
+  skillDiffs: i16[] = []
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
   questPrerequisite: Quest | null = null
