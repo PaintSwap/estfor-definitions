@@ -268,7 +268,7 @@ export class PassiveActionInfoInput {
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
   minSkills: Skill[] = []
-  minLevels: u16[] = []
+  minLevels: u8[] = []
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
@@ -333,7 +333,7 @@ export class InstantActionInput {
   minSkills: Skill[] = []
   minXPs: u32[] = []
   inputTokenIds: u16[] = []
-  inputAmounts: u16[] = []
+  inputAmounts: u32[] = []
   outputTokenId: u16 = 0
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
