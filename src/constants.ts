@@ -3535,16 +3535,6 @@ export const bonusEggs = [
   SECRET_EGG_4_TIER3,
   SECRET_EGG_4_TIER4,
   SECRET_EGG_4_TIER5,
-]
-
-// Special items to ignore for the hero progress
-export const specialItems = [
-  HALLOWEEN_BONUS_1,
-  HALLOWEEN_BONUS_2,
-  HALLOWEEN_BONUS_3,
-  ANNIV1_CHEST,
-  ANNIV1_KEY,
-  ANNIV1_RING,
   ANNIV1_EGG_TIER1,
   ANNIV1_EGG_TIER2,
   ANNIV1_EGG_TIER3,
@@ -3555,6 +3545,16 @@ export const specialItems = [
   KRAGSTYR_EGG_TIER3,
   KRAGSTYR_EGG_TIER4,
   KRAGSTYR_EGG_TIER5,
+]
+
+// Special items to ignore for the hero progress
+export const specialItems = [
+  HALLOWEEN_BONUS_1,
+  HALLOWEEN_BONUS_2,
+  HALLOWEEN_BONUS_3,
+  ANNIV1_CHEST,
+  ANNIV1_KEY,
+  ANNIV1_RING,
   RING_OF_TUR,
   KEPHRI_AMULET,
   TRICK_CHEST2024,
@@ -3563,6 +3563,7 @@ export const specialItems = [
 ]
 
 // Boosts to ignore for the account and hero progress
+// Potions are ok as they can be created by the player
 export const boosts = [
   COMBAT_BOOST,
   XP_BOOST,
@@ -3576,20 +3577,6 @@ export const boosts = [
   CLAN_BOOSTER,
   CLAN_BOOSTER_2,
   CLAN_BOOSTER_3,
-  POTION_001_SMALL_HEALING,
-  POTION_002_MEDIUM_HEALING,
-  POTION_003_LARGE_HEALING,
-  POTION_004_EXTRA_LARGE_HEALING,
-  POTION_005_SMALL_MELEE,
-  POTION_006_LARGE_MELEE,
-  POTION_007_SMALL_RANGED,
-  POTION_008_LARGE_RANGED,
-  POTION_009_SMALL_MAGIC,
-  POTION_010_LARGE_MAGIC,
-  POTION_011_SMALL_DEFENCE,
-  POTION_012_LARGE_DEFENCE,
-  POTION_013_SMALL_HEALTH,
-  POTION_014_LARGE_HEALTH,
 ]
 
 // Enchantments to ignore for the account and hero progress
