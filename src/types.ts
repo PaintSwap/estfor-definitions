@@ -4,17 +4,14 @@ export enum BoostType {
   COMBAT_XP,
   NON_COMBAT_XP,
   GATHERING,
-  ABSENCE,
-  PASSIVE_SKIP_CHANCE,
+  ABSENCE, // Not used yet
+  PASSIVE_SKIP_CHANCE, // Not used yet
   // Clan wars
   PVP_BLOCK,
   PVP_REATTACK,
   PVP_SUPER_ATTACK,
-  MELEE_FIXED,
-  RANGED_FIXED,
-  MAGIC_FIXED,
-  DEFENCE_FIXED,
-  HEALTH_FIXED,
+  // Combat stats
+  COMBAT_FIXED,
 }
 
 export enum Skill {
