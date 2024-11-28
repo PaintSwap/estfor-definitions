@@ -100,7 +100,7 @@ export class Attire {
 }
 
 export enum ActionQueueStrategy {
-  NONE,
+  OVERWRITE,
   APPEND,
   KEEP_LAST_IN_PROGRESS,
 }
