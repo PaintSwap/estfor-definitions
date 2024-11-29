@@ -1050,7 +1050,7 @@ export class Quest {
   actionChoice: ActionChoice = new ActionChoice() // actionChoice to perform
   actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
   skillReward: Skill = Skill.NONE // The skill to reward XP to
-  skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
+  skillXPGained: u32 = 0 // The amount of XP to give (up to 16 million)
   rewardItem1: Item = new Item() // Reward an item
   rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
   rewardItem2: Item = new Item() // Reward another item
