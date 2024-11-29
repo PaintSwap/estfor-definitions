@@ -3583,7 +3583,7 @@ export const boosts = [
 export const enchantments = [PROTECTION_SHIELD, DEVILISH_FINGERS, MIRROR_SHIELD, SHARPENED_CLAW]
 
 // Player details
-export const INITIAL_LEVEL = 16
+export const INITIAL_LEVEL = 17
 export const MAX_LEVEL = 135
 
 // For game progress
