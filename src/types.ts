@@ -1146,6 +1146,7 @@ class ClanShared {
   blockingLockedVaultAttacksTimestamp: string = '0'
   lockedVaults: LockedBankVault[] = []
   mmr: u16 = 0
+  xp: string = "0"
 }
 
 export class Clan extends ClanShared {
