@@ -1146,7 +1146,7 @@ class ClanShared {
   blockingLockedVaultAttacksTimestamp: string = '0'
   lockedVaults: LockedBankVault[] = []
   mmr: u16 = 0
-  xp: string = "0"
+  xp: string = '0'
 }
 
 export class Clan extends ClanShared {
@@ -1705,7 +1705,10 @@ export class Pet {
   lowercaseName: string = ''
   skillFixedEnhancements: u8[] = []
   skillPercentageEnhancements: u8[] = []
+  skillFixedEnhancementMaxes: u8[] = []
+  skillPercentageEnhancementMaxes: u8[] = []
   timestamp: string = '0'
+  xp: string = '0'
 }
 
 export class BaseRaid {
