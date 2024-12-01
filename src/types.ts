@@ -896,9 +896,9 @@ export class ItemInput {
 export class Item {
   id: string = '0'
   tokenId: u16 = 0
-  melee: i16 = 0
-  magic: i16 = 0
-  ranged: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
   rangedDefence: i16 = 0
