@@ -3410,7 +3410,7 @@ export const SPAWN_MUL = 1000
 export const RATE_MUL = 1000
 export const GUAR_MUL = 10
 
-export const TIER_REWARD_START_XP = [0, 7650, 33_913, 195_864, 784_726] // tier 6 when it's added 2_219_451
+export const TIER_REWARD_START_XP = [0, 7650, 33_913, 195_864, 784_726, 2_219_451];
 
 // 0 xp = level 1 (up to level 135)
 export const levelXp: Array<i32> = [
