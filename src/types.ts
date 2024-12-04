@@ -465,6 +465,7 @@ export class Player {
   smithingRank: u32 = 0
   craftingRank: u32 = 0
   thievingRank: u32 = 0
+  farmingRank: u32 = 0
   alchemyRank: u32 = 0
   fletchingRank: u32 = 0
   forgingRank: u32 = 0
