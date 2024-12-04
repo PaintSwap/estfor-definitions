@@ -297,7 +297,7 @@ export class PassiveAction {
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedPassiveAction {
@@ -350,7 +350,7 @@ export class InstantAction {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedInstantAction {
@@ -388,7 +388,7 @@ export class InstantVRFAction {
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedInstantVRFAction {
@@ -988,7 +988,7 @@ export class ActionChoice {
   skillDiffs: i16[] = []
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 }
 
 export class Action {
@@ -1011,7 +1011,7 @@ export class Action {
   successPercent: i8 = 100
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
   isFullModeOnly: boolean = false
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 
   /* Combat Stats */
   melee: i16 = 0
@@ -1438,7 +1438,7 @@ export class PromotionInfo {
   brushCostMissedDay: string = '0'
   numDaysHitNeededForStreakBonus: u16 = 0
   numDaysClaimablePeriodStreakBonus: u16 = 0
-  questPrerequisite: Quest | null = null
+  questPrerequisiteId: u16 = 0
 }
 
 export class PlayerPromotion {
