@@ -3436,7 +3436,7 @@ export const levelXp: Array<i32> = [
   16562359, 17750997
 ]
 
-export const MAX_LEVEL = levelXp.length - 1;
+export const MAX_LEVEL = levelXp.length;
 
 // Reveal items to ignore for the hero progress
 export const revealedItems = [
