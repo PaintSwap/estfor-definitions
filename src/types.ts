@@ -1015,9 +1015,9 @@ export class Action {
   questPrerequisiteId: u16 = 0
 
   /* Combat Stats */
-  melee: i16 = 0
-  magic: i16 = 0
-  ranged: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
   rangedDefence: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
