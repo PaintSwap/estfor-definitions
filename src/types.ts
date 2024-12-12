@@ -1710,6 +1710,7 @@ export class Pet {
   skillPercentageEnhancementMaxes: u8[] = []
   timestamp: string = '0'
   xp: string = '0'
+  isTransferable: boolean = true
 }
 
 export class BaseRaid {
