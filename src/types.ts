@@ -4,12 +4,14 @@ export enum BoostType {
   COMBAT_XP,
   NON_COMBAT_XP,
   GATHERING,
-  ABSENCE,
-  PASSIVE_SKIP_CHANCE,
+  ABSENCE, // Not used yet
+  PASSIVE_SKIP_CHANCE, // Not used yet
   // Clan wars
   PVP_BLOCK,
   PVP_REATTACK,
   PVP_SUPER_ATTACK,
+  // Combat stats
+  COMBAT_FIXED,
 }
 
 export enum Skill {
@@ -29,12 +31,12 @@ export enum Skill {
   CRAFTING,
   COOKING,
   FIREMAKING,
-  AGILITY,
+  FARMING,
   ALCHEMY,
   FLETCHING,
   FORGING,
+  AGILITY,
   HUNTING,
-  RESERVED3,
   RESERVED4,
   RESERVED5,
   RESERVED6,
@@ -97,8 +99,8 @@ export class Attire {
   reserved1: u16 = 0
 }
 
-export enum ActionQueueStatus {
-  NONE,
+export enum ActionQueueStrategy {
+  OVERWRITE,
   APPEND,
   KEEP_LAST_IN_PROGRESS,
 }
@@ -127,7 +129,7 @@ export class MetaBase {
   _meta: Meta = new Meta()
 }
 
-export class QueuedActionInputV2 {
+export class QueuedActionInput {
   attire: Attire = new Attire()
   actionId: u16 = 0
   regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
@@ -139,21 +141,9 @@ export class QueuedActionInputV2 {
   petId: u32 = 0
 }
 
-export class QueuedActionInput {
-  attire: Attire = new Attire()
-  actionId: u16 = 0
-  regenerateId: u16 = 0 // Food (combat), maybe something for non-combat later
-  choiceId: u32 = 0 // Melee/Ranged/Magic (combat), logs, ore etc (non-combat)
-  combatStyle: CombatStyle = CombatStyle.NONE
-  timespan: u32 = 0 // How long to queue the action for
-  rightHandEquipmentTokenId: u16 = 0
-  leftHandEquipmentTokenId: u16 = 0
-}
-
 export class ActionInfo {
   skill: Skill = Skill.NONE
   isAvailable: boolean = true
-  isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   xpPerHour: u32 = 0
   numSpawned: u32 = 0 // Base 10000
@@ -163,6 +153,7 @@ export class ActionInfo {
   successPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
+  questPrerequisiteId: u16 = 0
 }
 
 export class GuaranteedReward {
@@ -184,33 +175,10 @@ export class ActionInput {
   combatStats: CombatStats = new CombatStats()
 }
 
-// Contains everything you need to create an item
-export class ItemInput {
-  combatStats: CombatStats = new CombatStats()
-  tokenId: u16 = 0
-  equipPosition: EquipPosition = EquipPosition.NONE
-  // Can this be transferred to another player?
-  isTransferable: boolean = true
-  isFullModeOnly: boolean = false
-  // Minimum requirements in this skill
-  skill: Skill = Skill.NONE
-  minXP: u32 = 0
-  // Food
-  healthRestored: u32 = 0
-  // Boost
-  boostType: BoostType = BoostType.NONE
-  boostValue: u16 = 0 // Varies, could be the % increase
-  boostDuration: u32 = 0 // How long the effect of the boost last
-  // uri
-  metadataURI: string = ''
-  // name of the item
-  name: string = ''
-}
-
 export class CombatStats {
-  melee: i16 = 0
-  magic: i16 = 0
-  ranged: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
   rangedDefence: i16 = 0
@@ -297,11 +265,12 @@ export class PassiveActionInfoInput {
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
   minSkills: Skill[] = []
-  minLevels: u16[] = []
+  minLevels: u8[] = []
   skipSuccessPercent: u8 = 0
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
 }
 
 export class PassiveActionInput {
@@ -328,6 +297,7 @@ export class PassiveAction {
   worldLocation: u8 = 0
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedPassiveAction {
@@ -360,12 +330,13 @@ export class InstantActionInput {
   minSkills: Skill[] = []
   minXPs: u32[] = []
   inputTokenIds: u16[] = []
-  inputAmounts: u16[] = []
+  inputAmounts: u32[] = []
   outputTokenId: u16 = 0
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
-  actionType: InstantActionType = InstantActionType.NONE
   isAvailable: boolean = true
+  actionType: InstantActionType = InstantActionType.NONE
+  questPrerequisiteId: u16 = 0
 }
 
 export class InstantAction {
@@ -379,6 +350,7 @@ export class InstantAction {
   outputAmount: u16 = 0
   isFullModeOnly: boolean = false
   actionType: InstantActionType = InstantActionType.NONE
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedInstantAction {
@@ -403,6 +375,8 @@ export class InstantVRFActionInput {
   data: string = ''
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = true
+  isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
 }
 
 export class InstantVRFAction {
@@ -414,6 +388,7 @@ export class InstantVRFAction {
   actionType: InstantVRFActionType = InstantVRFActionType.NONE
   isFullModeOnly: boolean = false
   isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
 }
 
 export class QueuedInstantVRFAction {
@@ -466,7 +441,7 @@ export class Player {
   smithingXP: string = '0'
   craftingXP: string = '0'
   thievingXP: string = '0'
-  agilityXP: string = '0'
+  farmingXP: string = '0'
   alchemyXP: string = '0'
   fletchingXP: string = '0'
   forgingXP: string = '0'
@@ -490,6 +465,7 @@ export class Player {
   smithingRank: u32 = 0
   craftingRank: u32 = 0
   thievingRank: u32 = 0
+  farmingRank: u32 = 0
   alchemyRank: u32 = 0
   fletchingRank: u32 = 0
   forgingRank: u32 = 0
@@ -563,7 +539,7 @@ export class PlayerSimplified {
   smithingXP: string = '0'
   craftingXP: string = '0'
   thievingXP: string = '0'
-  agilityXP: string = '0'
+  farmingXP: string = '0'
   alchemyXP: string = '0'
   fletchingXP: string = '0'
   forgingXP: string = '0'
@@ -612,51 +588,10 @@ export class User {
   numUniqueItems: u32 = 0
   numActivities: u32 = 0
   numPets: u32 = 0
-  totalSold: string = '0'
-  totalBought: string = '0'
+  shopTotalSold: string = '0'
+  shopTotalBought: string = '0'
   totalDonated: string = '0'
   activePlayerId: string = '0'
-}
-
-export class GlobalPlayerStats {
-  totalPlayers: string = '0'
-  totalAvatars: string[] = []
-  totalUpgradedAvatars: string[] = []
-  lastMintedPlayer: Player = new Player()
-  lastQueuedActionPlayer: Player = new Player()
-  lastQueuedActions: QueuedAction[] = []
-  lastQueuedActionTimestamp: string = '0'
-  lastQueuedPassiveActionPlayer: Player = new Player()
-  lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
-  lastQueuedInstantActionPlayer: Player = new Player()
-  lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
-  lastQueuedInstantVRFActionPlayer: Player = new Player()
-  lastQueuedInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
-  lastHarvestPlayer: Player = new Player()
-  lastHarvestTimestamp: string = '0'
-  numActivities: string = '0'
-}
-
-export class GlobalUserStats {
-  totalUsers: string = '0'
-  totalSold: string = '0'
-  totalBought: string = '0'
-  totalBrushBurned: string = '0'
-  numActivities: string = '0'
-}
-
-export class GlobalClanStats {
-  totalClans: string = '0'
-  totalClanMembers: string = '0'
-  totalTerritoryBattles: string = '0'
-  totalLockedVaultBattles: string = '0'
-}
-
-export class GlobalDonationStats {
-  numUsersDonated: string = '0'
-  numPlayersDonated: string = '0'
-  totalDonatedAmount: string = '0'
-  numDonations: string = '0'
 }
 
 export enum ActivityType {
@@ -830,8 +765,6 @@ export class Activity {
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
-  isLastInSameTransaction: boolean = false // Is this the last activity for all activities with the same hash
-  uniqueTransactionId: string = '0' // Unique id for all activities with the same hash
 }
 
 export class ActivitySimplified {
@@ -864,8 +797,6 @@ export class ActivitySimplified {
   playerQuest: PlayerQuestSimplified = new PlayerQuestSimplified() // Only set for QuestsCompleted
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
-  isLastInSameTransaction: boolean = false // Is this the last activity for all activities with the same hash
-  uniqueTransactionId: string = '0' // Unique id for all activities with the same hash
 }
 
 export class LastFullEquipment {
@@ -938,12 +869,37 @@ export class QueuedActionSimplified {
   petId: string = ''
 }
 
+// Contains everything you need to create an item
+export class ItemInput {
+  combatStats: CombatStats = new CombatStats()
+  tokenId: u16 = 0
+  equipPosition: EquipPosition = EquipPosition.NONE
+  // Can this be transferred to another player?
+  isTransferable: boolean = true
+  isFullModeOnly: boolean = false
+  isAvailable: boolean = false
+  questPrerequisiteId: u16 = 0
+  // Minimum requirements in this skill
+  skill: Skill = Skill.NONE
+  minXP: u32 = 0
+  // Food
+  healthRestored: u32 = 0
+  // Boost
+  boostType: BoostType = BoostType.NONE
+  boostValue: u16 = 0 // Varies, could be the % increase
+  boostDuration: u32 = 0 // How long the effect of the boost last
+  // uri
+  metadataURI: string = ''
+  // name of the item
+  name: string = ''
+}
+
 export class Item {
   id: string = '0'
   tokenId: u16 = 0
-  melee: i16 = 0
-  magic: i16 = 0
-  ranged: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
   rangedDefence: i16 = 0
@@ -969,6 +925,8 @@ export class Item {
   isForgeable: boolean = false
   isSellableToShop: boolean = false
   isFullModeOnly: boolean = false
+  isAvailable: boolean = false
+  questPrerequisiteId: u16 = 0
 }
 
 export class UserItemNFT {
@@ -996,7 +954,6 @@ export class ShopItem {
 
 export class ActionChoiceInput {
   skill: Skill = Skill.NONE
-  skillDiff: i16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   inputTokenIds: u16[] = []
@@ -1007,15 +964,17 @@ export class ActionChoiceInput {
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
   isFullModeOnly: boolean = false
-  minSkills: Skill[] = []
-  minXPs: u32[] = []
+  isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
+  skills: Skill[] = [] // Attach other data to the skills, like minXP and a stats change (diff)
+  skillMinXPs: u32[] = []
+  skillDiffs: i16[] = []
 }
 
 export class ActionChoice {
   id: string = ''
   actionId: u16 = 0
   skill: Skill = Skill.NONE
-  skillDiff: u16 = 0
   rate: u16 = 0
   xpPerHour: u32 = 0
   outputTokenId: u16 = 0
@@ -1025,9 +984,12 @@ export class ActionChoice {
   handItemTokenIdRangeMax: u32 = 0
   inputTokenIds: u16[] = []
   inputAmounts: u16[] = []
-  minSkills: Skill[] = []
-  minXPs: string[] = []
+  skills: Skill[] = []
+  skillMinXPs: string[] = []
+  skillDiffs: i16[] = []
   isFullModeOnly: boolean = false
+  isAvailable: boolean = true
+  questPrerequisiteId: u16 = 0
 }
 
 export class Action {
@@ -1046,16 +1008,16 @@ export class Action {
   handItemTokenIdRangeMin: u32 = 0
   handItemTokenIdRangeMax: u32 = 0
   isAvailable: boolean = false
-  isDynamic: boolean = false
   actionChoiceRequired: boolean = false
   successPercent: i8 = 100
   worldLocation: WorldLocation = WorldLocation.STARTING_AREA
   isFullModeOnly: boolean = false
+  questPrerequisiteId: u16 = 0
 
   /* Combat Stats */
-  melee: i16 = 0
-  magic: i16 = 0
-  ranged: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
   rangedDefence: i16 = 0
   meleeDefence: i16 = 0
   magicDefence: i16 = 0
@@ -1089,7 +1051,7 @@ export class Quest {
   actionChoice: ActionChoice = new ActionChoice() // actionChoice to perform
   actionChoiceNum: u16 = 0 // how many to do (base number), (up to 65535)
   skillReward: Skill = Skill.NONE // The skill to reward XP to
-  skillXPGained: u16 = 0 // The amount of XP to give (up to 65535)
+  skillXPGained: u32 = 0 // The amount of XP to give (up to 16 million)
   rewardItem1: Item = new Item() // Reward an item
   rewardAmount1: u16 = 0 // amount of the reward (up to 65535)
   rewardItem2: Item = new Item() // Reward another item
@@ -1185,6 +1147,7 @@ class ClanShared {
   blockingLockedVaultAttacksTimestamp: string = '0'
   lockedVaults: LockedBankVault[] = []
   mmr: u16 = 0
+  xp: string = '0'
 }
 
 export class Clan extends ClanShared {
@@ -1254,6 +1217,7 @@ export enum ClanRank {
   NONE, // Not in a clan
   COMMONER, // Member of the clan
   SCOUT, // Invite and kick commoners
+  COLONEL, // Can launch attacks and assign combatants
   TREASURER, // Can withdraw from bank
   LEADER, // Can edit clan details
   OWNER, // Can do everything and transfer ownership
@@ -1330,8 +1294,14 @@ export class CoreData {
   clanDonationThresholdRewardIncrement: string = '0'
   startClanDonationThresholdRewardItemTokenId: u16 = 0
 
+  // Donations
   raffleEntryCost: string = '0'
+  numUsersDonated: string = '0'
+  numPlayersDonated: string = '0'
+  totalDonatedAmount: string = '0'
+  numDonations: string = '0'
 
+  // Global boost
   globalBoostStartTime: string = '0'
   globalBoostDuration: u32 = 0
   globalBoostVal: u8 = 0
@@ -1340,18 +1310,15 @@ export class CoreData {
 
   // Clan wars
   nextHarvestAllowedTimestamp: string = '0'
-  movingAverageGasPriceTerritory: string = '0'
   expectedGasLimitFulfillTerritory: string = '0'
-  baseAttackCostTerritory: string = '0'
-  totalAttackCostTerritory: string = '0'
-  movingAverageGasPriceLockedVault: string = '0'
   expectedGasLimitFulfillLockedVault: string = '0'
-  baseAttackCostLockedVault: string = '0'
-  totalAttackCostLockedVault: string = '0'
   initialMMR: u16 = 0
   mmrAttackDistance: u8 = 0
   Ka: u8 = 0
   Kd: u8 = 0
+  lockedBankVaultBurntPercentage: string = '0'
+  lockedBankVaultTreasuryPercentage: string = '0'
+  lockedBankVaultDevPercentage: string = '0'
 
   // Instant VRF actions
   gasCostPerUnitInstantVRFAction: string = '0'
@@ -1360,10 +1327,60 @@ export class CoreData {
   baseRequestCost: string = '0'
   movingAverageGasPrice: string = '0'
 
+  // Shop
+  shopBurntPercentage: string = '0'
+  shopTreasuryPercentage: string = '0'
+  shopDevPercentage: string = '0'
+
   // Pets
   petEditNameCost: string = '0'
+  petBurntPercentage: string = '0'
+  petTreasuryPercentage: string = '0'
+  petDevPercentage: string = '0'
   totalPets: string = '0'
   lastMintedPet: Pet = new Pet()
+
+  // Promotions
+  promotionBurntPercentage: string = '0'
+  promotionTreasuryPercentage: string = '0'
+  promotionDevPercentage: string = '0'
+
+  // Players
+  totalPlayers: string = '0'
+  totalAvatars: string[] = []
+  totalUpgradedAvatars: string[] = []
+  lastMintedPlayer: Player = new Player()
+  lastQueuedActionPlayer: Player = new Player()
+  lastQueuedActions: QueuedAction[] = []
+  lastQueuedActionTimestamp: string = '0'
+  lastQueuedPassiveActionPlayer: Player = new Player()
+  lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
+  lastQueuedInstantActionPlayer: Player = new Player()
+  lastQueuedInstantAction: QueuedInstantAction = new QueuedInstantAction()
+  lastQueuedInstantVRFActionPlayer: Player = new Player()
+  lastQueuedInstantVRFAction: QueuedInstantVRFAction = new QueuedInstantVRFAction()
+  lastHarvestPlayer: Player = new Player()
+  lastHarvestTimestamp: string = '0'
+  numActivities: string = '0'
+  playerBurntPercentage: string = '0'
+  playerTreasuryPercentage: string = '0'
+  playerDevPercentage: string = '0'
+
+  // Clans
+  totalClans: string = '0'
+  totalClanMembers: string = '0'
+  totalTerritoryBattles: string = '0'
+  totalLockedVaultBattles: string = '0'
+  clanBurntPercentage: string = '0'
+  clanTreasuryPercentage: string = '0'
+  clanDevPercentage: string = '0'
+
+  // Users
+  totalUsers: string = '0'
+  shopTotalSold: string = '0'
+  shopTotalBought: string = '0'
+  totalBrushBurned: string = '0'
+  numActivitiesUsers: string = '0'
 }
 
 export class FirstToReachMaxSkills {
@@ -1422,6 +1439,7 @@ export class PromotionInfo {
   brushCostMissedDay: string = '0'
   numDaysHitNeededForStreakBonus: u16 = 0
   numDaysClaimablePeriodStreakBonus: u16 = 0
+  questPrerequisiteId: u16 = 0
 }
 
 export class PlayerPromotion {
@@ -1441,6 +1459,7 @@ export enum PromotionMintStatus {
   MINTING_OUTSIDE_AVAILABLE_DATE,
   PLAYER_DOES_NOT_QUALIFY,
   PLAYER_NOT_HIT_ENOUGH_CLAIMS_FOR_STREAK_BONUS,
+  DEPENDENT_QUEST_NOT_COMPLETED,
 }
 
 // Clan Wars
@@ -1662,6 +1681,7 @@ export class BasePetInput {
   skillMinLevels: StaticArray<u8> = [0, 0]
   fixedStarThreshold: u16 = 0
   percentageStarThreshold: u16 = 0
+  isTransferable: boolean = false
 }
 
 export class BasePet {
@@ -1686,7 +1706,49 @@ export class Pet {
   lowercaseName: string = ''
   skillFixedEnhancements: u8[] = []
   skillPercentageEnhancements: u8[] = []
+  skillFixedEnhancementMaxes: u8[] = []
+  skillPercentageEnhancementMaxes: u8[] = []
   timestamp: string = '0'
+  xp: string = '0'
+  isTransferable: boolean = true
+}
+
+export class BaseRaid {
+  id: string = '' // baseRaidId
+  baseRaidId: string = '0'
+  tier: u8 = 0
+  minHealth: i16 = 0
+  maxHealth: i16 = 0
+  minMeleeAttack: i16 = 0
+  maxMeleeAttack: i16 = 0
+  minMagicAttack: i16 = 0
+  maxMagicAttack: i16 = 0
+  minRangedAttack: i16 = 0
+  maxRangedAttack: i16 = 0
+  minMeleeDefence: i16 = 0
+  maxMeleeDefence: i16 = 0
+  minMagicDefence: i16 = 0
+  maxMagicDefence: i16 = 0
+  minRangedDefence: i16 = 0
+  maxRangedDefence: i16 = 0
+  randomLootTokenIds: u16[] = []
+  randomLootTokenAmounts: u32[] = []
+  randomChances: u16[] = []
+}
+
+export class Raid {
+  id: string = '' // raidId
+  raidId: string = '0'
+  baseRaid: BaseRaid = new BaseRaid()
+  health: i16 = 0
+  meleeAttack: i16 = 0
+  magicAttack: i16 = 0
+  rangedAttack: i16 = 0
+  meleeDefence: i16 = 0
+  magicDefence: i16 = 0
+  rangedDefence: i16 = 0
+  tier: u8 = 0
+  combatActionIds: u16[] = []
 }
 
 export const emptyCombatStats = new CombatStats()
@@ -1698,3 +1760,4 @@ export const defaultInstantActionInput = new InstantActionInput()
 export const defaultInstantVRFActionInput = new InstantVRFActionInput()
 export const noAttire = new Attire()
 export const defaultAttire = new Attire()
+export const defaultRaid = new BaseRaid()
