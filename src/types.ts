@@ -1365,6 +1365,7 @@ export class CoreData {
   playerBurntPercentage: string = '0'
   playerTreasuryPercentage: string = '0'
   playerDevPercentage: string = '0'
+  maxId: string = '0'
 
   // Clans
   totalClans: string = '0'
