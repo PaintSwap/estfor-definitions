@@ -938,11 +938,11 @@ export class UserItemNFT {
   selfMade: boolean = false
 }
 
-export class PlayerItemNFT {
+// All the items that a player has made by themselves
+export class PlayerSelfMade {
   id: string = ''
-  playerId: string = ''
-  tokenId: u16 = 0
-  selfMade: boolean = false
+  selfMadeIds: u16[] = []
+  totalSelfMades: u32 = 0
 }
 
 export class ShopItem {
