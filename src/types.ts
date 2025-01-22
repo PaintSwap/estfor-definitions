@@ -730,14 +730,9 @@ export enum Direction {
   ProducedAndConsumed,
 }
 
-export enum ActivityUndertaker {
-  Player,
-  User,
-}
-
 export class Activity {
   id: string = ''
-  activityId: string = '' // Ascending numberic id for each Activity, unique only for each ActivityUndertaker
+  activityId: string = '' // Ascending numberic id for each Activity
   type: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
@@ -759,7 +754,6 @@ export class Activity {
   player: Player = new Player()
   otherPlayer: Player = new Player() // Only used for Clan things currently
   user: string = ''
-  undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedAction = new QueuedAction()
   queuedActions: QueuedAction[] = [] // Only used for SetActionQueue
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
@@ -769,7 +763,7 @@ export class Activity {
 
 export class ActivitySimplified {
   id: string = ''
-  activityId: string = '' // Ascending numberic id for each Activity, unique only for each ActivityUndertaker
+  activityId: string = '' // Ascending numberic id for each Activity
   type: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
@@ -791,7 +785,6 @@ export class ActivitySimplified {
   player: PlayerSimplified = new PlayerSimplified()
   otherPlayer: PlayerSimplified = new PlayerSimplified() // Only used for Clan things currently
   user: string = ''
-  undertaker: string = '' // ActivityUndertaker
   queuedAction: QueuedActionSimplified = new QueuedActionSimplified()
   queuedActions: QueuedActionSimplified[] = [] // Only used for SetActionQueue
   playerQuest: PlayerQuestSimplified = new PlayerQuestSimplified() // Only set for QuestsCompleted
