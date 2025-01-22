@@ -1131,7 +1131,6 @@ class ClanShared {
   lastDonationThreshold: string = '0'
   nextDonationThresholdRewardItemTokenId: u16 = 0
 
-  bankValue: string = '0'
   bankBrushValue: string = '0'
   totalWins: string = '0'
   totalLosses: string = '0'
