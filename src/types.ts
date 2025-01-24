@@ -1417,6 +1417,7 @@ export enum Promotion {
   HALLOWEEN_2023,
   XMAS_2023,
   HALLOWEEN_2024,
+  SONIC_TICKET_2025,
 }
 
 export class PromotionInfo {
