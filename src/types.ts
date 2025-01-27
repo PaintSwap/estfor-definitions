@@ -481,8 +481,13 @@ export class Player {
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
   boostVal: u8 = 0
-  boostType: BoostType
+  boostType: BoostType = BoostType.NONE
   boostItemTokenId: u16 = 0
+  lastBoostStartTime: u64 = 0
+  lastBoostDuration: u32 = 0
+  lastBoostVal: u8 = 0
+  lastBoostType: BoostType = BoostType.NONE
+  lastBoostItemTokenId: u16 = 0
 
   /* Extra Boost */
   extraBoostStartTime: u64 = 0
@@ -490,6 +495,11 @@ export class Player {
   extraBoostVal: u8 = 0
   extraBoostType: BoostType
   extraBoostItemTokenId: u16 = 0
+  lastExtraBoostStartTime: u64 = 0
+  lastExtraBoostVal: u8 = 0
+  lastExtraBoostDuration: u32 = 0
+  lastExtraBoostType: BoostType = BoostType.NONE
+  lastExtraBoostItemTokenId: u16 = 0
 
   /* Socials */
   discord: string = ''
