@@ -930,6 +930,7 @@ export const FOOLS_BERRY_EXTRACT = MISC_BASE - 65
 export const GOLDEN_SCARAB = MISC_BASE - 66
 export const KEY_001_OMNI = MISC_BASE - 67
 export const LUMELILA_TOXIN = MISC_BASE - 68
+export const SONIC_GEM_TICKET = MISC_BASE - 69
 export const MISC_MIN = 32768
 
 export const allItems = [
@@ -1585,6 +1586,7 @@ export const allItems = [
   HERB_015_EVIGOR_FRUIT,
   KEY_001_OMNI,
   LUMELILA_TOXIN,
+  SONIC_GEM_TICKET,
   NAIL_001_MITHRIL,
   NAIL_002_RUNITE,
   NAIL_003_ORICHALCUM,
