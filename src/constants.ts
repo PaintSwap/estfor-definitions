@@ -931,6 +931,7 @@ export const GOLDEN_SCARAB = MISC_BASE - 66
 export const KEY_001_OMNI = MISC_BASE - 67
 export const LUMELILA_TOXIN = MISC_BASE - 68
 export const SONIC_GEM_TICKET = MISC_BASE - 69
+export const ACTIVITY_TICKET = MISC_BASE - 70
 export const MISC_MIN = 32768
 
 export const allItems = [
@@ -1587,6 +1588,7 @@ export const allItems = [
   KEY_001_OMNI,
   LUMELILA_TOXIN,
   SONIC_GEM_TICKET,
+  ACTIVITY_TICKET,
   NAIL_001_MITHRIL,
   NAIL_002_RUNITE,
   NAIL_003_ORICHALCUM,
