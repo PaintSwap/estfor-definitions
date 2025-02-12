@@ -1717,6 +1717,12 @@ export class Pet {
   isTransferable: boolean = true
 }
 
+export enum NFTContractType {
+  NONE,
+  ERC721,
+  ERC1155
+}
+
 export class BaseRaid {
   id: string = '' // baseRaidId
   baseRaidId: string = '0'
@@ -1742,7 +1748,7 @@ export class BaseRaid {
 
 export class Raid {
   id: string = '' // raidId
-  raidId: string = '0'
+  raidId: string = '0'7
   baseRaid: BaseRaid = new BaseRaid()
   health: i16 = 0
   meleeAttack: i16 = 0
