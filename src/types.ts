@@ -1748,7 +1748,7 @@ export class BaseRaid {
 
 export class Raid {
   id: string = '' // raidId
-  raidId: string = '0'7
+  raidId: string = '0'
   baseRaid: BaseRaid = new BaseRaid()
   health: i16 = 0
   meleeAttack: i16 = 0
