@@ -729,9 +729,13 @@ export enum ActivityType {
   InstantVRFAction,
   InstantVRFActionCompleted,
 
+  // Pets
   TransferPets,
   ReceivedPets,
   EditPet,
+
+  // ActivityPoints
+  ActivityPointsEarned,
 }
 
 export enum Direction {
@@ -1720,7 +1724,7 @@ export class Pet {
 export enum NFTContractType {
   NONE,
   ERC721,
-  ERC1155
+  ERC1155,
 }
 
 export class BaseRaid {
