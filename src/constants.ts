@@ -3608,6 +3608,8 @@ export const specialItems = [
   TRICK_CHEST2024,
   TREAT_CHEST2024,
   TRICK_OR_TREAT_KEY,
+  ACTIVITY_TICKET,
+  SONIC_GEM_TICKET,
 ]
 
 // Boosts to ignore for the account and hero progress
