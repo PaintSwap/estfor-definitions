@@ -493,7 +493,7 @@ export class Player {
   extraBoostStartTime: u64 = 0
   extraBoostDuration: u32 = 0
   extraBoostVal: u8 = 0
-  extraBoostType: BoostType
+  extraBoostType: BoostType = BoostType.NONE
   extraBoostItemTokenId: u16 = 0
   lastExtraBoostStartTime: u64 = 0
   lastExtraBoostVal: u8 = 0
@@ -1138,7 +1138,7 @@ class ClanShared {
   boostStartTime: u64 = 0
   boostDuration: u32 = 0
   boostVal: u8 = 0
-  boostType: BoostType
+  boostType: BoostType = BoostType.NONE
   boostItemTokenId: u16 = 0
 
   totalDonated: string = '0'
