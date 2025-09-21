@@ -2,10 +2,6 @@
   "name": "@paintswap/estfor-definitions",
   "version": "2.0.66",
   "description": "Types and constants for Estfor Kingdom",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
-  },
   "keywords": [
     "estfor",
     "estfor kingdom",
@@ -18,30 +14,39 @@
     "web3",
     "thegraph"
   ],
-  "module": "src/index.mjs",
-  "ascMain": "src/index.ts",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "build": "yarn build:tsc",
-    "build:tsc": "tsc",
-    "build:asc": "asc --target release",
-    "build:asc:debug": "asc --target debug",
-    "prepare": "yarn build",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags"
-  },
-  "author": "Paintswap Team",
+  "author": "PaintSwap Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PaintSwap/estfor-definitions/issues"
   },
   "homepage": "https://github.com/PaintSwap/estfor-definitions",
-  "devDependencies": {
-    "run-script-os": "^1.1.6",
-    "typescript": "^4.9.5"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaintSwap/estfor-definitions.git"
   },
-  "dependencies": {
-    "assemblyscript": "0.19.10"
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "ascMain": "src/index.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types.js",
+    "./constants": "./dist/constants.js"
+  },
+  "scripts": {
+    "clean": "shx rm -rf ./dist",
+    "build": "npm run build:tsc && npm run build:asc && npm run build:mjs",
+    "build:asc": "asc --target release",
+    "build:asc:debug": "asc --target debug",
+    "build:tsc": "tsc",
+    "build:mjs": "shx cp src/index.mjs dist/index.mjs",
+    "prepare": "npm run clean && npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "assemblyscript": "0.19.23",
+    "shx": "^0.3.4",
+    "typescript": "^5.3.3"
   }
 }
