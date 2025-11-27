@@ -1337,6 +1337,8 @@ export class CoreData {
   shopBurntPercentage: string = '0'
   shopTreasuryPercentage: string = '0'
   shopDevPercentage: string = '0'
+  shopPromotionDiscountPercentage: string = '0'
+  shopIsPromotionActive: boolean = false
 
   // Pets
   petEditNameCost: string = '0'
