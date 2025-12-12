@@ -13,12 +13,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-    - run: npm install -g yarn@latest
-    - run: yarn install --frozen-lockfile
-    - run: yarn build:asc
-    - run: yarn publish --access public
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm install -g npm@latest
+      - run: npm install -g yarn@latest
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn build:asc
+
+      # OIDC-aware publish:
+      - run: npm publish --access public
