@@ -13,11 +13,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: '20.x'
-        registry-url: 'https://registry.npmjs.org'
+        node-version: '20'
+    - run: npm install -g yarn@latest
     - run: yarn install --frozen-lockfile
     - run: yarn build:asc
-    - run: npm publish
+    - run: yarn npm publish --access public
