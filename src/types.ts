@@ -410,7 +410,8 @@ export class Player {
   originalAvatarId: string = '1'
   owner: string = ''
   name: string = ''
-  lastTimestamp: string = '0'
+  lastTimestamp: string = '0' // Updated for different events
+  lastActiveTimestamp: string = '0' // Updated only at normal actions
   mintedNumber: string = '0' // Will be unique, use for sorting
   mintedTimestamp: string = '0'
   isActive: boolean = false // Is this player the active one for the owner
@@ -535,6 +536,7 @@ export class PlayerSimplified {
   name: string = ''
   avatarId: string = '1'
   lastTimestamp: string = '0'
+  lastActiveTimestamp: string = '0'
   mintedTimestamp: string = '0'
   isActive: boolean = false
   totalDonated: string = '0'
