@@ -3,6 +3,12 @@ on:
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
+
+# Make sure a connection for trusted publisher is enabled on the npmjs repo
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,5 +21,3 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn build:asc
     - run: yarn publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
