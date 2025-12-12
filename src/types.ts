@@ -1320,8 +1320,8 @@ export class CoreData {
   expectedGasLimitFulfillLockedVault: string = '0'
   initialMMR: u16 = 0
   mmrAttackDistance: u8 = 0
-  Ka: u8 = 0
-  Kd: u8 = 0
+  ka: u8 = 0
+  kd: u8 = 0
   lockedBankVaultBurntPercentage: string = '0'
   lockedBankVaultTreasuryPercentage: string = '0'
   lockedBankVaultDevPercentage: string = '0'
@@ -1359,7 +1359,7 @@ export class CoreData {
   totalUpgradedAvatars: string[] = []
   lastMintedPlayer: Player = new Player()
   lastQueuedActionPlayer: Player = new Player()
-  lastQueuedActions: QueuedAction[] = []
+  lastQueuedActions: string[] = []
   lastQueuedActionTimestamp: string = '0'
   lastQueuedPassiveActionPlayer: Player = new Player()
   lastQueuedPassiveAction: QueuedPassiveAction = new QueuedPassiveAction()
