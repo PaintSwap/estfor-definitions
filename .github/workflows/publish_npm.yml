@@ -21,4 +21,4 @@ jobs:
     - run: npm install -g yarn@latest
     - run: yarn install --frozen-lockfile
     - run: yarn build:asc
-    - run: yarn npm publish --access public
+    - run: yarn publish --access public
