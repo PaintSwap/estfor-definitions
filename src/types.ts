@@ -118,7 +118,7 @@ export class Equipment {
 
 export class Meta {
   startBlock: u32 = 0
-  endBlock: u32 | null = null
+  endBlock: u32 = 0
   readyAt: string = ''
   progressBlock: u32 = 0
 }
