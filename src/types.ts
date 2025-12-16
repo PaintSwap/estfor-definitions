@@ -116,17 +116,15 @@ export class Equipment {
   amount: u32 = 0
 }
 
-export class MetaBlock {
-  number: string = '0'
-  timestamp: string = '0'
-}
-
 export class Meta {
-  block: MetaBlock = new MetaBlock()
+  startBlock: u32 = 0
+  endBlock: u32 | null = null
+  readyAt: string = ''
+  progressBlock: u32 = 0
 }
 
 export class MetaBase {
-  _meta: Meta = new Meta()
+  _meta: Meta[] = []
 }
 
 export class QueuedActionInput {
