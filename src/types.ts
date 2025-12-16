@@ -398,7 +398,7 @@ export class QueuedInstantVRFAction {
   actions: InstantVRFAction[] = []
   amounts: string[] = []
   ongoing: boolean = false
-  producedItems: Item[] = []
+  producedItems: string[] = []
   producedAmounts: string[] = []
   timestamp: string = ''
 }
@@ -1515,8 +1515,8 @@ export class ClanBattleShared {
 }
 
 export class ClanBattle extends ClanBattleShared {
-  attackingPlayers: Player[] = []
-  defendingPlayers: Player[] = []
+  attackingPlayers: string[] = []
+  defendingPlayers: string[] = []
   randomSkills: Skill[] = []
   attackingClan: Clan | null = null
   defendingClan: Clan | null = null
