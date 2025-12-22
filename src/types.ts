@@ -747,7 +747,7 @@ export enum Direction {
 export class Activity {
   id: string = ''
   activityId: string = '' // Ascending numberic id for each Activity
-  type: string = '' // ActivityType
+  activityType: string = '' // ActivityType
   itemTokenIds: u16[] = []
   amounts: string[] = []
   directions: string[] = []
@@ -1508,7 +1508,7 @@ export class ClanBattleShared {
   defendingMMRDiff: i16 = 0
   attackingTimestamp: string = '0'
   ongoing: boolean = false
-  type: ClanBattleType = ClanBattleType.TERRITORY
+  clanBattleType: string // ClanBattleType
   brushWon: string = '0'
 }
 
