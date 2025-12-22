@@ -1508,7 +1508,7 @@ export class ClanBattleShared {
   defendingMMRDiff: i16 = 0
   attackingTimestamp: string = '0'
   ongoing: boolean = false
-  clanBattleType: string // ClanBattleType
+  clanBattleType: string = 'TERRITORY' // ClanBattleType
   brushWon: string = '0'
 }
 
