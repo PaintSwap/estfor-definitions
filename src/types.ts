@@ -525,6 +525,10 @@ export class Player {
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
   battlePoints: u32 = 0
+
+  /* Marketplace */
+  listingPrice: string = '0'
+  listing: MarketplaceListing | null = null
 }
 
 export class PlayerSimplified {
@@ -589,8 +593,11 @@ export class PlayerSimplified {
   totalSkillWins: string = '0'
   totalSkillLosses: string = '0'
   battlePoints: u16 = 0
-}
 
+  /* Marketplace */
+  listingPrice: string = '0'
+}
+  
 export class User {
   id: string = '0'
   numPlayers: u32 = 0
@@ -1723,6 +1730,10 @@ export class Pet {
   timestamp: string = '0'
   xp: string = '0'
   isTransferable: boolean = true
+
+  /* Marketplace */
+  listingPrice: string = '0'
+  listing: MarketplaceListing | null = null
 }
 
 export enum NFTContractType {
@@ -1767,6 +1778,16 @@ export class Raid {
   rangedDefence: i16 = 0
   tier: u8 = 0
   combatActionIds: u16[] = []
+}
+
+export class MarketplaceListing {
+  id: string = ''
+  isPlayerListing: boolean = false
+  isPetListing: boolean = false
+  listingPrice: string = '0'
+  tokenId: string = '0'
+  seller: string = ''
+  amount: string = '0' // Should always be 1 for players and pets
 }
 
 export const emptyCombatStats = new CombatStats()
