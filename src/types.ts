@@ -743,6 +743,9 @@ export enum ActivityType {
 
   // ActivityPoints
   ActivityPointsEarned,
+  
+  // Marketplace
+  MarketplaceItemSold,
 }
 
 export enum Direction {
