@@ -529,6 +529,7 @@ export class Player {
   /* Marketplace */
   listingPrice: string = '0'
   listing: MarketplaceListing | null = null
+  soldHistory: PlayerSoldHistory[] = []
 }
 
 export class PlayerSimplified {
@@ -1737,6 +1738,7 @@ export class Pet {
   /* Marketplace */
   listingPrice: string = '0'
   listing: MarketplaceListing | null = null
+  soldHistory: PetSoldHistory[] = []
 }
 
 export enum NFTContractType {
@@ -1791,6 +1793,22 @@ export class MarketplaceListing {
   tokenId: string = '0'
   seller: string = ''
   amount: string = '0' // Should always be 1 for players and pets
+}
+
+export class PlayerSoldHistory {
+  id: string = ''
+  listingPrice: string = '0'
+  hash: string = ''
+  blockNumber: string = ''
+  timestamp: string = '0'
+}
+
+export class PetSoldHistory {
+  id: string = ''
+  listingPrice: string = '0'
+  hash: string = ''
+  blockNumber: string = ''
+  timestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
