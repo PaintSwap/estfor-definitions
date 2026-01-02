@@ -1720,7 +1720,7 @@ export class BasePet {
   percentageStarThreshold: u16 = 0
 }
 
-export class Pet {
+export class PetSimplified {
   id: string = '' // tokenId
   tokenId: string = '0'
   basePet: BasePet = new BasePet()
@@ -1737,8 +1737,12 @@ export class Pet {
 
   /* Marketplace */
   listingPrice: string = '0'
-  listing: MarketplaceListing | null = null
   soldHistory: PetSoldHistory[] = []
+}
+
+export class Pet extends PetSimplified {
+  /* Marketplace */
+  listing: MarketplaceListing | null = null
 }
 
 export enum NFTContractType {
@@ -1793,6 +1797,8 @@ export class MarketplaceListing {
   tokenId: string = '0'
   seller: string = ''
   amount: string = '0' // Should always be 1 for players and pets
+  player: PlayerSimplified | null = null
+  pet: PetSimplified | null = null
 }
 
 export class PlayerSoldHistory {
