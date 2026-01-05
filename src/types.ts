@@ -82,6 +82,8 @@ export enum EquipPosition {
   PASSIVE_BOOST_VIAL,
   LOCKED_VAULT,
   TERRITORY,
+  AVATAR,
+  AVATAR_BORDER
 }
 
 export enum WorldLocation {
@@ -530,6 +532,10 @@ export class Player {
   listingPrice: string = '0'
   listing: MarketplaceListing | null = null
   soldHistory: PlayerSoldHistory[] = []
+
+  /* Cosmetics */
+  avatarCosmeticId: string = ''
+  avatarBorderCosmeticId: string = ''
 }
 
 export class PlayerSimplified {
@@ -597,6 +603,16 @@ export class PlayerSimplified {
 
   /* Marketplace */
   listingPrice: string = '0'
+
+  /* Cosmetics */
+  avatarCosmeticId: string = ''
+  avatarBorderCosmeticId: string = ''
+}
+
+export class CosmeticItem {
+  id: string = ''
+  cosmeticPosition: EquipPosition = EquipPosition.NONE
+  itemTokenId: u16 = 0
 }
   
 export class User {
