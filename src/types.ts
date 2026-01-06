@@ -609,12 +609,6 @@ export class PlayerSimplified {
   avatarBorderCosmeticId: string = ''
 }
 
-export class CosmeticItem {
-  id: string = ''
-  cosmeticPosition: EquipPosition = EquipPosition.NONE
-  itemTokenId: u16 = 0
-}
-  
 export class User {
   id: string = '0'
   numPlayers: u32 = 0
@@ -624,6 +618,7 @@ export class User {
   numPets: u32 = 0
   shopTotalSold: string = '0'
   shopTotalBought: string = '0'
+  shopSupporterPackTotalBoughtUsdc: string = '0'
   totalDonated: string = '0'
   activePlayerId: string = '0'
 }
@@ -1365,6 +1360,7 @@ export class CoreData {
   shopTreasuryPercentage: string = '0'
   shopDevPercentage: string = '0'
   shopPromotionDiscountPercentage: string = '0'
+  shopSupporterPackUsdcRaised: string = '0'
   shopIsPromotionActive: boolean = false
 
   // Pets
@@ -1831,6 +1827,30 @@ export class PetSoldHistory {
   hash: string = ''
   blockNumber: string = ''
   timestamp: string = '0'
+}
+
+export class CosmeticItem {
+  id: string = '' // tokenId
+  equipPosition: EquipPosition = EquipPosition.NONE
+  avatarId: u16 = 0
+  item: Item = new Item()
+}
+
+export class SupporterPackItem {
+  id: string = '' // packId - tokenId
+  item: Item = new Item()
+  quantity: string = '0'
+}
+
+export class SupporterPack {
+  id: string = '' // packId
+  price: string = '0'
+  items: SupporterPackItem[] = []
+  amountRemaining: string = '0'
+  amountBought: string = '0'
+  amountTotal: string = '0'
+  brushToGive: string = '0'
+  startTimestamp: string = '0'
 }
 
 export const emptyCombatStats = new CombatStats()
