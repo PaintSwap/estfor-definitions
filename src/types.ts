@@ -1444,6 +1444,10 @@ export class ClanMessage {
   deletedByName: string = ''
   replyId: string = '' // If replying to a message this is the id
   reactions: Reaction[] = [] // Emoji reactions
+
+  /* Cosmetics */
+  avatarCosmeticId: string = ''
+  avatarBorderCosmeticId: string = ''
 }
 
 export enum Referrer {
