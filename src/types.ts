@@ -534,8 +534,8 @@ export class Player {
   soldHistory: PlayerSoldHistory[] = []
 
   /* Cosmetics */
-  avatarCosmeticId: CosmeticItem | null = null
-  avatarBorderCosmeticId: CosmeticItem | null = null
+  avatarCosmetic: CosmeticItem | null = null
+  avatarBorderCosmetic: CosmeticItem | null = null
 }
 
 export class PlayerSimplified {
@@ -605,8 +605,8 @@ export class PlayerSimplified {
   listingPrice: string = '0'
 
   /* Cosmetics */
-  avatarCosmeticId: CosmeticItem | null = null
-  avatarBorderCosmeticId: CosmeticItem | null = null
+  avatarCosmetic: CosmeticItem | null = null
+  avatarBorderCosmetic: CosmeticItem | null = null
 }
 
 export class User {
