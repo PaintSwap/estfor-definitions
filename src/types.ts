@@ -1857,6 +1857,24 @@ export class SupporterPack {
   startTimestamp: string = '0'
 }
 
+export class GlobalEventContributor {
+  id: string = '' // eventId-playerId
+  player: PlayerSimplified = new PlayerSimplified()
+  amount: string = '0'
+}
+
+export class GlobalEvent {
+  id: string = '' // eventId
+  startTime: string = '0'
+  endTime: string = '0' // if 0 then ongoing
+  rewardItem: Item = new Item()
+  rewardItemAmountPerInput: string = '0'
+  inputItem: Item = new Item()
+  inputItemMaxAmount: string = '0' // total amount that can be contributed
+  totalInputAmount: string = '0' // total amount contributed so far
+  contributors: GlobalEventContributor[] = []
+}
+
 export const emptyCombatStats = new CombatStats()
 export const defaultItemInput = new ItemInput()
 export const defaultActionChoice = new ActionChoiceInput()
