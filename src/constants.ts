@@ -887,11 +887,15 @@ export const REWARD_002_BOOK = REWARD_BASE + 1
 export const REWARD_003_CROSSBOW = REWARD_BASE + 2
 export const REWARD_MAX = 15711 // +255
 
-// Cosmetics
-export const COSMETIC_BASE = 15712
-export const COSMETIC_001_AVATAR = COSMETIC_BASE
-export const COSMETIC_002_AVATAR_BORDER = COSMETIC_BASE + 1
-export const COSMETIC_MAX = COSMETIC_BASE + 255 // 15967
+// Cosmetic Avatars
+export const COSMETIC_AVATAR_BASE = 15712
+export const AVATAR_001_CHIMP = COSMETIC_AVATAR_BASE
+export const COSMETIC_AVATAR_MAX = COSMETIC_AVATAR_BASE + 255 // 15967
+
+// Cosmetic Avatar Borders
+export const COSMETIC_AVATAR_BORDER_BASE = 15968
+export const BORDER_001_ARCANE_PORTAL = COSMETIC_AVATAR_BORDER_BASE
+export const COSMETIC_AVATAR_BORDER_MAX = COSMETIC_AVATAR_BORDER_BASE + 255 // 16223
 
 // MISC
 export const MISC_BASE = 65535
@@ -969,6 +973,9 @@ export const ACTIVITY_TICKET = MISC_BASE - 70
 export const SONIC_GEM_TICKET2 = MISC_BASE - 71
 export const ACTIVITY_TICKET2 = MISC_BASE - 72
 export const ANNIV2_POUCH = MISC_BASE - 73
+export const WQ1_PARCHMENT = MISC_BASE - 74
+export const WQ1_CRYSTAL = MISC_BASE - 75
+export const WQ1_FRAGMENT = MISC_BASE - 76
 export const MISC_MIN = 32768
 
 export const allItems = [
@@ -1690,8 +1697,11 @@ export const allItems = [
   ANNIV2_EGG_TIER3,
   ANNIV2_EGG_TIER4,
   ANNIV2_EGG_TIER5,
-  COSMETIC_001_AVATAR,
-  COSMETIC_002_AVATAR_BORDER,
+  AVATAR_001_CHIMP,
+  BORDER_001_ARCANE_PORTAL,
+  WQ1_PARCHMENT,
+  WQ1_CRYSTAL,
+  WQ1_FRAGMENT,
 ]
 
 /** ACTIONS */
@@ -3762,6 +3772,9 @@ export const specialItems = [
   ANNIV2_RING,
   ANNIV2_AMULET,
   ANNIV2_POUCH,
+  WQ1_PARCHMENT,
+  WQ1_CRYSTAL,
+  WQ1_FRAGMENT,
 ]
 
 // Boosts to ignore for the account and hero progress
