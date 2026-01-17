@@ -922,6 +922,9 @@ export class ItemInput {
   metadataURI: string = ''
   // name of the item
   name: string = ''
+  // For categorization
+  isCollectionItem: boolean = false
+  isQuestItem: boolean = false
 }
 
 export class Item {
