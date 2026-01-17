@@ -757,6 +757,7 @@ export enum ActivityType {
   ActivityPointsEarned,
   
   // Marketplace
+  MarketplaceItemBought,
   MarketplaceItemSold,
 }
 
@@ -956,6 +957,9 @@ export class Item {
   isFullModeOnly: boolean = false
   isAvailable: boolean = false
   questPrerequisiteId: u16 = 0
+  // For categorization
+  isCollectionItem: boolean = false
+  isQuestItem: boolean = false
 }
 
 export class UserItemNFT {
