@@ -796,6 +796,7 @@ export class Activity {
   playerQuest: PlayerQuest = new PlayerQuest() // Only set for QuestsCompleted
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
+  pet: PetSimplified = new PetSimplified() // Only set for pet related activities
 }
 
 export class ActivitySimplified {
@@ -827,6 +828,7 @@ export class ActivitySimplified {
   playerQuest: PlayerQuestSimplified = new PlayerQuestSimplified() // Only set for QuestsCompleted
   clanId: string = '0' // Id if this is a clan activity
   clanName: string = '' // Name of the clan if this is a clan activity
+  pet: PetSimplified = new PetSimplified() // Only set for pet related activities
 }
 
 export class LastFullEquipment {
@@ -1830,6 +1832,9 @@ export class PlayerSoldHistory {
   hash: string = ''
   blockNumber: string = ''
   timestamp: string = '0'
+  buyer: string = ''
+  seller: string = ''
+  player: PlayerSimplified = new PlayerSimplified()
 }
 
 export class PetSoldHistory {
@@ -1838,6 +1843,9 @@ export class PetSoldHistory {
   hash: string = ''
   blockNumber: string = ''
   timestamp: string = '0'
+  buyer: string = ''
+  seller: string = ''
+  pet: PetSimplified = new PetSimplified()
 }
 
 export class CosmeticItem {
