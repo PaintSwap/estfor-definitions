@@ -1887,7 +1887,6 @@ export class GlobalEvent {
   inputItem: Item = new Item()
   inputItemMaxAmount: string = '0' // total amount that can be contributed
   totalInputAmount: string = '0' // total amount contributed so far
-  contributors: GlobalEventContributor[] = []
 }
 
 export const emptyCombatStats = new CombatStats()
