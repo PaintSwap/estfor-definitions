@@ -1887,6 +1887,22 @@ export class GlobalEvent {
   inputItem: Item = new Item()
   inputItemMaxAmount: string = '0' // total amount that can be contributed
   totalInputAmount: string = '0' // total amount contributed so far
+  blackMarketItems: BlackMarketItem[] = []
+  blackMarketItemsLastRequested: string = '0' // timestamp of last request (if not today and black market trader is active, VRF can be requested)
+  blackMarketItemsLastFulfilled: string = '0' // timestamp of last fulfilled (when random words were received)
+  isBlackMarketActive: boolean = false
+  blackMarketAcceptedItem: Item = new Item() // item that can be used to buy from black market
+}
+
+export class BlackMarketItem {
+  id: string = '' // globalEventId_tokenId
+  item: Item = new Item()
+  price: string = '0' // price in accepted item (e.g. 1 coin)
+  tokenId: u16 = 0 // item tokenId
+  amountPerPurchase: string = '0' // e.g. 100 logs for 1 coin
+  currentStock: string = '0' // current stock available to buy
+  stock: string = '0' // total stock that resets daily (0 means infinite)
+  isActive: boolean = false // determined each day via VRF when black market trader is active ~33% chance
 }
 
 export const emptyCombatStats = new CombatStats()
