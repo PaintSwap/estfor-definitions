@@ -1699,6 +1699,7 @@ export enum PetSkin {
   ANNIV1,
   KRAGSTYR,
   ANNIV2,
+  RIFT,
 }
 
 export enum PetEnhancementType {
@@ -1711,6 +1712,7 @@ export enum PetEnhancementType {
   MELEE_AND_DEFENCE,
   MAGIC_AND_DEFENCE,
   RANGED_AND_DEFENCE,
+  ALCHEMY,
 }
 
 export class BasePetInput {
