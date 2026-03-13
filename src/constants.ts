@@ -3126,6 +3126,10 @@ export const allQuestsLogicalOrdering = [
   QUEST_WORLD_I_V,
 ]
 
+export const deprecatedQuests = [
+  QUEST_PURSE_STRINGS
+]
+
 // Pets
 export const DEFAULT_MIN_TIER1 = 1
 export const PET_DEFAULT_MELEE_TIER1 = DEFAULT_MIN_TIER1
@@ -3688,6 +3692,6 @@ export const INITIAL_LEVEL = 17
 
 // For game progress
 export const totalCombinedLevel = INITIAL_LEVEL * MAX_LEVEL
-export const totalQuests = allQuestsLogicalOrdering.length
+export const totalQuests = allQuestsLogicalOrdering.length - deprecatedQuests.length
 
 export default NONE
