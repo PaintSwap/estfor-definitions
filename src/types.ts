@@ -83,7 +83,8 @@ export enum EquipPosition {
   LOCKED_VAULT,
   TERRITORY,
   AVATAR,
-  AVATAR_BORDER
+  AVATAR_BORDER,
+  TITLE,
 }
 
 export enum WorldLocation {
