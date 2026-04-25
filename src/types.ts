@@ -753,6 +753,7 @@ export enum ActivityType {
   TransferPets,
   ReceivedPets,
   EditPet,
+  PetReroll,
 
   // ActivityPoints
   ActivityPointsEarned,
