@@ -433,6 +433,7 @@ export class Player {
   numRaffleEntries: u32 = 0
   isFullMode: boolean = false
   lockCooldownTimestamp: string = '0'
+  boostCounter: u32 = 0
 
   /* Skill XP */
   woodcuttingXP: string = '0'
