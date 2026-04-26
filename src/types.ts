@@ -538,6 +538,7 @@ export class Player {
   /* Cosmetics */
   avatarCosmetic: CosmeticItem | null = null
   avatarBorderCosmetic: CosmeticItem | null = null
+  titleCosmetic: CosmeticItem | null = null
 }
 
 export class PlayerSimplified {
@@ -609,6 +610,7 @@ export class PlayerSimplified {
   /* Cosmetics */
   avatarCosmetic: CosmeticItem | null = null
   avatarBorderCosmetic: CosmeticItem | null = null
+  titleCosmetic: CosmeticItem | null = null
 }
 
 export class User {
